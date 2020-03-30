@@ -170,7 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9fd3b4208265545bf2aa60da34a6b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listPlants: 0000000004000000
+  plantes: 0000000004000000
+  listPlantes: []
 --- !u!1 &1473961705
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +425,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
+        type: 3}
+      propertyPath: azote
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
+        type: 3}
+      propertyPath: phosphore
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
+        type: 3}
+      propertyPath: potassium
+      value: 33
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e9f16942f41353498a45480d3fd73cd, type: 3}
 --- !u!4 &1925498447 stripped
@@ -530,7 +546,7 @@ PrefabInstance:
     - target: {fileID: 2100113420279626953, guid: 15aafa471f2f3e6429f039cbfc649d63,
         type: 3}
       propertyPath: m_TagString
-      value: Lettuce
+      value: Laitue
       objectReference: {fileID: 0}
     - target: {fileID: 2923846568427703858, guid: 15aafa471f2f3e6429f039cbfc649d63,
         type: 3}
@@ -749,6 +765,21 @@ PrefabInstance:
         type: 3}
       propertyPath: ph
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
+        type: 3}
+      propertyPath: azote
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
+        type: 3}
+      propertyPath: phosphore
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
+        type: 3}
+      propertyPath: potassium
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 7115126433775341963, guid: 9e9f16942f41353498a45480d3fd73cd,
         type: 3}
