@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 586a5eb3621964342a08476cc87f8f83, type: 3}
-  m_Name: EngraisPhosphore
+  m_Script: {fileID: 11500000, guid: be4d0dbd6a42ca64f89b53f6af0dc5ff, type: 3}
+  m_Name: Tanaisie
   m_EditorClassIdentifier: 
-  nom: Engrais riche en ...
-  description: donner un exemple sur comment faire tel ou tel engrais
-  azote: 0
-  phosphore: 0
-  potassium: 0
+  nom: "D\xE9coction de Tanaisie"
+  description: "Produit extr\xEAment puissant"
   icon: {fileID: 0}

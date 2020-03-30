@@ -17,10 +17,11 @@ public class Storage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             state = !state;
             panel.gameObject.SetActive(state);
         }
     }
 }
+

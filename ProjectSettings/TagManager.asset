@@ -4,12 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Plot
+  - Storage  - Plot
   - Carotte
   - Laitue
   - Tomate
-  - Pomme de terre
-  layers:
+  - Pomme de terre  layers:
   - Default
   - TransparentFX
   - Ignore Raycast

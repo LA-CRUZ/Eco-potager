@@ -23,18 +23,20 @@ public class SimpleCharacterControlFree : MonoBehaviour
 
     [SerializeField] private float m_moveSpeed = 2;
     [SerializeField] private float m_turnSpeed = 200;
-    [SerializeField] private float m_jumpForce = 4;
+    private float m_jumpForce = 4;
 
     [SerializeField] private Animator m_animator;
     [SerializeField] private Rigidbody m_rigidBody;
 
     [SerializeField] private ControlMode m_controlMode = ControlMode.Direct;
 
+    [SerializeField] private Item object_in_hand;
+
     private float m_currentV = 0;
     private float m_currentH = 0;
 
     private readonly float m_interpolation = 10;
-    private readonly float m_walkScale = 0.33f;
+    private readonly float m_walkScale = 2.33f;
     private readonly float m_backwardsWalkScale = 0.16f;
     private readonly float m_backwardRunScale = 0.66f;
 
@@ -152,7 +154,8 @@ public class SimpleCharacterControlFree : MonoBehaviour
 
         m_animator.SetFloat("MoveSpeed", m_currentV);
 
-        JumpingAndLanding();
+        //JumpingAndLanding();
+        Interact();
     }
 
     private void DirectUpdate()
@@ -187,27 +190,57 @@ public class SimpleCharacterControlFree : MonoBehaviour
             m_animator.SetFloat("MoveSpeed", direction.magnitude);
         }
 
-        JumpingAndLanding();
+        //JumpingAndLanding();
+        Interact();
     }
 
-    private void JumpingAndLanding()
+    private void Interact()
     {
-        bool jumpCooldownOver = (Time.time - m_jumpTimeStamp) >= m_minJumpInterval;
-
-        if (jumpCooldownOver && m_isGrounded && Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.E))
         {
-            m_jumpTimeStamp = Time.time;
-            m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
+            if(object_in_hand != null)
+            {
+                Debug.Log("You interacted !");
+                m_animator.SetTrigger("Pickup");
+            }
+            else
+            {
+                Debug.Log("You don't have an item in hand !");
+            }
         }
+    }
 
-        if (!m_wasGrounded && m_isGrounded)
+    public void SetObjetInHand(Item obj)
+    {
+        if (obj != null && object_in_hand == null)
         {
-            m_animator.SetTrigger("Land");
+            object_in_hand = obj;
+            Debug.Log("C'est fait !");
         }
-
-        if (!m_isGrounded && m_wasGrounded)
+        else
         {
-            m_animator.SetTrigger("Jump");
+            Debug.Log("Il y a déjà un objet dans la main !");
         }
     }
 }
+
+//private void JumpingAndLanding()
+//    {
+//        bool jumpCooldownOver = (Time.time - m_jumpTimeStamp) >= m_minJumpInterval;
+
+//        if (jumpCooldownOver && m_isGrounded && Input.GetKey(KeyCode.Space))
+//        {
+//            m_jumpTimeStamp = Time.time;
+//            m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
+//        }
+
+//        if (!m_wasGrounded && m_isGrounded)
+//        {
+//            m_animator.SetTrigger("Land");
+//        }
+
+//        if (!m_isGrounded && m_wasGrounded)
+//        {
+//            m_animator.SetTrigger("Jump");
+//        }
+//    }

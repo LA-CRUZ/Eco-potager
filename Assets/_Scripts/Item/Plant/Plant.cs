@@ -13,13 +13,11 @@ public enum Saison
 }
 
 [CreateAssetMenu(fileName = "New Plant", menuName = "Plant")]
-public class Plant : ScriptableObject
+public class Plant : Item
 {
-    public string nom;
-    public string description;
-    public string pesticide="indiquer ici le pesticide recommendé";
     public List<Saison> saison;
     public Nature sol;
+    public List<Pesticide> listPes;
 
     public float tauxHum;
     public float tauxNut;
@@ -31,6 +29,4 @@ public class Plant : ScriptableObject
     public float azote;
     public float phosphore;
     public float potassium;
-
-    public Sprite icon;
 }
