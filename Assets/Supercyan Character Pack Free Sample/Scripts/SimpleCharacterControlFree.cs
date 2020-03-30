@@ -201,6 +201,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
             if(object_in_hand != null)
             {
                 Debug.Log("You interacted !");
+                m_animator.SetTrigger("Pickup");
             }
             else
             {

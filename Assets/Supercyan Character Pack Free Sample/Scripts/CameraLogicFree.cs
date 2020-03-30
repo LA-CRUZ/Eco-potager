@@ -4,9 +4,9 @@ using System.Collections.Generic;
 public class CameraLogicFree : MonoBehaviour {
 
     private Transform m_currentTarget;
-    private float m_distance = 2f;
-    private float m_height = 1;
-    private float m_lookAtAroundAngle = 180;
+    [SerializeField] private float m_distance = 2f;
+    [SerializeField] private float m_height = 1;
+    [SerializeField] private float m_lookAtAroundAngle = 180;
 
     [SerializeField] private List<Transform> m_targets;
     private int m_currentIndex;
