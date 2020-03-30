@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2fceb7c60d6e84aaeac94096b07ba0, type: 3}
   m_Name: Tomate
   m_EditorClassIdentifier: Assembly-CSharp::Plant
+  name: Tomate
+  description: Ceci est une tomate
+  icon: {fileID: 21300000, guid: 1c334e355caba524f8696f23e57481b0, type: 3}
+  saison: Hiver

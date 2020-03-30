@@ -23,7 +23,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
 
     [SerializeField] private float m_moveSpeed = 2;
     [SerializeField] private float m_turnSpeed = 200;
-    [SerializeField] private float m_jumpForce = 4;
+    private float m_jumpForce = 4;
 
     [SerializeField] private Animator m_animator;
     [SerializeField] private Rigidbody m_rigidBody;
@@ -36,7 +36,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
     private float m_currentH = 0;
 
     private readonly float m_interpolation = 10;
-    private readonly float m_walkScale = 0.33f;
+    private readonly float m_walkScale = 2.33f;
     private readonly float m_backwardsWalkScale = 0.16f;
     private readonly float m_backwardRunScale = 0.66f;
 

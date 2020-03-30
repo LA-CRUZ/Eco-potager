@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class StorageScrollList : MonoBehaviour
 {
 
-    public List<Plant> plantList;
+    public List<Item> itemList;
     public Transform contentPanel;
     public SimpleObjectPool simpleObjectPool;
 
@@ -23,13 +23,13 @@ public class StorageScrollList : MonoBehaviour
 
     private void addButtons()
     {
-        for (int i = 0; i < plantList.Count; i++)
+        for (int i = 0; i < itemList.Count; i++)
         {
-            Plant plante = plantList[i];
+            Item item = itemList[i];
             GameObject newPlante = simpleObjectPool.GetObject();
             newPlante.transform.SetParent(contentPanel);
             InfoToShow infos = newPlante.GetComponent<InfoToShow>();
-            infos.Setup(plante, this);
+            infos.Setup(item, this);
         }
     }
 }

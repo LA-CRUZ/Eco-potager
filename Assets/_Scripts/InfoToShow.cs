@@ -23,14 +23,14 @@ public class InfoToShow : MonoBehaviour
         player = GameObject.FindWithTag("Player");
     }
 
-    public void Setup(Plant currentPlant, StorageScrollList currentScrollList)
+    public void Setup(Item currentItem, StorageScrollList currentScrollList)
     {
         prendre.onClick.AddListener(delegate() { prendreObjet(); });
         moreInfo.onClick.AddListener(delegate () { expandInfos(); });
 
         this.panel.transform.localScale = new Vector3(1, 1, 1);
         storageScrollList = currentScrollList;
-        item = currentPlant;
+        item = currentItem;
         nom.text = item.name;
         description.text = item.description;
         iconImage.sprite = item.icon;
@@ -41,6 +41,7 @@ public class InfoToShow : MonoBehaviour
 
     private void prendreObjet()
     {
+
         player.GetComponent<SimpleCharacterControlFree>().SetObjetInHand(item);
     }
 
