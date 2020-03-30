@@ -12,14 +12,15 @@ public class InfoToShow : MonoBehaviour
     public Text description;
     public Image iconImage;
 
-    private Plant plante;
+    private Item item;
     private StorageScrollList storageScrollList;
     public bool showMore = false;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.FindWithTag("Player");
     }
 
     public void Setup(Plant currentPlant, StorageScrollList currentScrollList)
@@ -29,10 +30,10 @@ public class InfoToShow : MonoBehaviour
 
         this.panel.transform.localScale = new Vector3(1, 1, 1);
         storageScrollList = currentScrollList;
-        plante = currentPlant;
-        nom.text = plante.name;
-        description.text = plante.description;
-        iconImage.sprite = plante.icon;
+        item = currentPlant;
+        nom.text = item.name;
+        description.text = item.description;
+        iconImage.sprite = item.icon;
 
         this.GetComponent<LayoutElement>().minHeight = 200;
 
@@ -40,13 +41,11 @@ public class InfoToShow : MonoBehaviour
 
     private void prendreObjet()
     {
-        Debug.Log("prendre !");
+        player.GetComponent<SimpleCharacterControlFree>().SetObjetInHand(item);
     }
 
     private void expandInfos()
     {
-        Debug.Log("expand !");
-        //this.GetComponent<RectTransform>().sizeDelta = new Vector2(500, 500);
         if (!showMore)
         {
             this.GetComponent<LayoutElement>().minHeight = 500;

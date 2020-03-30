@@ -4,11 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "New Plant", menuName = "Plant")]
-public class Plant : ScriptableObject
+public class Plant : Item
 {
-    public string name;
-    public string description;
     public string saison;
-    public Sprite icon;
-
 }
