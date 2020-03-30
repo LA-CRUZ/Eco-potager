@@ -9,18 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: Carotte
-  m_EditorClassIdentifier: Assembly-CSharp::Plant
-  nom: Carotte
-  description: todo
-  saison: 3
-  sol: 2
-  tauxHum: 0
-  tauxNut: 0
-  tauxLum: 0
-  phMin: 4
-  phMax: 7
+  m_Script: {fileID: 11500000, guid: 586a5eb3621964342a08476cc87f8f83, type: 3}
+  m_Name: EngraisPhosphore
+  m_EditorClassIdentifier: 
+  nom: Engrais riche en ...
+  description: donner un exemple sur comment faire tel ou tel engrais
   azote: 0
   phosphore: 0
   potassium: 0

@@ -12,7 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Tomate
   m_EditorClassIdentifier: Assembly-CSharp::Plant
-  name: Tomate
+  nom: Tomate
   description: Ceci est une tomate
-  saison: ETE
+  saison: 0
+  sol: 0
+  tauxHum: 0
+  tauxNut: 0
+  tauxLum: 0
+  phMin: 0
+  phMax: 0
+  azote: 0
+  phosphore: 0
+  potassium: 0
   icon: {fileID: 21300000, guid: 79dffa8ea895a4744b6b35a9f71bd5fc, type: 3}

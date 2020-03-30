@@ -9,9 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2923846568427703858}
-  - component: {fileID: 5557466178001584402}
-  - component: {fileID: 8869920980390611500}
-  - component: {fileID: 5200062003307580433}
   m_Layer: 0
   m_Name: lettuce crops
   m_TagString: Untagged
@@ -38,53 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5557466178001584402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100113420279626953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e27ad93355b79b4fbcdef8f7e6f3dcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  azote: 60
-  phosphore: 20
-  potassium: 20
---- !u!114 &8869920980390611500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100113420279626953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64b1162baa9af6d469eab5804eddd7ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sol: 2
-  tauxHum: 75
-  tauxNut: 50
-  tauxLum: 50
---- !u!114 &5200062003307580433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100113420279626953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87274f047d4f7ef40839ce613bfabcff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nom: 4
-  phMin: 5
-  phMax: 6
-  description: "\xE0 remplir"
 --- !u!1001 &4059812987310483821
 PrefabInstance:
   m_ObjectHideFlags: 0
