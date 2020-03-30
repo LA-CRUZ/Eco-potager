@@ -27,13 +27,15 @@ public class InfoToShow : MonoBehaviour
     {
         prendre.onClick.AddListener(delegate() { prendreObjet(); });
         moreInfo.onClick.AddListener(delegate () { expandInfos(); });
-
+        Debug.Log("setup");
         this.panel.transform.localScale = new Vector3(1, 1, 1);
         storageScrollList = currentScrollList;
         item = currentItem;
         nom.text = item.name;
         description.text = item.description;
         iconImage.sprite = item.icon;
+        Debug.Log("Item:" + item);
+        Debug.Log("currentItem:"  + currentItem);
 
         this.GetComponent<LayoutElement>().minHeight = 200;
 
@@ -41,7 +43,8 @@ public class InfoToShow : MonoBehaviour
 
     private void prendreObjet()
     {
-
+        Debug.Log("setup");
+        Debug.Log(item);
         player.GetComponent<SimpleCharacterControlFree>().SetObjetInHand(item);
     }
 

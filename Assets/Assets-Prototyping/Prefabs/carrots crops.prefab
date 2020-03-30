@@ -9,12 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2563420138213906166}
-  - component: {fileID: 3530605198932538458}
-  - component: {fileID: 2286161322925972520}
-  - component: {fileID: 4417943985699978150}
   m_Layer: 0
   m_Name: carrots crops
-  m_TagString: Carrot
+  m_TagString: Carotte
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,53 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3530605198932538458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2154721113134426587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e27ad93355b79b4fbcdef8f7e6f3dcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  azote: 20
-  phosphore: 20
-  potassium: 60
---- !u!114 &2286161322925972520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2154721113134426587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64b1162baa9af6d469eab5804eddd7ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sol: 2
-  tauxHum: 25
-  tauxNut: 25
-  tauxLum: 75
---- !u!114 &4417943985699978150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2154721113134426587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87274f047d4f7ef40839ce613bfabcff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nom: 0
-  phMin: 5.5
-  phMax: 7
-  description: "\xE0 remplir"
 --- !u!1001 &429232505048746048
 PrefabInstance:
   m_ObjectHideFlags: 0
