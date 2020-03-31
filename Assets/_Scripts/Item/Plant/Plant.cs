@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public enum Saison
 {
-    Ete,
+    Eté,
     Automne,
     Hiver,
     Printemps,
@@ -19,9 +19,9 @@ public class Plant : Item
     public Nature sol;
     public List<Pesticide> listPes;
 
-    public float tauxHum;
-    public float tauxNut;
-    public float tauxLum;
+    public float quantiteEau;
+    public float quantiteNutrition;
+    public float quantiteLumière;
 
     public float phMin;
     public float phMax;
