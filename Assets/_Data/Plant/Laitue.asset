@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2fceb7c60d6e84aaeac94096b07ba0, type: 3}
   m_Name: Laitue
   m_EditorClassIdentifier: Assembly-CSharp::Plant
-  nom: A FAIRE
+  nom: Laitue
   description: A FAIRE
   icon: {fileID: 0}
   saison: 

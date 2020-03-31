@@ -19,8 +19,8 @@ MonoBehaviour:
   sol: 2
   listPes:
   - {fileID: 11400000, guid: 98c72a5c9f89575499f3c0b778fb0c39, type: 2}
-  tauxHum: 0
-  tauxNut: 0
+  tauxHum: 33
+  tauxNut: 66
   tauxLum: 0
   phMin: 5
   phMax: 7
