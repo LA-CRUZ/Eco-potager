@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f2fceb7c60d6e84aaeac94096b07ba0, type: 3}
-  m_Name: Carotte
+  m_Name: Radis
   m_EditorClassIdentifier: 
-  nom: Carotte
-  description: "La carotte est consid\xE9r\xE9e comme un fruit car au Portugal elle
-    est pr\xE9par\xE9e en confiture, or la confiture est cens\xE9e \xEAtre \xE0 base
-    de fruit !"
+  nom: Radis
+  description: "Au mexique le 23 d\xE9cembre on c\xE9l\xE8bre la \u201CNoche de Rabanos\u201D,
+    la nuit des radis ! En france on dispose \xE9galement d\u2019un \u201Cjour des
+    radis\u201D qui se d\xE9roule le 8 avril."
   icon: {fileID: 21300000, guid: c7e399a4a1f4de24092ac91bc437782a, type: 3}
-  saison: 0000000003000000
-  sol: 2
+  saison: 01000000
+  sol: 0
   listPes:
+  - {fileID: 11400000, guid: 1a3771a0d67237b4b8c1b084a44234f5, type: 2}
   - {fileID: 11400000, guid: 98c72a5c9f89575499f3c0b778fb0c39, type: 2}
-  quantiteEau: 1
+  quantiteEau: 2
   quantiteNutrition: 1
-  "quantiteLumi\xE8re": 3
-  phMin: 5.5
-  phMax: 7
-  azote: 20
-  phosphore: 20
-  potassium: 60
+  "quantiteLumi\xE8re": 2
+  phMin: 6.1
+  phMax: 7.5
+  azote: 33
+  phosphore: 33
+  potassium: 34

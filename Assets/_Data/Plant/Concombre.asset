@@ -10,20 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f2fceb7c60d6e84aaeac94096b07ba0, type: 3}
-  m_Name: Laitue
-  m_EditorClassIdentifier: Assembly-CSharp::Plant
-  nom: Laitue
-  description: "L\u2019expression \u201Craconter des salades\u201D signifie \u201Craconter
-    des mensonges\u201D"
+  m_Name: Concombre
+  m_EditorClassIdentifier: 
+  nom: Concombre
+  description: "Auguste et Tib\xE8re, deux empereurs romains \xE9taient friands de
+    concombre !"
   icon: {fileID: 21300000, guid: c7e399a4a1f4de24092ac91bc437782a, type: 3}
-  saison: 03000000  sol: 0
+  saison: 00000000
+  sol: 0
   listPes:
   - {fileID: 11400000, guid: 69595388b305d1f449181d348c46d40a, type: 2}
   quantiteEau: 3
   quantiteNutrition: 2
-  "quantiteLumi\xE8re": 2
-  phMin: 5
-  phMax: 6
+  "quantiteLumi\xE8re": 3
+  phMin: 5.5
+  phMax: 6.8
   azote: 60
   phosphore: 20
   potassium: 20

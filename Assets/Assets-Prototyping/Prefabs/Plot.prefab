@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7115126433775341953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15, y: 0.25, z: -15}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 2, y: 0.5, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -107,10 +107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sol: 0
-  tauxHum: 0
-  tauxNut: 0
-  tauxLum: 0
-  azote: 0
-  phosphore: 0
-  potassium: 0
-  ph: 0
+  tauxHum: 20
+  tauxNut: 20
+  tauxLum: 60
+  azote: 20
+  phosphore: 20
+  potassium: 60
+  ph: 7
