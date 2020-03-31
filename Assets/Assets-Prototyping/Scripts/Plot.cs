@@ -16,11 +16,11 @@ public class Plot : MonoBehaviour
     public Nature sol;
 
     [SerializeField]
-    private float tauxHum;
+    private int quantiteEau;
     [SerializeField]
-    private float tauxNut;
+    private int quantiteNutrition;
     [SerializeField]
-    private float tauxLum;   // taux de luminosité => à garder? 
+    private int quantiteLumière;   // taux de luminosité => à garder? 
 
     [SerializeField]
     private float azote = 0f;
@@ -32,7 +32,7 @@ public class Plot : MonoBehaviour
     [SerializeField]
     private float ph;
 
-
+    public string historiquePlot = "indiquer ici si le terrain a déjà servie à la culture etc..";
     
 
     // Start is called before the first frame update
@@ -53,9 +53,9 @@ public class Plot : MonoBehaviour
     }
 
     // all Getters
-    public float getTauxHum() { return tauxHum; }
+    public int getQEau() { return quantiteEau; }
 
-    public float getTauxNut() { return tauxNut; }
+    public int getQNutrition() { return quantiteNutrition; }
 
     public float getAzote() { return azote; }
 
@@ -67,11 +67,11 @@ public class Plot : MonoBehaviour
 
 
     //all Setters
-    public void setTauxHum(float _tauxHum) { tauxHum = (_tauxHum >= 0f && _tauxHum <= 100f) ? _tauxHum : tauxHum; }    // idem
+    public void setQEau(int _quantiteEau) { quantiteEau = (_quantiteEau >= 0 && _quantiteEau <= 3) ? _quantiteEau : quantiteEau; }    // idem
 
-    public void setTauxNut(float _tauxNut) { tauxNut = (_tauxNut >= 0f && _tauxNut <= 100f) ? _tauxNut : tauxNut; }    // ...
+    public void setQNutrition(int _quantiteNutrition) { quantiteNutrition = (_quantiteNutrition >= 0 && _quantiteNutrition <= 3) ? _quantiteNutrition : quantiteNutrition; }    // ...
 
-    public void setTauxLum(float _tauxLum) { tauxLum = (_tauxLum >= 0f && _tauxLum <= 100f) ? _tauxLum : tauxLum; }    // ...
+    public void setQLumière(int _quantiteLumière) { quantiteLumière = (_quantiteLumière >= 0 && _quantiteLumière <= 3) ? _quantiteLumière : quantiteLumière; }    // ...
 
     public void setAzote(float _azote)
     {
@@ -100,39 +100,39 @@ public class Plot : MonoBehaviour
     public void setPh(float _ph) { ph = (_ph >= 0f && _ph <= 14f) ? _ph : ph; }   // si le ph passé en param est incompatible on ne fait rien 
 
     // fct d'ajout 
-    public void addToTauxHum(float _tauxHum)
+    public void addToQEau(int _quantiteEau)
     {
-        if (_tauxHum >= 0f && _tauxHum <= 100f)
+        if (_quantiteEau >= 0 && _quantiteEau <= 3)
         {
-            if (tauxHum + _tauxHum > 100f)
-                tauxHum = 100f;
-            else if (tauxHum + _tauxHum < 0f)
-                tauxHum = 0f;
-            else tauxHum += _tauxHum;
+            if (quantiteEau + _quantiteEau > 3)
+                quantiteEau = 3;
+            else if (quantiteEau + _quantiteEau < 0)
+                quantiteEau = 0;
+            else quantiteEau += _quantiteEau;
         }
     }
 
-    public void addToTauxNut(float _tauxNut)
+    public void addToQNutrition(int _quantiteNutrition)
     {
-        if (_tauxNut >= 0f && _tauxNut <= 100f)
+        if (_quantiteNutrition >= 0f && _quantiteNutrition <= 3)
         {
-            if (tauxNut + _tauxNut > 100f)
-                tauxNut = 100f;
-            else if (tauxNut + _tauxNut < 0f)
-                tauxNut = 0f;
-            else tauxNut += _tauxNut;
+            if (quantiteNutrition + _quantiteNutrition > 3)
+                quantiteNutrition = 3;
+            else if (quantiteNutrition + _quantiteNutrition < 0)
+                quantiteNutrition = 0;
+            else quantiteNutrition += _quantiteNutrition;
         }
     }
 
-    public void addToTauxLum(float _tauxLum)
+    public void addToQLumière(int _quantiteLumière)
     {
-        if (_tauxLum >= 0f && _tauxLum <= 100f)
+        if (_quantiteLumière >= 0 && _quantiteLumière <= 3)
         {
-            if (tauxLum + _tauxLum > 100f)
-                tauxLum = 100f;
-            else if (tauxLum + _tauxLum < 0f)
-                tauxLum = 0f;
-            else tauxLum += _tauxLum;
+            if (quantiteLumière + _quantiteLumière > 3)
+                quantiteLumière = 3;
+            else if (quantiteLumière + _quantiteLumière < 0)
+                quantiteLumière = 0;
+            else quantiteLumière += _quantiteLumière;
         }
     }
 
@@ -153,13 +153,13 @@ public class Plot : MonoBehaviour
     {
         try
         {
-            if (tauxNut > 100f || tauxNut < 0f)
+            if (quantiteNutrition > 3 || quantiteNutrition < 0)
             {
-                throw new Exception("invalid tauxNut current in gameobject  " + name + " : " + tauxNut);
+                throw new Exception("invalid quantiteNutrition current in gameobject  " + name + " : " + quantiteNutrition);
             }
-            if (tauxHum > 100f || tauxHum < 0f)
+            if (quantiteEau > 3 || quantiteEau < 0)
             {
-                throw new Exception("invalid tauxHum current in gameobject  " + name + " : " + tauxHum);
+                throw new Exception("invalid quantiteEau current in gameobject  " + name + " : " + quantiteEau);
             }
         }
         catch (Exception e)
