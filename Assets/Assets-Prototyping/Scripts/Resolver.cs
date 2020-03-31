@@ -111,23 +111,23 @@ public class Resolver : MonoBehaviour
         //  analyse des taux
 
         //  Humidité
-        if (plot.getTauxHum() - 10 < p.tauxHum)
-            commentairePlots[indice] += "Dommage, le taux d'humidité de cette parcelle est trop faible pour cette plante.\n";
-        if (plot.getTauxHum() - 10 <= p.tauxHum && plot.getTauxHum() + 10 >= p.tauxHum)
+        if (plot.getQEau() < p.quantiteEau)
+            commentairePlots[indice] += "Dommage, la quantité d'eau de cette parcelle est trop faible pour cette plante.\n";
+        if (plot.getQEau() == p.quantiteEau)
         {
-            commentairePlots[indice] += "Super, le taux d'humidité est idéale pour cette plante.\n";
+            commentairePlots[indice] += "Super, la quantité d'eau est idéale pour cette plante.\n";
             nbBonPoints++;
         }
-        if (plot.getTauxHum() + 10 > p.tauxHum)
-            commentairePlots[indice] += "Fait attention! Le taux d'humidité de cette parcelle est trop élevé pour les " + p.nom + "\n";
+        if (plot.getQEau()  > p.quantiteEau)
+            commentairePlots[indice] += "Fait attention! la quantité d'eau de cette parcelle est trop élevé pour les " + p.nom + "\n";
 
         // Nutriment
 
-        if (plot.getTauxNut() - 10 < p.tauxNut)
-            commentairePlots[indice] += "Dommage, le taux de nutriments de cette parcelle est trop faible pour cette plante.\n";
-        if (plot.getTauxNut() - 10 >= p.tauxNut)
+        if (plot.getQNutrition() < p.quantiteNutrition)
+            commentairePlots[indice] += "Dommage, la quantité de nutriments de cette parcelle est trop faible pour cette plante.\n";
+        if (plot.getQNutrition() >= p.quantiteNutrition)
         {
-            commentairePlots[indice] += "Super, le taux de nutriments dans cette parcelle convient bien à cette plante.\n";
+            commentairePlots[indice] += "Super, la quantité de nutriments dans cette parcelle convient bien à cette plante.\n";
             nbBonPoints++;
         }
 
@@ -166,7 +166,7 @@ public class Resolver : MonoBehaviour
         float phMax = p.phMax;
         if (phPlot >= phMin && phPlot <= phMax)
         {
-            commentairePlots[indice] += "Incroyable! Le ph de cette parcelle est parfait pour cette plante.\n";
+            commentairePlots[indice] += "Incroyable! Le ph de cette parcelle est parfaite pour cette plante.\n";
             nbBonPoints++;
         }
         else

@@ -19,9 +19,9 @@ public class Plant : Item
     public Nature sol;
     public List<Pesticide> listPes;
 
-    public float quantiteEau;
-    public float quantiteNutrition;
-    public float quantiteLumière;
+    public int quantiteEau;
+    public int quantiteNutrition;
+    public int quantiteLumière;
 
     public float phMin;
     public float phMax;
