@@ -17,7 +17,7 @@ MonoBehaviour:
     de la plante et sert \xE0 d\xE9velopper toutes les parties vertes qui assurent
     la croissance. On peut faire cet engrais avec du marc \xE0 caf\xE9, ou encore
     avec du purin d'orties (celui-ci peut m\xEAme servir d'insecticide biologique!)."
-  icon: {fileID: 21300000, guid: 79dffa8ea895a4744b6b35a9f71bd5fc, type: 3}
+  icon: {fileID: 21300000, guid: 326de57deaf503b43abd1ee3f7bee48a, type: 3}
   azote: 60
   phosphore: 20
   potassium: 20
