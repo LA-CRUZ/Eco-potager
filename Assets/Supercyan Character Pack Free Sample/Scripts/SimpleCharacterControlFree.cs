@@ -212,14 +212,14 @@ public class SimpleCharacterControlFree : MonoBehaviour
 
     public void SetObjetInHand(Item obj)
     {
-        if (obj != null && object_in_hand == null)
+        if (obj != null)
         {
             object_in_hand = obj;
-            Debug.Log("C'est fait !");
+            GameObject.Find("Objet en main").GetComponent<InfoObjetEnMain>().SetObjet(obj);
         }
         else
         {
-            Debug.Log("Il y a déjà un objet dans la main !");
+            Debug.Log("Object to put in inventory doesn't exist !");
         }
     }
 }
