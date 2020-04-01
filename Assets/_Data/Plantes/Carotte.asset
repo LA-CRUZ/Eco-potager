@@ -18,14 +18,10 @@ MonoBehaviour:
     de fruit !"
   icon: {fileID: 21300000, guid: c7e399a4a1f4de24092ac91bc437782a, type: 3}
   saison: 0000000003000000
-  sol: 2
   listPes:
   - {fileID: 11400000, guid: 98c72a5c9f89575499f3c0b778fb0c39, type: 2}
   quantiteEau: 1
   quantiteNutrition: 1
-  "quantiteLumi\xE8re": 3
   phMin: 5.5
   phMax: 7
-  azote: 20
-  phosphore: 20
-  potassium: 60
+  mineral: 2

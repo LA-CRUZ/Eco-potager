@@ -21,6 +21,9 @@ public class Resolver : MonoBehaviour
     private bool endStage = false;
 
     [SerializeField]
+    private Saison saison;
+
+    [SerializeField]
     private Plants[] plantes;
     public List<Plant> listPlantes = new List<Plant>(); 
     private List<string> commentairePlantes = new List<string>();
@@ -61,7 +64,7 @@ public class Resolver : MonoBehaviour
             affichage();
             Debug.Break();
         }
-        if(Input.anyKey)
+        if(Input.GetKey(KeyCode.F))
         {
             endStage = true;
         }
@@ -74,22 +77,25 @@ public class Resolver : MonoBehaviour
         int i = 0;
         foreach(GameObject plot in listPlots)
         {
-            if (plot.transform.childCount != 0)
+            string tagChild;
+            if(plot.transform.childCount > 1)
+                tagChild = plot.transform.GetChild(1).tag;
+            else tagChild = plot.transform.GetChild(0).tag;
+
+            if(tagChild == "Untagged")
             {
-                string tagChild = plot.transform.GetChild(0).tag;
-                foreach(Plant p in listPlantes)
+                commentairePlots[i] = "Aucune plante n'a été planté sur cette parcelle. \n";
+            } else
+            {
+                foreach (Plant p in listPlantes)
                 {
-                    if(p.nom == tagChild)
+                    if (p.nom == tagChild)
                     {
                         if (process(plot.GetComponent<Plot>(), p, i))
                             score++;
                     }
                 }
-            } else
-            {
-                commentairePlots[i] = "Aucune plante n'a été planté sur cette parcelle. \n";
-                Debug.Log(commentairePlots[i]);
-            }
+            }   
             i++;
         }
     }
@@ -98,15 +104,21 @@ public class Resolver : MonoBehaviour
     {
         int nbBonPoints = 0;
         commentairePlots[indice] = "Des " + p.nom + " ont été planté ici. \n ";
-        //  analyse type de sol
-        if (p.sol != Nature.None)
+        // analyse de la saison
+        bool estDeSaison = false;
+        Saison s = Saison.None;
+        foreach(Saison tmp in p.saison)
         {
-            if(p.sol == plot.sol)
-            {
-                commentairePlots[indice] += "Bien joué! Effectivement un sol " + plot.sol + " correspond mieux aux " + p.nom + ". \n";
-                nbBonPoints++;
-            }
-        }   // pas de remarque si la plante peut pousser sur tous type de terrains.
+            s = tmp;
+            if (tmp == saison || tmp == Saison.None)
+                estDeSaison = true;
+        }
+        if (estDeSaison)
+        {
+            commentairePlots[indice] += "Il s'agit bien d'un légume de saison, c'est super!\n";
+            nbBonPoints++;
+        }
+        else commentairePlots[indice] += "Attention, les " + p.nom + " poussent en " + s + " et non en " + saison + ".\n";
 
         //  analyse des taux
 
@@ -132,34 +144,7 @@ public class Resolver : MonoBehaviour
         }
 
         //  analyse du NPK
-        string nutPlantePrincipale;
-        string nutPlotPrincipale;
-        if (p.azote == 60)
-        {
-            nutPlantePrincipale = "azote";
-        }
-        else if (p.phosphore == 60)
-        {
-            nutPlantePrincipale = "phosphore";
-        }
-        else nutPlantePrincipale = "potassium";
 
-        if (plot.getAzote() == 60)
-        {
-            nutPlotPrincipale = "azote";
-        }
-        else if (plot.getPhosphore() == 60)
-        {
-            nutPlotPrincipale = "phosphore";
-        }
-        else nutPlotPrincipale = "potassium";
-
-        if (nutPlantePrincipale == nutPlotPrincipale)
-        {
-            commentairePlots[indice] += "Parfait! Cette parcelle est riche en " + nutPlotPrincipale + " c'est exactement ce que veut les " + p.nom + ".\n";
-            nbBonPoints++;
-        }
-        else commentairePlots[indice] += "Cette parcelle ne contient pas assez de  " + nutPlantePrincipale + " pour les " + p.nom + " c'est dommage.\n";
         //  analyse du ph
         float phPlot = plot.getPh();
         float phMin = p.phMin;
@@ -186,7 +171,6 @@ public class Resolver : MonoBehaviour
         else concat += "Bravo! Tu as atteint l'objectif qui était de bien gérer " + objectifScore + " parcelles sur " + listPlots.Count + ".\n";
         foreach (string str in commentairePlots)
         {
-            Debug.Log(str);
             concat += str;
         }
         Debug.Log(concat);

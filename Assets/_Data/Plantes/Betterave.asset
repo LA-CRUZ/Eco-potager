@@ -16,13 +16,9 @@ MonoBehaviour:
   description: "La betterave est principalement cultiv\xE9e pour son sucre."
   icon: {fileID: 21300000, guid: c7e399a4a1f4de24092ac91bc437782a, type: 3}
   saison: 03000000
-  sol: 0
   listPes: []
   quantiteEau: 3
   quantiteNutrition: 2
-  "quantiteLumi\xE8re": 3
   phMin: 6.5
   phMax: 7
-  azote: 20
-  phosphore: 20
-  potassium: 60
+  mineral: 2

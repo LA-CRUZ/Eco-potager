@@ -16,17 +16,13 @@ public enum Saison
 public class Plant : Item
 {
     public List<Saison> saison;
-    public Nature sol;
     public List<Traitement> listPes;
 
     public int quantiteEau;
     public int quantiteNutrition;
-    public int quantiteLumière;
 
     public float phMin;
     public float phMax;
 
-    public float azote;
-    public float phosphore;
-    public float potassium;
+    public Minerals mineral;
 }
