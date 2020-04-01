@@ -38,7 +38,7 @@ public class StorageScrollList : MonoBehaviour
             else if (newItem.GetComponent<InfoPesticide>() != null)
             {
                 InfoPesticide infos = newItem.GetComponent<InfoPesticide>();
-                infos.Setup((Pesticide) item, this);
+                infos.Setup((Traitement) item, this);
             }
             else if (newItem.GetComponent<InfoEngrais>() != null)
             {

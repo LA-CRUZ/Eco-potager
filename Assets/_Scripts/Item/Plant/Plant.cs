@@ -17,7 +17,7 @@ public class Plant : Item
 {
     public List<Saison> saison;
     public Nature sol;
-    public List<Pesticide> listPes;
+    public List<Traitement> listPes;
 
     public int quantiteEau;
     public int quantiteNutrition;

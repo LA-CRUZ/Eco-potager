@@ -31,6 +31,8 @@ public class SimpleCharacterControlFree : MonoBehaviour
     [SerializeField] private ControlMode m_controlMode = ControlMode.Direct;
 
     [SerializeField] private Item object_in_hand;
+    private Item item_to_pick_up;
+    private Plot plot_to_interact;
 
     private float m_currentV = 0;
     private float m_currentH = 0;
@@ -54,6 +56,25 @@ public class SimpleCharacterControlFree : MonoBehaviour
     {
         if(!m_animator) { gameObject.GetComponent<Animator>(); }
         if(!m_rigidBody) { gameObject.GetComponent<Animator>(); }
+    }
+
+    
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Nouveau item à mettre en main
+            if (item_to_pick_up != null)
+            {
+                SetObjetInHand(item_to_pick_up);
+            }
+            // Intéraction avec un plot
+            else if (plot_to_interact != null)
+            {
+                InteractWith(plot_to_interact);
+            }
+            InteractAnimation();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -153,9 +174,6 @@ public class SimpleCharacterControlFree : MonoBehaviour
         transform.Rotate(0, m_currentH * m_turnSpeed * Time.deltaTime, 0);
 
         m_animator.SetFloat("MoveSpeed", m_currentV);
-
-        //JumpingAndLanding();
-        Interact();
     }
 
     private void DirectUpdate()
@@ -189,24 +207,13 @@ public class SimpleCharacterControlFree : MonoBehaviour
 
             m_animator.SetFloat("MoveSpeed", direction.magnitude);
         }
-
-        //JumpingAndLanding();
-        Interact();
     }
 
-    private void Interact()
+    private void InteractAnimation()
     {
-        if(Input.GetKey(KeyCode.E))
+        if(object_in_hand != null)
         {
-            if(object_in_hand != null)
-            {
-                Debug.Log("You interacted !");
-                m_animator.SetTrigger("Pickup");
-            }
-            else
-            {
-                Debug.Log("You don't have an item in hand !");
-            }
+            m_animator.SetTrigger("Pickup");
         }
     }
 
@@ -220,6 +227,49 @@ public class SimpleCharacterControlFree : MonoBehaviour
         else
         {
             Debug.Log("Object to put in inventory doesn't exist !");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.tag)
+        {
+            case "Watering can":
+                //TODO: Show tooltip
+                item_to_pick_up = Resources.Load<Item>("Arrosoir");
+                break;
+            case "Plot":
+                //TODO Show tooltip
+                plot_to_interact = other.GetComponent<Plot>();
+                break;
+            default:
+                Debug.Log("tag not handled : " + other.tag);
+                break;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        item_to_pick_up = null;
+    }
+
+    private void InteractWith(Plot plot)
+    {
+        if(object_in_hand.GetType() == typeof(Plant))
+        {
+            Debug.Log("Plante");
+        }
+        else if (object_in_hand.GetType() == typeof(Traitement))
+        {
+            Debug.Log("Pesticide");
+        }
+        else if (object_in_hand.GetType() == typeof(Engrais))
+        {
+            Debug.Log("Engrais");
+        }
+        else
+        {
+            plot.addToQEau(1);
         }
     }
 }

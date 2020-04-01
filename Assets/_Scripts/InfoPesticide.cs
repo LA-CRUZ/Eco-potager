@@ -12,7 +12,7 @@ public class InfoPesticide : MonoBehaviour
     public Text description;
     public Image iconImage;
 
-    private Pesticide item;
+    private Traitement item;
     private StorageScrollList storageScrollList;
     public bool showMore = false;
     public GameObject player;
@@ -24,7 +24,7 @@ public class InfoPesticide : MonoBehaviour
         this.description.enabled = false;
     }
 
-    public void Setup(Pesticide currentItem, StorageScrollList currentScrollList)
+    public void Setup(Traitement currentItem, StorageScrollList currentScrollList)
     {
         prendre.onClick.AddListener(delegate() { prendreObjet(); });
         moreInfo.onClick.AddListener(delegate () { expandInfos(); });
