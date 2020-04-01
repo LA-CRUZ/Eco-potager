@@ -171,7 +171,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantes: 0000000004000000
-  listPlantes: []
+  listPlantes:
+  - {fileID: 11400000, guid: 38d40187ba08b5c4f8d67516418c4c4c, type: 2}
+  - {fileID: 11400000, guid: 5dbbe8c23f7699a4395035fa81da866c, type: 2}
+  objectifScore: 1
 --- !u!1 &1473961705
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +442,16 @@ PrefabInstance:
         type: 3}
       propertyPath: potassium
       value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
+        type: 3}
+      propertyPath: tauxHum
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
+        type: 3}
+      propertyPath: tauxNut
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e9f16942f41353498a45480d3fd73cd, type: 3}
@@ -769,17 +782,17 @@ PrefabInstance:
     - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
         type: 3}
       propertyPath: azote
-      value: 33
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
         type: 3}
       propertyPath: phosphore
-      value: 33
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
         type: 3}
       propertyPath: potassium
-      value: 34
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7115126433775341963, guid: 9e9f16942f41353498a45480d3fd73cd,
         type: 3}
