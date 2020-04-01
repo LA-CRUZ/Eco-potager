@@ -133,11 +133,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plot
       objectReference: {fileID: 0}
-    - target: {fileID: 7115126433775341953, guid: 9e9f16942f41353498a45480d3fd73cd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7115126433775341957, guid: 9e9f16942f41353498a45480d3fd73cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -192,56 +187,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7115126433775341957, guid: 9e9f16942f41353498a45480d3fd73cd,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7115126433775341957, guid: 9e9f16942f41353498a45480d3fd73cd,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7115126433775341957, guid: 9e9f16942f41353498a45480d3fd73cd,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
-        type: 3}
-      propertyPath: tauxHum
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
-        type: 3}
-      propertyPath: tauxNut
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
-        type: 3}
-      propertyPath: tauxLum
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
-        type: 3}
-      propertyPath: azote
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
-        type: 3}
-      propertyPath: phosphore
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
-        type: 3}
-      propertyPath: potassium
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 7115126433775341962, guid: 9e9f16942f41353498a45480d3fd73cd,
-        type: 3}
-      propertyPath: ph
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e9f16942f41353498a45480d3fd73cd, type: 3}
