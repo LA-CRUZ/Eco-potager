@@ -18,15 +18,11 @@ MonoBehaviour:
     radis\u201D qui se d\xE9roule le 8 avril."
   icon: {fileID: 21300000, guid: c7e399a4a1f4de24092ac91bc437782a, type: 3}
   saison: 01000000
-  sol: 0
   listPes:
   - {fileID: 11400000, guid: 1a3771a0d67237b4b8c1b084a44234f5, type: 2}
   - {fileID: 11400000, guid: 98c72a5c9f89575499f3c0b778fb0c39, type: 2}
   quantiteEau: 2
   quantiteNutrition: 1
-  "quantiteLumi\xE8re": 2
   phMin: 6.1
   phMax: 7.5
-  azote: 33
-  phosphore: 33
-  potassium: 34
+  mineral: 3

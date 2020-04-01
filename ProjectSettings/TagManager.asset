@@ -12,12 +12,15 @@ TagManager:
   - Water
   - UI
   - Plot
-  - Watering can  - Chou-fleur
   - Celeri
+  - Navet
+  - Chou-fleur
+  - Watering can
   layers:
   - Default
   - TransparentFX
-  - Ignore Raycast  - 
+  - Ignore Raycast
+  - 
   - Water
   - UI
   - 

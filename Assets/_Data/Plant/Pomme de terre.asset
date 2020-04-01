@@ -16,14 +16,10 @@ MonoBehaviour:
   description: "Il existe plusieurs mus\xE9es de la pomme de terre."
   icon: {fileID: 21300000, guid: c7e399a4a1f4de24092ac91bc437782a, type: 3}
   saison: 0100000002000000
-  sol: 0
   listPes:
   - {fileID: 11400000, guid: 7a2d5587cde685f4c9dcb45f386ea3cc, type: 2}
   quantiteEau: 3
   quantiteNutrition: 2
-  "quantiteLumi\xE8re": 3
   phMin: 4.5
   phMax: 6
-  azote: 20
-  phosphore: 20
-  potassium: 60
+  mineral: 2

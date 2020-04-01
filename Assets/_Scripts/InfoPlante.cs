@@ -76,7 +76,7 @@ public class InfoPlante : MonoBehaviour
 
         // Besoins minéraux : désactiver par défaut
         this.mineraux.enabled = false;
-        this.mineraux.text += "Azote : " + item.azote + "%, Phosphore : " + item.phosphore + "%, Potassium : " + item.potassium + "%";
+        this.mineraux.text += item.mineral;
 
         this.GetComponent<LayoutElement>().minHeight = 200;
 
