@@ -25,7 +25,8 @@ public class Plot : MonoBehaviour
     private float ph;
 
     public string historiquePlot = "indiquer ici si le terrain a déjà servie à la culture etc..";
-    
+
+    public GameObject tooltip;
 
     // Start is called before the first frame update
     void Start()
