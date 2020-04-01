@@ -42,7 +42,7 @@ public class Resolver : MonoBehaviour
         {
             foreach (Plants p in plantes)
             {
-                listPlantes.Add((Plant)AssetDatabase.LoadAssetAtPath("Assets/_Data/Plant/" + p + ".asset", typeof(Plant)));
+                listPlantes.Add((Plant)AssetDatabase.LoadAssetAtPath("Assets/_Data/Plantes/" + p + ".asset", typeof(Plant)));
                 commentairePlantes.Add("Pour les " + p + " : ");
             }
         }
