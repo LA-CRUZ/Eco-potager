@@ -185,11 +185,11 @@ RectTransform:
   m_Father: {fileID: 2155822580766792798}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 125}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 500, y: 250}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!222 &2718502383327795401
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 2155822580414576574}
   - component: {fileID: 2155822580414576575}
   m_Layer: 5
-  m_Name: Tab Pesticides
+  m_Name: Tab Traitements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -937,7 +937,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.00017166138, y: 0.00012207031}
   m_SizeDelta: {x: 0.00024414, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2155822580678167093
@@ -1130,7 +1130,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0.00024414, y: -762.70276}
+  m_SizeDelta: {x: 0.00024414, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2155822580755521318
 MonoBehaviour:
@@ -1680,7 +1680,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2155822581674465891}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.9999999
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2173,7 +2173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2155822581574575069
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2542,7 +2542,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3751,7 +3751,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PESTICIDES
+  m_Text: TRAITEMENTS
 --- !u!1 &2155822582533365625
 GameObject:
   m_ObjectHideFlags: 0

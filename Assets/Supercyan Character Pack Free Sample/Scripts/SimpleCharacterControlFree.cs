@@ -259,7 +259,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
         {
             Debug.Log("Plante");
         }
-        else if (object_in_hand.GetType() == typeof(Pesticide))
+        else if (object_in_hand.GetType() == typeof(Traitement))
         {
             Debug.Log("Pesticide");
         }
