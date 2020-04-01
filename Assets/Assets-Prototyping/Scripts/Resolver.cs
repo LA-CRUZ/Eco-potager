@@ -27,13 +27,14 @@ public class Resolver : MonoBehaviour
     private Plants[] plantes;
     public List<Plant> listPlantes = new List<Plant>(); 
     private List<string> commentairePlantes = new List<string>();
+    private List<AnalysePlante> listComPlants = new List<AnalysePlante>();
 
     private List<GameObject> listPlots = new List<GameObject>();     // on stock des gameObject et non des Plots pour pouvoir savoir pour chaque élément si il a un fils avec getChild
     private List<string> commentairePlots = new List<string>();
 
     public int objectifScore; // de 0 à nb parcelles
     private int score = 0;
-    private string commentaireScore;
+    private string conseil;
 
     void Start()
     {   
@@ -42,8 +43,12 @@ public class Resolver : MonoBehaviour
         {
             foreach (Plants p in plantes)
             {
+                // recuperation des objets Plant stocké dans _Data/...
                 listPlantes.Add((Plant)AssetDatabase.LoadAssetAtPath("Assets/_Data/Plantes/" + p + ".asset", typeof(Plant)));
                 commentairePlantes.Add("Pour les " + p + " : ");
+
+                // initialisation de l'analysePlant
+                listComPlants.Add(new AnalysePlante { plant = p });
             }
         }
 
@@ -84,23 +89,42 @@ public class Resolver : MonoBehaviour
 
             if(tagChild == "Untagged")
             {
-                commentairePlots[i] = "Aucune plante n'a été planté sur cette parcelle. \n";
+                commentairePlots[i] = "Aucune plante n'a été planté sur cette parcelle. \n\n";
             } else
             {
+                int j = 0;
                 foreach (Plant p in listPlantes)
                 {
+                    AnalysePlante ap = listComPlants[j];
                     if (p.nom == tagChild)
                     {
-                        if (process(plot.GetComponent<Plot>(), p, i))
+                        Debug.Log("avant lancement du process pour le legume " + listComPlants[j].plant + " dont le score est actuellement de " + listComPlants[j].scoreTot);
+                        Debug.Log("avant lancement du process pour le legume " + ap.plant + " dont le score est actuellement de " + ap.scoreTot);
+                        ap.nbPlanter++;
+                        if (process(plot.GetComponent<Plot>(), p, i , ap))
                             score++;
                     }
+                    j++;
                 }
             }   
             i++;
         }
+        // generation des commentaires sur chaques plantes
+        AnalysePlante planteNonMaitrise = new AnalysePlante { scoreTot = 0 };
+        foreach(AnalysePlante tmp in listComPlants)
+        {
+            tmp.genCommentaire();
+            Debug.Log("pour les " + tmp.plant + " il y a " + tmp.scoreTot);
+            Debug.Log("pour les " + planteNonMaitrise.plant + " il y a " + planteNonMaitrise.scoreTot);
+            if (planteNonMaitrise.scoreTot <= tmp.scoreTot)
+                planteNonMaitrise = tmp;    // on récupère la plante la moins bien maitrisé sur la partie
+        }
+        if (planteNonMaitrise.scoreTot != 0)
+            conseil = planteNonMaitrise.conseil;
+        else conseil = "";  // pas de conseil si le joueur n'a pas commis d'erreur
     }
 
-    bool process (Plot plot, Plant p, int indice)   // créer les commentaires pour 1 plot et son fils
+    bool process (Plot plot, Plant p, int indice, AnalysePlante ap)   // créer les commentaires pour 1 plot et son fils
     {
         int nbBonPoints = 0;
         commentairePlots[indice] = "Des " + p.nom + " ont été planté ici. \n ";
@@ -124,10 +148,13 @@ public class Resolver : MonoBehaviour
 
         //  Humidité
         if (plot.getQEau() < p.quantiteEau)
+        {
             commentairePlots[indice] += "Dommage, la quantité d'eau de cette parcelle est trop faible pour cette plante.\n";
+        }
         if (plot.getQEau() == p.quantiteEau)
         {
             commentairePlots[indice] += "Super, la quantité d'eau est idéale pour cette plante.\n";
+            ap.maitriseQEau++;
             nbBonPoints++;
         }
         if (plot.getQEau()  > p.quantiteEau)
@@ -140,11 +167,20 @@ public class Resolver : MonoBehaviour
         if (plot.getQNutrition() >= p.quantiteNutrition)
         {
             commentairePlots[indice] += "Super, la quantité de nutriments dans cette parcelle convient bien à cette plante.\n";
+            ap.maitriseQNut++;
             nbBonPoints++;
         }
 
         //  analyse du NPK
-
+        if( plot.getMineral() == p.mineral)
+        {
+            commentairePlots[indice] += "Cette parcelle est riche en " + p.mineral.ToString() + ", c'est idéale pour les " + p.nom + ".\n";
+            ap.maitriseMin++;
+            nbBonPoints++;
+        } else
+        {
+            commentairePlots[indice] += "Dommage. Cette plante aime les parcelles richent en " + p.mineral.ToString() + " et ce n'est pas le cas de cette parcelle.\n";
+        }
         //  analyse du ph
         float phPlot = plot.getPh();
         float phMin = p.phMin;
@@ -152,12 +188,14 @@ public class Resolver : MonoBehaviour
         if (phPlot >= phMin && phPlot <= phMax)
         {
             commentairePlots[indice] += "Incroyable! Le ph de cette parcelle est parfaite pour cette plante.\n";
+            ap.maitrisePh++;
             nbBonPoints++;
         }
         else
         {
-            commentairePlots[indice] += "Ooooh il semblerait que le ph de cette parcelle ne correspond à celui des " + p.nom + ".\n\n";
+            commentairePlots[indice] += "Ooooh il semblerait que le ph de cette parcelle ne correspond à celui des " + p.nom + ".\n";
         }
+        commentairePlots[indice] += "\n\n";
         return (nbBonPoints > 2);
     }
 
@@ -174,5 +212,6 @@ public class Resolver : MonoBehaviour
             concat += str;
         }
         Debug.Log(concat);
+        Debug.Log(conseil);
     }
 }
