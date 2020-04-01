@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c5ab677701bc074386eb38f5d09aa08, type: 3}
-  m_Name: Voile anti insecte
+  m_Name: Coach Plus
   m_EditorClassIdentifier: 
-  nom: Voile anti insecte
+  nom: Coach Plus
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 2d6769debd6759a428a2f5afd04e359e, type: 3}

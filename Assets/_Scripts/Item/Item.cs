@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Item : ScriptableObject
 {
     public string nom;
+    [TextArea (10,100)]
     public string description;
     public Sprite icon;
 }
