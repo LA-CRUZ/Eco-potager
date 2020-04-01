@@ -8,7 +8,17 @@ TagManager:
   - Carotte
   - Laitue
   - Tomate
-  - Pomme de terre  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Water
+  - UI
+  - Plot
+  - Navet
+  - Chou-fleur
+  - Celeri
+  - Pomme de terre
+  layers:
   - Default
   - TransparentFX
   - Ignore Raycast
