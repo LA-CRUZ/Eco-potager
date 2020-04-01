@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769018008680030835}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.057, z: 0}
   m_LocalScale: {x: 0.20638, y: 0.20638, z: 0.20638}
   m_Children:
@@ -45,13 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88cb4b171d3a1d84fbcf81cbf47c935f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sol: 0
   quantiteEau: 0
   quantiteNutrition: 0
-  "quantiteLumi\xE8re": 0
-  azote: 20
-  phosphore: 20
-  potassium: 60
+  mineral: 3
   ph: 7
   historiquePlot: "indiquer ici si le terrain a d\xE9j\xE0 servie \xE0 la culture
     etc.."
@@ -63,11 +59,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769018008680030835}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 13, y: 8, z: 13}
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!1 &6530311141291755502
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,6 +75,7 @@ GameObject:
   - component: {fileID: 6096079335923696472}
   - component: {fileID: 6834598708522260363}
   - component: {fileID: 2881175221204515707}
+  - component: {fileID: 1082776598}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -147,3 +144,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &1082776598
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6530311141291755502}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 3.000199, z: 10.070586}
+  m_Center: {x: 0, y: 0.50009954, z: -0.035293102}

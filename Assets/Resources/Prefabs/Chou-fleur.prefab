@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2140796266960244615}
   m_Layer: 0
-  m_Name: cauliflower crops 1
+  m_Name: Chou-fleur
   m_TagString: Chou-fleur
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2140796266960244612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 2140796267805398794}
   - {fileID: 5622564732831628572}

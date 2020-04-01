@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nom: Navet
   description: "Au cin\xE9ma, un navet est un film de mauvaise qualit\xE9."
-  icon: {fileID: 21300000, guid: c7e399a4a1f4de24092ac91bc437782a, type: 3}
+  icon: {fileID: 21300000, guid: f2c3d987f76b0ae46ad57e8b966e90fa, type: 3}
   saison: 02000000
   listPes: []
   quantiteEau: 2

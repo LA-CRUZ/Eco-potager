@@ -32,7 +32,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
 
     [SerializeField] private Item object_in_hand;
     private Item item_to_pick_up;
-    private Plot plot_to_interact;
+    public Plot plot_to_interact;
 
     private float m_currentV = 0;
     private float m_currentH = 0;
@@ -67,13 +67,14 @@ public class SimpleCharacterControlFree : MonoBehaviour
             if (item_to_pick_up != null)
             {
                 SetObjetInHand(item_to_pick_up);
+                InteractAnimation();
             }
             // Intéraction avec un plot
             else if (plot_to_interact != null)
             {
                 InteractWith(plot_to_interact);
+                InteractAnimation();
             }
-            InteractAnimation();
         }
     }
 
@@ -251,6 +252,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         item_to_pick_up = null;
+        plot_to_interact = null;
     }
 
     private void InteractWith(Plot plot)

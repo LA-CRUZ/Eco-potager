@@ -15,15 +15,12 @@ MonoBehaviour:
   nom: Laitue
   description: "L\u2019expression \u201Craconter des salades\u201D signifie \u201Craconter
     des mensonges\u201D"
-  icon: {fileID: 21300000, guid: c7e399a4a1f4de24092ac91bc437782a, type: 3}
-  saison: 03000000  sol: 0
+  icon: {fileID: 21300000, guid: 40d80e1ed3e2fdc4fa6528065e89e28e, type: 3}
+  saison: 00000000
   listPes:
   - {fileID: 11400000, guid: 69595388b305d1f449181d348c46d40a, type: 2}
   quantiteEau: 3
   quantiteNutrition: 2
-  "quantiteLumi\xE8re": 2
   phMin: 5
   phMax: 6
-  azote: 60
-  phosphore: 20
-  potassium: 20
+  mineral: 0

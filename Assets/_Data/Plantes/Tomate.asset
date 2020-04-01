@@ -15,16 +15,12 @@ MonoBehaviour:
   nom: Tomate
   description: "On se demande souvent si la tomate est un fruit OU un l\xE9gume,
     mais officiellement la tomate est le fruit qui vient d\u2019un l\xE9gume."
-  icon: {fileID: 21300000, guid: c7e399a4a1f4de24092ac91bc437782a, type: 3}
+  icon: {fileID: 21300000, guid: b85df735c74fe2a4d9ab9fcedc022d39, type: 3}
   saison: 0000000003000000
-  sol: 0
   listPes:
   - {fileID: 11400000, guid: 7a2d5587cde685f4c9dcb45f386ea3cc, type: 2}
   quantiteEau: 2
   quantiteNutrition: 3
-  "quantiteLumi\xE8re": 3
   phMin: 5.5
   phMax: 7.5
-  azote: 60
-  phosphore: 20
-  potassium: 20
+  mineral: 0
