@@ -260,6 +260,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
         if(object_in_hand.GetType() == typeof(Plant))
         {
             Debug.Log("Plante");
+            plot.setPlante((Plant) object_in_hand);
         }
         else if (object_in_hand.GetType() == typeof(Traitement))
         {

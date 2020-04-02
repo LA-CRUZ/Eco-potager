@@ -14,6 +14,8 @@ public enum Minerals
 public class Plot : MonoBehaviour
 {
     [SerializeField]
+    private Plant plante;
+    [SerializeField]
     private int quantiteEau;
     [SerializeField]
     private int quantiteNutrition;
@@ -105,5 +107,14 @@ public class Plot : MonoBehaviour
         {
             Debug.LogException(e, this);
         }
+    }
+
+    internal void setPlante(Plant plante)
+    {
+        //TODO: Check si déjà présent et delete avant
+        this.plante = plante;
+        GameObject crops = (GameObject)Instantiate(Resources.Load("Prefabs/" + plante.nom), this.transform.position, Quaternion.identity, this.transform);
+        crops.name = plante.nom;
+
     }
 }
