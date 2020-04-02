@@ -119,7 +119,11 @@ public class Plot : MonoBehaviour
         }
 
         this.plante = plante;
-        GameObject crops = (GameObject)Instantiate(Resources.Load("Prefabs/" + plante.nom), this.transform.position, Quaternion.identity, this.transform);
+        if(transform.childCount == 2)
+        {
+            Destroy(transform.GetChild(1).gameObject);
+        }
+        GameObject crops = (GameObject)Instantiate(Resources.Load("Prefabs/" + plante.nom), transform.position, Quaternion.identity, transform);
         crops.name = plante.nom;
 
     }
