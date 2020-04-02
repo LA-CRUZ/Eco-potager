@@ -16,13 +16,15 @@ public class Plot : MonoBehaviour
     [SerializeField]
     private Plant plante;
     [SerializeField]
+    private Traitement traitement;
+
+
+    [SerializeField]
     private int quantiteEau;
     [SerializeField]
     private int quantiteNutrition;
-
     [SerializeField]
     private Minerals mineral = Minerals.None;
-
     [SerializeField]
     private float ph;
 
@@ -109,12 +111,21 @@ public class Plot : MonoBehaviour
         }
     }
 
-    internal void setPlante(Plant plante)
+    internal void SetPlante(Plant plante)
     {
-        //TODO: Check si déjà présent et delete avant
+        if(this.plante != null)
+        {
+            DestroyImmediate(this.transform.Find(this.plante.nom).gameObject);
+        }
+
         this.plante = plante;
         GameObject crops = (GameObject)Instantiate(Resources.Load("Prefabs/" + plante.nom), this.transform.position, Quaternion.identity, this.transform);
         crops.name = plante.nom;
 
+    }
+
+    internal void SetTraitement(Traitement traitement)
+    {
+        this.traitement = traitement;
     }
 }

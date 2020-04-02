@@ -259,19 +259,22 @@ public class SimpleCharacterControlFree : MonoBehaviour
     {
         if(object_in_hand.GetType() == typeof(Plant))
         {
-            Debug.Log("Plante");
-            plot.setPlante((Plant) object_in_hand);
+            plot.SetPlante((Plant) object_in_hand);
         }
         else if (object_in_hand.GetType() == typeof(Traitement))
         {
-            Debug.Log("Pesticide");
+            plot.SetTraitement((Traitement) object_in_hand);
         }
         else if (object_in_hand.GetType() == typeof(Engrais))
         {
-            Debug.Log("Engrais");
+            // On ajoute à la quantité de nutrition et on garde le dernier minéral ajouté
+            Engrais actuel = (Engrais) object_in_hand;
+            plot.setMineral(actuel.mineral);
+            plot.addToQNutrition(1);
         }
         else
         {
+            // On est sur l'arrosoir car on a que ça qui est de type autre que les 3 du dessus donc on ajoute de l'eau
             plot.addToQEau(1);
         }
     }

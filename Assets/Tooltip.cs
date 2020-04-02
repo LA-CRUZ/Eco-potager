@@ -5,7 +5,9 @@ using UnityEngine;
 public class Tooltip : MonoBehaviour
 {
 
-    bool show = false;
+    public bool show = false;
+    [SerializeField] private GameObject panel;
+
 
     // Start is called before the first frame update
     void Start()
