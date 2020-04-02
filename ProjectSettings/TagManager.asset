@@ -16,6 +16,11 @@ TagManager:
   - Navet
   - Chou-fleur
   - Watering can
+  - Radis
+  - Betterave
+  - Poireau
+  - Melon
+  - Concombre
   layers:
   - Default
   - TransparentFX
