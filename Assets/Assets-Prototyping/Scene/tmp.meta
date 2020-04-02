@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Assets-Prototyping/Scene/tmp.meta
 guid: 425560f9fd2576241823075e484e0fe3
+=======
+guid: fd342daa94c64ac4492fb26f31907493
+>>>>>>> 522e494726d0f831b6436c4b45209299b76eade1:Assets/Imports.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
