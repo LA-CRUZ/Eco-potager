@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2fceb7c60d6e84aaeac94096b07ba0, type: 3}
+  m_Name: Navet
+  m_EditorClassIdentifier: 
+  nom: Navet
+  description: "Au cin\xE9ma, un navet est un film de mauvaise qualit\xE9."
+  icon: {fileID: 21300000, guid: f2c3d987f76b0ae46ad57e8b966e90fa, type: 3}
+  saison: 02000000
+  listPes: []
+  quantiteEau: 2
+  quantiteNutrition: 2
+  phMin: 6.5
+  phMax: 7
+  mineral: 1

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5ab677701bc074386eb38f5d09aa08, type: 3}
+  m_Name: Coach Plus
+  m_EditorClassIdentifier: 
+  nom: Coach Plus
+  description: "Le Coach Plus permet de se d\xE9barasser du mildiou ! C'est une maladie
+    qui appara\xEEt sur beaucoup de plantes et qu'on peut observer gr\xE2ce aux t\xE2ches
+    jaunes qu'elle laisse sur les feuilles des plantes. \nLe mildiou se montre plus
+    vite avec l'humidit\xE9, g\xE9n\xE9ralement quand on arrose les plantes : un
+    premier geste pour lutter contre cette maladie est d'arroser les plantes au niveau
+    de leur pied et non de leurs feuilles !\n\nOn peut aussi vaporiser du Coach Plus
+    sur les feuilles de la plante : le produit d\xE9pose une couche de protection
+    sur la feuille qui va absorber le produit pour emp\xEAcher le mildiou de se r\xE9g\xE9n\xE9rer
+    en d\xE9truisant son int\xE9grit\xE9 cellulaire.\nLe produit se fixe sur la plante
+    et reste longtemps ce qui laisse le temps aux mol\xE9cules d'\xEAtre absorber
+    au fur et \xE0 mesure."
+  icon: {fileID: 21300000, guid: 2d6769debd6759a428a2f5afd04e359e, type: 3}

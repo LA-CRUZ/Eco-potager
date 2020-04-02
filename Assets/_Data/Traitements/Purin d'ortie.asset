@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5ab677701bc074386eb38f5d09aa08, type: 3}
+  m_Name: Purin d'ortie
+  m_EditorClassIdentifier: 
+  nom: Purin d'ortie
+  description: "Le produit parfait pour remplacer les produits chimiques lorsqu'on
+    veut se d\xE9barasser des pucerons et des acariens qui envahissent nos plantes
+    ! Ces petites b\xEAtes attaquent les plantes pour se nourrirent et emp\xEAche
+    souvent la r\xE9colte de nos bons fruits et l\xE9gumes.\n\nLe purin d'ortie est
+    facile \xE0 fabriquer en quelques heures et est 100% bio. Il se comporte comme
+    un activateur pour la plante : il va booster les m\xE9canismes de d\xE9fense
+    de celle-ci pour lui permettre d'\xEAtre plus forte et plus r\xE9actif contre
+    les attaques d'insecte."
+  icon: {fileID: 21300000, guid: c05d9ffdd4d4d6c4ab81216ffa9c460d, type: 3}

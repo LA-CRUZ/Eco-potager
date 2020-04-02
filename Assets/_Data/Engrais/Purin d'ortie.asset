@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Purin d'ortie
   m_EditorClassIdentifier: 
   nom: Purin d'ortie
-  description: "L\u2019azote est l\u2019\xE9l\xE9ment le plus important pour la vie
-    de la plante et sert \xE0 d\xE9velopper toutes les parties vertes qui assurent
-    la croissance. On peut faire cet engrais avec du marc \xE0 caf\xE9, ou encore
-    avec du purin d'orties (celui-ci peut m\xEAme servir d'insecticide biologique!)."
+  description: "\n\nL\u2019azote est l\u2019\xE9l\xE9ment le plus important pour
+    la vie de la plante et sert \xE0 d\xE9velopper toutes les parties vertes qui
+    assurent la croissance. "
   icon: {fileID: 21300000, guid: 326de57deaf503b43abd1ee3f7bee48a, type: 3}
   azote: 60
   phosphore: 20
