@@ -15,6 +15,4 @@ MonoBehaviour:
   nom: Purin de consoude
   description: Engrais riche en pottasium !
   icon: {fileID: 21300000, guid: 319d3b5d28f6684489204f7f91ad260b, type: 3}
-  azote: 0
-  phosphore: 0
-  potassium: 100
+  mineral: 2
