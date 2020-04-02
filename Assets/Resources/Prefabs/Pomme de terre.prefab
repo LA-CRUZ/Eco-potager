@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 542828423873364174}
   m_Layer: 0
-  m_Name: potato crops
+  m_Name: Pomme de terre
   m_TagString: Pomme de terre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,8 +24,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535058301061081737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.6, y: 0.22, z: 1.29}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 2608892673385115944}
   - {fileID: 4904211610164424836}
