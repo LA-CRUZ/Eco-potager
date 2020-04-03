@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: "Farines d'ar\xEAtes"
   m_EditorClassIdentifier: 
   nom: "Farines d'ar\xEAtes"
-  description: Engrais riche en phosphore !
+  description: "C'est un engrais fait \xE0 partir de <b>d\xE9chets de poisson</b>
+    donc on ne fait pas de gaspillage avec \xE7a.\n\nIl s'agit d'un engrais riche
+    en <b><color=blue>phosphore</color></b>! \n\nLe <b><color=blue>phosphore</color></b>
+    sert principalement \xE0 la <b>photosynth\xE8se</b>, c'est-\xE0-dire il sert
+    aux feuilles \xE0 transformer la lumi\xE8re qu'elles captent en \xE9nergie!"
   icon: {fileID: 21300000, guid: a083878a6e608214e808915b238ca9de, type: 3}
   mineral: 1

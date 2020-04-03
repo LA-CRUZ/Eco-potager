@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: Voile anti insecte
   m_EditorClassIdentifier: 
   nom: Voile anti insecte
-  description: 
+  description: "Pourquoi utiliser un produit chimique, m\xEAme s'il est bio un produit
+    chimique reste dangereux, quand un simple voile suffit?\n\nCe voile est pratique
+    pour <b>repousser certains parasites</b> comme la teigne du poireau, la mouche
+    \xE0 carotte et ceux qui sont plus gros. Par contre il ne prot\xE8ge pas des
+    petits insectes comme les pucerons et emp\xEAche certains insectes pollinisateurs
+    d'acc\xE9der aux fleurs (\xE0 ne pas utiliser sur les <b>tomates</b> par exemple)."
   icon: {fileID: 21300000, guid: 5b343970a8c949e4fa6ece0e77e596c4, type: 3}

@@ -13,15 +13,14 @@ MonoBehaviour:
   m_Name: Coach Plus
   m_EditorClassIdentifier: 
   nom: Coach Plus
-  description: "Le Coach Plus permet de se d\xE9barasser du mildiou ! C'est une maladie
-    qui appara\xEEt sur beaucoup de plantes et qu'on peut observer gr\xE2ce aux t\xE2ches
-    jaunes qu'elle laisse sur les feuilles des plantes. \nLe mildiou se montre plus
-    vite avec l'humidit\xE9, g\xE9n\xE9ralement quand on arrose les plantes : un
-    premier geste pour lutter contre cette maladie est d'arroser les plantes au niveau
-    de leur pied et non de leurs feuilles !\n\nOn peut aussi vaporiser du Coach Plus
-    sur les feuilles de la plante : le produit d\xE9pose une couche de protection
-    sur la feuille qui va absorber le produit pour emp\xEAcher le mildiou de se r\xE9g\xE9n\xE9rer
-    en d\xE9truisant son int\xE9grit\xE9 cellulaire.\nLe produit se fixe sur la plante
-    et reste longtemps ce qui laisse le temps aux mol\xE9cules d'\xEAtre absorber
-    au fur et \xE0 mesure."
+  description: "Le Coach Plus permet de se d\xE9barasser du <b>mildiou</b> ! C'est
+    une maladie qui appara\xEEt sur beaucoup de plantes et qu'on peut observer gr\xE2ce
+    aux t\xE2ches jaunes qu'elle laisse sur les feuilles des plantes. \nLe mildiou
+    se montre plus vite avec l'humidit\xE9, g\xE9n\xE9ralement quand on arrose les
+    plantes : un premier geste pour lutter contre cette maladie est d'arroser les
+    plantes au niveau de leur pied et non de leurs feuilles !\n\nOn peut aussi vaporiser
+    du Coach Plus sur les feuilles de la plante : le produit d\xE9pose une couche
+    de protection sur la feuille qui va absorber le produit afin d'emp\xEAcher la
+    maladie de se propager.\nLe produit se fixe sur la plante et reste longtemps
+    ce qui laisse le temps aux produits d'\xEAtre absorber au fur et \xE0 mesure."
   icon: {fileID: 21300000, guid: 2d6769debd6759a428a2f5afd04e359e, type: 3}

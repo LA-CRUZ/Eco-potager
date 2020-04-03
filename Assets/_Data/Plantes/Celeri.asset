@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2fceb7c60d6e84aaeac94096b07ba0, type: 3}
   m_Name: Celeri
   m_EditorClassIdentifier: 
-  nom: "C\xE9leri"
+  nom: Celeri
   description: "Le c\xE9leri dispose de nombreuses vertus m\xE9dicinales"
   icon: {fileID: 21300000, guid: c1490da31824b4342a66ea8e8511a89d, type: 3}
   saison: 01000000
