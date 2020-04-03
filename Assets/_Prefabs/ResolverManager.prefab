@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1405490067367206730}
   - component: {fileID: 1405490067367206729}
   m_Layer: 0
-  m_Name: ResolverManager 1
+  m_Name: ResolverManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +127,6 @@ MonoBehaviour:
   listPlantes: []
   objectifScore: 1
   resolverGUI: {fileID: 1405490068194464124}
-  plotSelected: 0
   nbCriteres: 3
 --- !u!1 &1405490067421688942
 GameObject:
