@@ -218,6 +218,8 @@ public class SimpleCharacterControlFree : MonoBehaviour
         }
     }
 
+    public Item getObjetInHand() { return object_in_hand; }
+
     public void SetObjetInHand(Item obj)
     {
         if (obj != null)
