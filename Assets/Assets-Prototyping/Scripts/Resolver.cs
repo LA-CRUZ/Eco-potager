@@ -46,6 +46,7 @@ public class Resolver : MonoBehaviour
     //-1 si non, 0-9 si oui (0 parcelle de test)
     private int plotSelected;
     public int nbCriteres = 3;
+    public int nbPlotRequis = 1;
 
     void Start()
     {   
@@ -242,19 +243,9 @@ public class Resolver : MonoBehaviour
 
     void affichage()
     {
-        /*string concat = "Le score est de : " + score + "/" + listPlots.Count + ".";
-        if (score < objectifScore)
-        {
-            concat += "L'objectif n'a pas été atteint. Tant pis, regardons en détails ce qui c'est passé.\n";
-        }
-        else concat += "Bravo! Tu as atteint l'objectif qui était de bien gérer " + objectifScore + " parcelles sur " + listPlots.Count + ".\n";
-        foreach (string str in commentairePlots)
-        {
-            concat += str;
-        }
-        Debug.Log(concat);
-        Debug.Log(conseil);*/
         Transform starsGroup = GameObject.Find("starsGroup").transform;
+        int nbReussite = 0;
+        string appreciation = "";
         foreach (Transform child in starsGroup)
             GameObject.Destroy(child.gameObject);
         for(int i=0; i<plotScores.Count; i++)
@@ -263,6 +254,7 @@ public class Resolver : MonoBehaviour
             {
                 Instantiate(Resources.Load("starFull"), starsGroup, false);
                 commentairePlots[i].estReussi();
+                nbReussite++;
             }
                 
         }
@@ -271,6 +263,17 @@ public class Resolver : MonoBehaviour
             if (plotScore < nbCriteres)
                 Instantiate(Resources.Load("starEmpty"), starsGroup, false);
         }
+        if(nbReussite == plotScores.Count)
+        {
+            appreciation = "Parfait !";
+        } else if(nbReussite == nbPlotRequis)
+        {
+            appreciation = "Super !";
+        } else
+        {
+            appreciation = "Dommage...";
+        }
+        GameObject.Find("Appreciation").GetComponent<Text>().text = appreciation;
     }
 
     public void displayPlotDetails()
