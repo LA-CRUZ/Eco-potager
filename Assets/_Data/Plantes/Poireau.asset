@@ -14,16 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nom: Poireau
   description: "Le poireau appara\xEEt sur l\u2019embl\xE8me du Pays de Galles."
-  icon: {fileID: 21300000, guid: c7e399a4a1f4de24092ac91bc437782a, type: 3}
+  icon: {fileID: 21300000, guid: 50458ed7bd0348844948ce6881c3ec3c, type: 3}
   saison: 0100000002000000
-  sol: 0
   listPes:
   - {fileID: 11400000, guid: 98c72a5c9f89575499f3c0b778fb0c39, type: 2}
   quantiteEau: 2
   quantiteNutrition: 3
-  "quantiteLumi\xE8re": 2
   phMin: 6.5
   phMax: 7
-  azote: 60
-  phosphore: 20
-  potassium: 20
+  mineral: 0

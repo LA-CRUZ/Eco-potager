@@ -37,14 +37,16 @@ public class Resolver : MonoBehaviour
     public int objectifScore; // de 0 à nb parcelles
     private int score = 0;
     private string conseil;
-
+    private List<int> plotScores = new List<int>();
     //Resolver Window Variables
     private float plotButWidth = 47.2f;
     private float plotButHeight = 43.4f;
     private Transform plotDetails;
     public Canvas resolverGUI;
     //-1 si non, 0-9 si oui (0 parcelle de test)
-    public int plotSelected;
+    private int plotSelected;
+    public int nbCriteres = 3;
+    public int nbPlotRequis = 1;
 
     void Start()
     {   
@@ -67,10 +69,10 @@ public class Resolver : MonoBehaviour
         {
             listPlots.Add(plot);
             commentairePlots.Add(new commentairePlot());
+            plotScores.Add(0);
         }
 
         //Resolver Window Initilisation
-        resolverGUI.enabled = false;
         plotSelected = -1;
         plotDetails = GameObject.Find("SelectedPlotDetails").transform;
         Transform plotsListing = GameObject.Find("PlotsListing").transform;
@@ -125,7 +127,7 @@ public class Resolver : MonoBehaviour
 
             if(tagChild == "Untagged")
             {
-                commentairePlots[i].setLegume("Aucun");
+                commentairePlots[i].setLegume("Aucune");
             } else
             {
                 int j = 0;
@@ -137,7 +139,8 @@ public class Resolver : MonoBehaviour
                         Debug.Log("avant lancement du process pour le legume " + listComPlants[j].plant + " dont le score est actuellement de " + listComPlants[j].scoreTot);
                         Debug.Log("avant lancement du process pour le legume " + ap.plant + " dont le score est actuellement de " + ap.scoreTot);
                         ap.nbPlanter++;
-                        if (process(plot.GetComponent<Plot>(), p, i , ap))
+                        plotScores[i] = process(plot.GetComponent<Plot>(), p, i, ap);
+                        if (plotScores[i] > 2)
                             score++;
                     }
                     j++;
@@ -163,7 +166,7 @@ public class Resolver : MonoBehaviour
         else conseil = "";  // pas de conseil si le joueur n'a pas commis d'erreur
     }
 
-    bool process (Plot plot, Plant p, int indice, AnalysePlante ap)   // créer les commentaires pour 1 plot et son fils
+    int process (Plot plot, Plant p, int indice, AnalysePlante ap)   // créer les commentaires pour 1 plot et son fils
     {
         int nbBonPoints = 0;
         commentairePlots[indice].setLegume(p.nom);
@@ -235,23 +238,42 @@ public class Resolver : MonoBehaviour
             commentairePlots[indice].setPH("Ooooh il semblerait que le ph de cette parcelle ne correspond à celui des " + p.nom + ".\n");
         }
         //commentairePlots[indice] += "\n\n";
-        return (nbBonPoints > 2);
+        return nbBonPoints;
     }
 
     void affichage()
     {
-        string concat = "Le score est de : " + score + "/" + listPlots.Count + ".";
-        if (score < objectifScore)
+        Transform starsGroup = GameObject.Find("starsGroup").transform;
+        int nbReussite = 0;
+        string appreciation = "";
+        foreach (Transform child in starsGroup)
+            GameObject.Destroy(child.gameObject);
+        for(int i=0; i<plotScores.Count; i++)
         {
-            concat += "L'objectif n'a pas été atteint. Tant pis, regardons en détails ce qui c'est passé.\n";
+            if(plotScores[i] >= nbCriteres)
+            {
+                Instantiate(Resources.Load("starFull"), starsGroup, false);
+                commentairePlots[i].estReussi();
+                nbReussite++;
+            }
+                
         }
-        else concat += "Bravo! Tu as atteint l'objectif qui était de bien gérer " + objectifScore + " parcelles sur " + listPlots.Count + ".\n";
-        /*foreach (string str in commentairePlots)
+        foreach (int plotScore in plotScores)
         {
-            concat += str;
+            if (plotScore < nbCriteres)
+                Instantiate(Resources.Load("starEmpty"), starsGroup, false);
         }
-        Debug.Log(concat);*/
-        Debug.Log(conseil);
+        if(nbReussite == plotScores.Count)
+        {
+            appreciation = "Parfait !";
+        } else if(nbReussite == nbPlotRequis)
+        {
+            appreciation = "Super !";
+        } else
+        {
+            appreciation = "Dommage...";
+        }
+        GameObject.Find("Appreciation").GetComponent<Text>().text = appreciation;
     }
 
     public void displayPlotDetails()
@@ -264,11 +286,18 @@ public class Resolver : MonoBehaviour
         {
             togglePlotDetails(true);
             plotDetails.GetChild(2).GetComponent<Text>().text = "Parcelle " + plotSelected;
-            plotDetails.GetChild(3).GetChild(0).GetComponent<Text>().text = commentairePlots[plotSelected-1].getLegume() + "\n" + commentairePlots[plotSelected - 1].getSaison();
+            plotDetails.GetChild(3).GetChild(0).GetComponent<Text>().text = commentairePlots[plotSelected-1].getLegume() + ". " + commentairePlots[plotSelected - 1].getSaison();
             plotDetails.GetChild(4).GetChild(0).GetComponent<Text>().text = commentairePlots[plotSelected - 1].getHydratation();
             plotDetails.GetChild(5).GetChild(0).GetComponent<Text>().text = commentairePlots[plotSelected - 1].getEngrais();
             plotDetails.GetChild(6).GetChild(0).GetComponent<Text>().text = commentairePlots[plotSelected - 1].getTraitement();
             plotDetails.GetChild(7).GetChild(0).GetComponent<Text>().text = commentairePlots[plotSelected - 1].getPH();
+            Transform starPosition = GameObject.Find("starPosition").transform;
+            foreach (Transform child in starPosition)
+                GameObject.Destroy(child.gameObject);
+            if(commentairePlots[plotSelected-1].getReussi())
+                Instantiate(Resources.Load("starFull"), starPosition, false);
+            else Instantiate(Resources.Load("starEmpty"), starPosition, false);
+
         }
         GameObject.Find("Tips").transform.GetChild(0).GetChild(0).GetComponent<Text>().text = conseil;
 
