@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nom: Betterave
   description: "La betterave est principalement cultiv\xE9e pour son sucre."
-  icon: {fileID: 21300000, guid: c7e399a4a1f4de24092ac91bc437782a, type: 3}
+  icon: {fileID: 21300000, guid: 66896f90d28792f4cb3c21a2592d9d1b, type: 3}
   saison: 03000000
   listPes: []
   quantiteEau: 3
