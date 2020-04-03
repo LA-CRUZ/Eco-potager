@@ -10,6 +10,7 @@ public class commentairePlot : MonoBehaviour
     string Engrais = "";
     string Traitement = "";
     string PH = "";
+    bool reussi = false;
 
     public string getLegume()
     {
@@ -41,6 +42,11 @@ public class commentairePlot : MonoBehaviour
         return PH;
     }
 
+    public bool getReussi()
+    {
+        return reussi;
+    }
+
     public void setLegume(string _Legume)
     {
         Legume = _Legume;
@@ -69,5 +75,10 @@ public class commentairePlot : MonoBehaviour
     public void setPH(string _PH)
     {
         PH = _PH;
+    }
+
+    public void estReussi()
+    {
+        reussi = true;
     }
 }
