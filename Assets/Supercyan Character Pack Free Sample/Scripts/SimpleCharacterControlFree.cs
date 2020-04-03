@@ -280,7 +280,6 @@ public class SimpleCharacterControlFree : MonoBehaviour
             // On est sur l'arrosoir car on a que ça qui est de type autre que les 3 du dessus donc on ajoute de l'eau
             plot.addToQEau(1);
         }
-        Debug.Log("Time to update data !");
         plot.GetComponent<Tooltip>().UpdateData();
     }
 }

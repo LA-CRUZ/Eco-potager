@@ -19,13 +19,11 @@ public class TooltipInteraction : MonoBehaviour
         tooltip.transform.position = pos + coords;
         tooltip.transform.localScale = new Vector3(1, 1, 1);
 
-        Debug.Log("exit set true");
         tooltip.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("exit set false");
         tooltip.SetActive(false);
     }
 }
