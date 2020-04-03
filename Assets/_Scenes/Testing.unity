@@ -402,6 +402,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 284407380}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &361043609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 361043609, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2155822581049321363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &481806780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,6 +1253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1920349470}
   - component: {fileID: 1920349471}
+  - component: {fileID: 1920349472}
   m_Layer: 0
   m_Name: Watering can
   m_TagString: Watering can
@@ -1282,6 +1289,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.1577806, z: 1}
   m_Center: {x: 0, y: 0.54941225, z: 0}
+--- !u!114 &1920349472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920349469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a0f87a1982ba542b03e88f6abab47c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltip: {fileID: 361043609}
+  coords: {x: 0, y: -25, z: 0}
 --- !u!1001 &1969108353
 PrefabInstance:
   m_ObjectHideFlags: 0

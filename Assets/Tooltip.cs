@@ -55,7 +55,6 @@ public class Tooltip : MonoBehaviour
 
     public void UpdateData()
     {
-        Debug.Log("init data");
         myTooltip.transform.Find("nomPlante").gameObject.GetComponent<Text>().text = plot.GetPlanteName();
         myTooltip.transform.Find("nomTraitement").gameObject.GetComponent<Text>().text = plot.GetTraitementName();
         myTooltip.transform.Find("nomMineral").gameObject.GetComponent<Text>().text = plot.getMineral() == Minerals.None ? " " : plot.getMineral().ToString();

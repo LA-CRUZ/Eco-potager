@@ -1069,6 +1069,7 @@ MonoBehaviour:
   m_rigidBody: {fileID: 54084939265967506}
   m_controlMode: 1
   object_in_hand: {fileID: 0}
+  plot_to_interact: {fileID: 0}
 --- !u!114 &2126136749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1082,6 +1083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
+  state: 0
 --- !u!1 &1826566120413068
 GameObject:
   m_ObjectHideFlags: 0

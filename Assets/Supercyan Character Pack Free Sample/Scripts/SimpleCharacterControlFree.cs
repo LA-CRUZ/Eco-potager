@@ -238,6 +238,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
             case "Watering can":
                 //TODO: Show tooltip
                 item_to_pick_up = Resources.Load<Item>("Arrosoir");
+                GameObject.Find("Recuperer").SetActive(true);
                 break;
             case "Plot":
                 //TODO Show tooltip
@@ -253,7 +254,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         item_to_pick_up = null;
-        if(plot_to_interact != null) plot_to_interact.GetComponent<Tooltip>().HideTooltip();
+        if (plot_to_interact != null) plot_to_interact.GetComponent<Tooltip>().HideTooltip();
         plot_to_interact = null;
     }
 
