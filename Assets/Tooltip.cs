@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tooltip : MonoBehaviour
 {
 
-    public bool show = false;
-    [SerializeField] private GameObject panel;
-
+    [SerializeField] private GameObject prefabTooltip;
+    [SerializeField] private Vector3 coords;
+    private Plot plot;
+    private GameObject canvas;
+    private GameObject myTooltip;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        InitTooltip();
     }
 
     // Update is called once per frame
@@ -21,21 +24,54 @@ public class Tooltip : MonoBehaviour
         
     }
 
-    private void OnMouseEnter()
+    private void InitTooltip()
     {
-        show = true;
+        this.canvas = GameObject.Find("Tooltips");
+        this.plot = this.GetComponent<Plot>();
+
+        // Init panel
+        GameObject inst = (GameObject)Instantiate(prefabTooltip);
+        Vector3 pos = Camera.main.WorldToScreenPoint(this.transform.position);
+        inst.transform.SetParent(canvas.transform);
+        inst.transform.position = pos + coords;
+        inst.transform.localScale = new Vector3(1, 1, 1);
+        inst.name = "tooltip_" + this.name;
+        myTooltip = inst;
+
+        HideTooltip();
     }
 
-    private void OnMouseExit()
+    public void ShowTooltip()
     {
-        show = false;
+        myTooltip.SetActive(true);
+        UpdateData();
+
     }
 
-    private void OnGUI()
+    public void HideTooltip()
     {
-        if (show)
+        myTooltip.SetActive(false);
+    }
+
+    public void UpdateData()
+    {
+        Debug.Log("init data");
+        myTooltip.transform.Find("nomPlante").gameObject.GetComponent<Text>().text = plot.GetPlanteName();
+        myTooltip.transform.Find("nomTraitement").gameObject.GetComponent<Text>().text = plot.GetTraitementName();
+        myTooltip.transform.Find("nomMineral").gameObject.GetComponent<Text>().text = plot.getMineral() == Minerals.None ? " " : plot.getMineral().ToString();
+
+        myTooltip.transform.Find("qttEngrais").gameObject.GetComponent<Text>().text = " ";
+        for (int i=0; i < plot.getQNutrition(); i++)
         {
-            GUI.Label(new Rect(10, 10, 200, 30), "yeet");
+            myTooltip.transform.Find("qttEngrais").gameObject.GetComponent<Text>().text += " +";
         }
+
+        myTooltip.transform.Find("qttEau").gameObject.GetComponent<Text>().text = " ";
+        for (int i = 0; i < plot.getQEau(); i++)
+        {
+            myTooltip.transform.Find("qttEau").gameObject.GetComponent<Text>().text += " +";
+        }
+
+        myTooltip.transform.Find("qttPh").gameObject.GetComponent<Text>().text = plot.getPh().ToString();
     }
 }

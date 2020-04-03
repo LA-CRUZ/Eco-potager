@@ -53,6 +53,16 @@ public class Plot : MonoBehaviour
 
     public float getPh() { return ph; }
 
+    internal string GetPlanteName()
+    {
+        return plante == null ? " " : this.plante.nom;
+    }
+
+    internal string GetTraitementName()
+    {
+        return traitement == null ? " " : this.traitement.nom;
+    }
+
 
     //all Setters
     public void setQEau(int _quantiteEau) { quantiteEau = (_quantiteEau >= 0 && _quantiteEau <= 3) ? _quantiteEau : quantiteEau; }    // idem

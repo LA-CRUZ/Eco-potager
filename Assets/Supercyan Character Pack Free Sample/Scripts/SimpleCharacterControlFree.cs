@@ -70,7 +70,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
                 InteractAnimation();
             }
             // Intéraction avec un plot
-            else if (plot_to_interact != null)
+            else if (plot_to_interact != null && object_in_hand != null)
             {
                 InteractWith(plot_to_interact);
                 InteractAnimation();
@@ -242,6 +242,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
             case "Plot":
                 //TODO Show tooltip
                 plot_to_interact = other.GetComponent<Plot>();
+                plot_to_interact.GetComponent<Tooltip>().ShowTooltip();
                 break;
             default:
                 Debug.Log("tag not handled : " + other.tag);
@@ -252,6 +253,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         item_to_pick_up = null;
+        if(plot_to_interact != null) plot_to_interact.GetComponent<Tooltip>().HideTooltip();
         plot_to_interact = null;
     }
 
@@ -277,6 +279,8 @@ public class SimpleCharacterControlFree : MonoBehaviour
             // On est sur l'arrosoir car on a que ça qui est de type autre que les 3 du dessus donc on ajoute de l'eau
             plot.addToQEau(1);
         }
+        Debug.Log("Time to update data !");
+        plot.GetComponent<Tooltip>().UpdateData();
     }
 }
 
