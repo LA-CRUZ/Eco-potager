@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Plants
 {
@@ -30,11 +32,19 @@ public class Resolver : MonoBehaviour
     private List<AnalysePlante> listComPlants = new List<AnalysePlante>();
 
     private List<GameObject> listPlots = new List<GameObject>();     // on stock des gameObject et non des Plots pour pouvoir savoir pour chaque élément si il a un fils avec getChild
-    private List<string> commentairePlots = new List<string>();
+    private List<commentairePlot> commentairePlots = new List<commentairePlot>();
 
     public int objectifScore; // de 0 à nb parcelles
     private int score = 0;
     private string conseil;
+
+    //Resolver Window Variables
+    private float plotButWidth = 47.2f;
+    private float plotButHeight = 43.4f;
+    private Transform plotDetails;
+    public Canvas resolverGUI;
+    //-1 si non, 0-9 si oui (0 parcelle de test)
+    public int plotSelected;
 
     void Start()
     {   
@@ -56,7 +66,28 @@ public class Resolver : MonoBehaviour
         foreach (GameObject plot in GameObject.FindGameObjectsWithTag("Plot"))
         {
             listPlots.Add(plot);
-            commentairePlots.Add( "Pour  " + plot.name + " : ");
+            commentairePlots.Add(new commentairePlot());
+        }
+
+        //Resolver Window Initilisation
+        resolverGUI.enabled = false;
+        plotSelected = -1;
+        plotDetails = GameObject.Find("SelectedPlotDetails").transform;
+        Transform plotsListing = GameObject.Find("PlotsListing").transform;
+        for (int i=0; i< GameObject.FindGameObjectsWithTag("Plot").Length; i++)
+        {
+            GameObject pb = (GameObject)Instantiate(Resources.Load("PlotButton"), plotsListing, false);
+            if(i <= 2)
+            {
+                pb.GetComponent<RectTransform>().localPosition = pb.GetComponent<RectTransform>().localPosition + new Vector3((plotButWidth+14)*(i%3),0,0);
+            } else if (i <= 5)
+            {
+                pb.GetComponent<RectTransform>().localPosition = pb.GetComponent<RectTransform>().localPosition + new Vector3((plotButWidth+14)*(i%3), (plotButHeight + 14)*-1, 0);
+            } else if(i <= 8)
+            {
+                pb.GetComponent<RectTransform>().localPosition = pb.GetComponent<RectTransform>().localPosition + new Vector3((plotButWidth+14)*(i%3), (plotButHeight + 14)*-2, 0);
+            }
+            pb.transform.GetChild(0).GetComponent<Text>().text = (i+1).ToString();
         }
     }
 
@@ -65,13 +96,16 @@ public class Resolver : MonoBehaviour
     {
         if(endStage)
         {
-            calculScore();
-            affichage();
-            Debug.Break();
+            
+            displayPlotDetails();
+            //Debug.Break();
         }
         if(Input.GetKey(KeyCode.F))
         {
             endStage = true;
+            calculScore();
+            affichage();
+            AfficherResolverWindow();
         }
     }
 
@@ -83,13 +117,15 @@ public class Resolver : MonoBehaviour
         foreach(GameObject plot in listPlots)
         {
             string tagChild;
-            if(plot.transform.childCount > 1)
+            if (plot.transform.childCount > 1)
                 tagChild = plot.transform.GetChild(1).tag;
-            else tagChild = plot.transform.GetChild(0).tag;
+            else if (plot.transform.childCount > 0)
+                tagChild = plot.transform.GetChild(0).tag;
+            else tagChild = "Untagged";
 
             if(tagChild == "Untagged")
             {
-                commentairePlots[i] = "Aucune plante n'a été planté sur cette parcelle. \n\n";
+                commentairePlots[i].setLegume("Aucun");
             } else
             {
                 int j = 0;
@@ -113,11 +149,14 @@ public class Resolver : MonoBehaviour
         AnalysePlante planteNonMaitrise = new AnalysePlante { scoreTot = 0 };
         foreach(AnalysePlante tmp in listComPlants)
         {
-            tmp.genCommentaire();
-            Debug.Log("pour les " + tmp.plant + " il y a " + tmp.scoreTot);
-            Debug.Log("pour les " + planteNonMaitrise.plant + " il y a " + planteNonMaitrise.scoreTot);
-            if (planteNonMaitrise.scoreTot <= tmp.scoreTot)
-                planteNonMaitrise = tmp;    // on récupère la plante la moins bien maitrisé sur la partie
+            if(tmp.nbPlanter > 0)
+            {
+                tmp.genCommentaire();
+                Debug.Log("pour les " + tmp.plant + " il y a " + tmp.scoreTot);
+                Debug.Log("pour les " + planteNonMaitrise.plant + " il y a " + planteNonMaitrise.scoreTot);
+                if (planteNonMaitrise.scoreTot <= tmp.scoreTot)
+                    planteNonMaitrise = tmp;    // on récupère la plante la moins bien maitrisé sur la partie
+            }
         }
         if (planteNonMaitrise.scoreTot != 0)
             conseil = planteNonMaitrise.conseil;
@@ -127,7 +166,7 @@ public class Resolver : MonoBehaviour
     bool process (Plot plot, Plant p, int indice, AnalysePlante ap)   // créer les commentaires pour 1 plot et son fils
     {
         int nbBonPoints = 0;
-        commentairePlots[indice] = "Des " + p.nom + " ont été planté ici. \n ";
+        commentairePlots[indice].setLegume(p.nom);
         // analyse de la saison
         bool estDeSaison = false;
         Saison s = Saison.None;
@@ -139,34 +178,34 @@ public class Resolver : MonoBehaviour
         }
         if (estDeSaison)
         {
-            commentairePlots[indice] += "Il s'agit bien d'un légume de saison, c'est super!\n";
+            commentairePlots[indice].setSaison("Il s'agit bien d'un légume de saison, c'est super!\n");
             nbBonPoints++;
         }
-        else commentairePlots[indice] += "Attention, les " + p.nom + " poussent en " + s + " et non en " + saison + ".\n";
+        else commentairePlots[indice].setSaison("Attention, les " + p.nom + " poussent en " + s + " et non en " + saison + ".\n");
 
         //  analyse des taux
 
         //  Humidité
         if (plot.getQEau() < p.quantiteEau)
         {
-            commentairePlots[indice] += "Dommage, la quantité d'eau de cette parcelle est trop faible pour cette plante.\n";
+            commentairePlots[indice].setHydratation("Dommage, la quantité d'eau de cette parcelle est trop faible pour cette plante.\n");
         }
         if (plot.getQEau() == p.quantiteEau)
         {
-            commentairePlots[indice] += "Super, la quantité d'eau est idéale pour cette plante.\n";
+            commentairePlots[indice].setHydratation("Super, la quantité d'eau est idéale pour cette plante.\n");
             ap.maitriseQEau++;
             nbBonPoints++;
         }
         if (plot.getQEau()  > p.quantiteEau)
-            commentairePlots[indice] += "Fait attention! la quantité d'eau de cette parcelle est trop élevé pour les " + p.nom + "\n";
+            commentairePlots[indice].setHydratation("Fait attention! la quantité d'eau de cette parcelle est trop élevé pour les " + p.nom + "\n");
 
         // Nutriment
 
         if (plot.getQNutrition() < p.quantiteNutrition)
-            commentairePlots[indice] += "Dommage, la quantité de nutriments de cette parcelle est trop faible pour cette plante.\n";
+            commentairePlots[indice].setEngrais("Dommage, la quantité de nutriments de cette parcelle est trop faible pour cette plante.\n");
         if (plot.getQNutrition() >= p.quantiteNutrition)
         {
-            commentairePlots[indice] += "Super, la quantité de nutriments dans cette parcelle convient bien à cette plante.\n";
+            commentairePlots[indice].setEngrais("Super, la quantité de nutriments dans cette parcelle convient bien à cette plante.\n");
             ap.maitriseQNut++;
             nbBonPoints++;
         }
@@ -174,12 +213,12 @@ public class Resolver : MonoBehaviour
         //  analyse du NPK
         if( plot.getMineral() == p.mineral)
         {
-            commentairePlots[indice] += "Cette parcelle est riche en " + p.mineral.ToString() + ", c'est idéale pour les " + p.nom + ".\n";
+            commentairePlots[indice].setEngrais("Cette parcelle est riche en " + p.mineral.ToString() + ", c'est idéale pour les " + p.nom + ".\n");
             ap.maitriseMin++;
             nbBonPoints++;
         } else
         {
-            commentairePlots[indice] += "Dommage. Cette plante aime les parcelles richent en " + p.mineral.ToString() + " et ce n'est pas le cas de cette parcelle.\n";
+            commentairePlots[indice].setEngrais("Dommage. Cette plante aime les parcelles richent en " + p.mineral.ToString() + " et ce n'est pas le cas de cette parcelle.\n");
         }
         //  analyse du ph
         float phPlot = plot.getPh();
@@ -187,15 +226,15 @@ public class Resolver : MonoBehaviour
         float phMax = p.phMax;
         if (phPlot >= phMin && phPlot <= phMax)
         {
-            commentairePlots[indice] += "Incroyable! Le ph de cette parcelle est parfaite pour cette plante.\n";
+            commentairePlots[indice].setPH("Incroyable! Le ph de cette parcelle est parfaite pour cette plante.\n");
             ap.maitrisePh++;
             nbBonPoints++;
         }
         else
         {
-            commentairePlots[indice] += "Ooooh il semblerait que le ph de cette parcelle ne correspond à celui des " + p.nom + ".\n";
+            commentairePlots[indice].setPH("Ooooh il semblerait que le ph de cette parcelle ne correspond à celui des " + p.nom + ".\n");
         }
-        commentairePlots[indice] += "\n\n";
+        //commentairePlots[indice] += "\n\n";
         return (nbBonPoints > 2);
     }
 
@@ -207,11 +246,76 @@ public class Resolver : MonoBehaviour
             concat += "L'objectif n'a pas été atteint. Tant pis, regardons en détails ce qui c'est passé.\n";
         }
         else concat += "Bravo! Tu as atteint l'objectif qui était de bien gérer " + objectifScore + " parcelles sur " + listPlots.Count + ".\n";
-        foreach (string str in commentairePlots)
+        /*foreach (string str in commentairePlots)
         {
             concat += str;
         }
-        Debug.Log(concat);
+        Debug.Log(concat);*/
         Debug.Log(conseil);
     }
+
+    public void displayPlotDetails()
+    {
+        if (plotSelected < 0)
+        {
+            togglePlotDetails(false);
+        }
+        else
+        {
+            togglePlotDetails(true);
+            plotDetails.GetChild(2).GetComponent<Text>().text = "Parcelle " + plotSelected;
+            plotDetails.GetChild(3).GetChild(0).GetComponent<Text>().text = commentairePlots[plotSelected-1].getLegume() + "\n" + commentairePlots[plotSelected - 1].getSaison();
+            plotDetails.GetChild(4).GetChild(0).GetComponent<Text>().text = commentairePlots[plotSelected - 1].getHydratation();
+            plotDetails.GetChild(5).GetChild(0).GetComponent<Text>().text = commentairePlots[plotSelected - 1].getEngrais();
+            plotDetails.GetChild(6).GetChild(0).GetComponent<Text>().text = commentairePlots[plotSelected - 1].getTraitement();
+            plotDetails.GetChild(7).GetChild(0).GetComponent<Text>().text = commentairePlots[plotSelected - 1].getPH();
+        }
+        GameObject.Find("Tips").transform.GetChild(0).GetChild(0).GetComponent<Text>().text = conseil;
+
+
+
+    }
+
+    public void selectPlot(Transform clickedButton)
+    {
+        int newSelectedPlot = int.Parse(clickedButton.GetChild(0).GetComponent<Text>().text);
+        if (plotSelected == newSelectedPlot)
+            newSelectedPlot = -1;
+        plotSelected = newSelectedPlot;
+    }
+
+    void togglePlotDetails(bool plotSelected)
+    {
+        //Si un plot est select, on affiche les détails, sinon on affiche le msg par défaut (index 1)
+        plotDetails.GetChild(1).gameObject.SetActive(!plotSelected);
+        for (int i = 2; i < 8; i++)
+        {
+            plotDetails.GetChild(i).gameObject.SetActive(plotSelected);
+        }
+    }
+
+    public void CacherResolverWindow()
+    {
+        if (resolverGUI.GetComponent<Canvas>().enabled == true)
+        {
+            resolverGUI.GetComponent<Canvas>().enabled = false;
+            GameObject.Find("Player").GetComponent<Storage>().enabled = true;
+            GameObject.Find("Player").GetComponent<SimpleCharacterControlFree>().enabled = true;
+        }
+        plotSelected = -1;
+    }
+
+
+    public void AfficherResolverWindow()
+    {
+        if (resolverGUI.GetComponent<Canvas>().enabled == false)
+        {
+            resolverGUI.GetComponent<Canvas>().enabled = true;
+            GameObject.Find("Player").GetComponent<Storage>().enabled = false;
+            GameObject.Find("Player").GetComponent<SimpleCharacterControlFree>().enabled = false;
+        }
+    }
 }
+
+//EEDCC0
+//463823
