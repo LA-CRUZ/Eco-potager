@@ -1493,7 +1493,7 @@ PrefabInstance:
     - target: {fileID: 1166705928390244737, guid: 1a97ad03f3417d049a9b739b03df034a,
         type: 3}
       propertyPath: m_Name
-      value: ResolverManager (1)
+      value: ResolverManager
       objectReference: {fileID: 0}
     - target: {fileID: 1166705928390244743, guid: 1a97ad03f3417d049a9b739b03df034a,
         type: 3}
@@ -1782,7 +1782,7 @@ PrefabInstance:
     - target: {fileID: 2155822581574575070, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2155822581597464092, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
@@ -2010,6 +2010,11 @@ PrefabInstance:
     - target: {fileID: 5406855262966366098, guid: 7502cd16bd557964a86051505013ee24,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5406855264405144687, guid: 7502cd16bd557964a86051505013ee24,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
