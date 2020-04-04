@@ -4355,10 +4355,26 @@ PrefabInstance:
       propertyPath: plantPanel
       value: 
       objectReference: {fileID: 1704514443}
+    - target: {fileID: 1895843439341793289, guid: eb71d99032af46c4eb9270797a38da75,
+        type: 3}
+      propertyPath: texte.Array.data[14]
+      value: "Parfait ! \xC0 pr\xE9sent notre parcelle est pr\xEAte \xE0 recevoir
+        nos <b>graines de tomates</b>, va donc les chercher dans le stock !"
+      objectReference: {fileID: 0}
     - target: {fileID: 1895843439341793291, guid: eb71d99032af46c4eb9270797a38da75,
         type: 3}
       propertyPath: m_Name
       value: DialoguesManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895843439341793291, guid: eb71d99032af46c4eb9270797a38da75,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895843439846550917, guid: eb71d99032af46c4eb9270797a38da75,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb71d99032af46c4eb9270797a38da75, type: 3}
@@ -6536,6 +6552,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 795127311971885486, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2155822580411981872, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: m_Name

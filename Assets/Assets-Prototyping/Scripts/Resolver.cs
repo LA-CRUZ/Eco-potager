@@ -99,7 +99,7 @@ public class Resolver : MonoBehaviour
             displayPlotDetails();
             //Debug.Break();
         }
-        if(Input.GetKey(KeyCode.F))
+        if(Input.GetKey(KeyCode.Space))
         {
             endStage = true;
             calculScore();

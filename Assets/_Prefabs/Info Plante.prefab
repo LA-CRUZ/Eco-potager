@@ -384,7 +384,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '<b><size=40>Pesticide(s) : </size></b>'
+  m_Text: '<b><size=40>Traitement : </size></b>'
 --- !u!1 &126139251394606251
 GameObject:
   m_ObjectHideFlags: 0
