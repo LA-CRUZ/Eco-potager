@@ -6544,7 +6544,7 @@ PrefabInstance:
         type: 3}
       propertyPath: texte.Array.data[1]
       value: "Je te laisse regarder dans le <b>stock</b> les l\xE9gumes qui poussent
-        au <b>Printemps</b>. Fait bien attention \xE0 planter les bons l\xE9gumes
+        au <b>Printemps</b>. Fais bien attention \xE0 planter les bons l\xE9gumes
         de saison dans la bonne <b>parcelle</b>, n'h\xE9site pas \xE0 <b>arroser</b>
         ou mettre de l'<b>engrais</b> si n\xE9cessaire."
       objectReference: {fileID: 0}
