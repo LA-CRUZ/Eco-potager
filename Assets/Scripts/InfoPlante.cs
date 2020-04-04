@@ -15,6 +15,7 @@ public class InfoPlante : MonoBehaviour
     public Text engrais;
     public Text pesticide;
     public Text mineraux;
+    public Text ph;
     public Image iconImage;
 
     private Plant item;
@@ -76,7 +77,11 @@ public class InfoPlante : MonoBehaviour
 
         // Besoins minéraux : désactiver par défaut
         this.mineraux.enabled = false;
-        this.mineraux.text += item.mineral;
+        this.mineraux.text += item.mineral == Minerals.None ? "Pas de préférence" : item.mineral.ToString();
+
+        // pH : désactiver par défaut
+        this.ph.enabled = false;
+        this.ph.text += item.phMin + " - " + item.phMax;
 
         this.GetComponent<LayoutElement>().minHeight = 200;
 
@@ -98,6 +103,7 @@ public class InfoPlante : MonoBehaviour
             this.engrais.enabled = true;
             this.pesticide.enabled = true;
             this.mineraux.enabled = true;
+            this.ph.enabled = true;
             showMore = true;
         }
         else
@@ -109,6 +115,7 @@ public class InfoPlante : MonoBehaviour
             this.engrais.enabled = false;
             this.pesticide.enabled = false;
             this.mineraux.enabled = false;
+            this.ph.enabled = false;
             showMore = false;
         }
     }
