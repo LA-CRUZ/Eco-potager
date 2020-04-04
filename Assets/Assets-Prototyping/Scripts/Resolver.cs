@@ -276,7 +276,7 @@ public class Resolver : MonoBehaviour
         if(nbReussite == plotScores.Count)
         {
             appreciation = "Parfait !";
-        } else if(nbReussite == nbPlotRequis)
+        } else if(nbReussite >= nbPlotRequis)
         {
             appreciation = "Super !";
         } else
