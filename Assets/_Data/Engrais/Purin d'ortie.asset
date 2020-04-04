@@ -17,6 +17,6 @@ MonoBehaviour:
     quelques heures et vous aurez un <b>engrais 100% biologique</b>.\n\nIl s'agit
     d'un engrais riche en <b><color=green>azote</color></b>!\n\nL\u2019<b><color=green>azote</color></b>
     est l\u2019\xE9l\xE9ment le plus important pour la vie de la plante et sert \xE0
-    d\xE9velopper toutes les parties vertes qui assurent la croissance. "
+    d\xE9velopper toutes les parties vertes qui <b>assurent la croissance</b>. "
   icon: {fileID: 21300000, guid: 326de57deaf503b43abd1ee3f7bee48a, type: 3}
   mineral: 0
