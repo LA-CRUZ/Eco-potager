@@ -30,69 +30,49 @@ public class ButtonManager : MonoBehaviour
         menuStart.SetActive(false);
         menuCredits.SetActive(false);
         //Level 1
-        if (PlayerPrefs.GetInt("Tutoriel", -1) == -1)
+        if (PlayerPrefs.GetInt("Tutoriel", 0) == 0)
         {
             GameObject.Find("Level 1").GetComponent<Button>().interactable = false;
             GameObject.Find("Level 1").transform.GetChild(1).GetComponent<Text>().enabled = true;
-            GameObject.Find("Level 1").transform.GetChild(1).GetComponent<Text>().text = PlayerPrefs.GetInt("Level 1", 0).ToString();
-            GameObject.Find("Level 1").transform.GetChild(2).GetComponent<Text>().enabled = false;
-            GameObject.Find("Level 1").transform.GetChild(3).GetComponent<Text>().enabled = false;
         }
         else
         {
             GameObject.Find("Level 1").GetComponent<Button>().interactable = true;
             GameObject.Find("Level 1").transform.GetChild(1).GetComponent<Text>().enabled = false;
-            GameObject.Find("Level 1").transform.GetChild(2).GetComponent<Text>().enabled = true;
-            GameObject.Find("Level 1").transform.GetChild(3).GetComponent<Text>().enabled = true;
         }
         
         //Level 2
-        if (PlayerPrefs.GetInt("Level 1", -1) == -1)
+        if (PlayerPrefs.GetInt("Level 1", 0) == 0)
         {
             GameObject.Find("Level 2").GetComponent<Button>().interactable = false;
             GameObject.Find("Level 2").transform.GetChild(1).GetComponent<Text>().enabled = true;
-            GameObject.Find("Level 2").transform.GetChild(1).GetComponent<Text>().text = PlayerPrefs.GetInt("Level 2", 0).ToString();
-            GameObject.Find("Level 2").transform.GetChild(2).GetComponent<Text>().enabled = false;
-            GameObject.Find("Level 2").transform.GetChild(3).GetComponent<Text>().enabled = false;
         }
         else
         {
             GameObject.Find("Level 2").GetComponent<Button>().interactable = true;
             GameObject.Find("Level 2").transform.GetChild(1).GetComponent<Text>().enabled = false;
-            GameObject.Find("Level 2").transform.GetChild(2).GetComponent<Text>().enabled = true;
-            GameObject.Find("Level 2").transform.GetChild(3).GetComponent<Text>().enabled = true;
         }
         //Level 3
-        if (PlayerPrefs.GetInt("Level 2", -1) == -1)
+        if (PlayerPrefs.GetInt("Level 2", 0) == 0)
         {
             GameObject.Find("Level 3").GetComponent<Button>().interactable = false;
             GameObject.Find("Level 3").transform.GetChild(1).GetComponent<Text>().enabled = true;
-            GameObject.Find("Level 3").transform.GetChild(1).GetComponent<Text>().text = PlayerPrefs.GetInt("Level 3", 0).ToString();
-            GameObject.Find("Level 3").transform.GetChild(2).GetComponent<Text>().enabled = false;
-            GameObject.Find("Level 2").transform.GetChild(3).GetComponent<Text>().enabled = false;
         }
         else
         {
             GameObject.Find("Level 3").GetComponent<Button>().interactable = true;
             GameObject.Find("Level 3").transform.GetChild(1).GetComponent<Text>().enabled = false;
-            GameObject.Find("Level 3").transform.GetChild(2).GetComponent<Text>().enabled = true;
-            GameObject.Find("Level 2").transform.GetChild(3).GetComponent<Text>().enabled = true;
         }
         //Level 4
-        if (PlayerPrefs.GetInt("Level 3", -1) == -1)
+        if (PlayerPrefs.GetInt("Level 3", 0) == 0)
         {
             GameObject.Find("Level 4").GetComponent<Button>().interactable = false;
             GameObject.Find("Level 4").transform.GetChild(1).GetComponent<Text>().enabled = true;
-            GameObject.Find("Level 4").transform.GetChild(1).GetComponent<Text>().text = PlayerPrefs.GetInt("Level 4", 0).ToString();
-            GameObject.Find("Level 4").transform.GetChild(2).GetComponent<Text>().enabled = false;
-            GameObject.Find("Level 2").transform.GetChild(3).GetComponent<Text>().enabled = false;
         }
         else
         {
             GameObject.Find("Level 4").GetComponent<Button>().interactable = true;
             GameObject.Find("Level 4").transform.GetChild(1).GetComponent<Text>().enabled = false;
-            GameObject.Find("Level 4").transform.GetChild(2).GetComponent<Text>().enabled = true;
-            GameObject.Find("Level 2").transform.GetChild(23).GetComponent<Text>().enabled = true;
         }
     }
 

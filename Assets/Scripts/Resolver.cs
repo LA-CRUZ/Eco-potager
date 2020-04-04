@@ -48,7 +48,6 @@ public class Resolver : MonoBehaviour
     private int nbCriteres = 3;
     public int nbPlotRequis = 1;
     public int numNiveau = 0;
-    private int nbReussite = 0;
 
     void Start()
     {
@@ -255,6 +254,7 @@ public class Resolver : MonoBehaviour
 
     void affichage()
     {
+        int nbReussite = 0;
         Transform starsGroup = GameObject.Find("starsGroup").transform;
         string appreciation = "";
         foreach (Transform child in starsGroup)
@@ -369,8 +369,7 @@ public class Resolver : MonoBehaviour
         string varLabel = "Tutoriel";
         if (numNiveau > 0)
             varLabel = "Level " + numNiveau.ToString();
-        PlayerPrefs.SetInt(varLabel, nbReussite);
-        Debug.Log(varLabel);
+        PlayerPrefs.SetInt(varLabel, 1);
     }
 
     public string translate(Plant plante)
