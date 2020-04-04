@@ -6557,6 +6557,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 290371294}
     m_Modifications:
+    - target: {fileID: 771862228, guid: c2c683c518a6b8d4eacc876fd11bef02, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 361043609}
     - target: {fileID: 7738158306763357169, guid: c2c683c518a6b8d4eacc876fd11bef02,
         type: 3}
       propertyPath: m_Name
