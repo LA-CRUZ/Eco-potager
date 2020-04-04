@@ -6168,21 +6168,21 @@ PrefabInstance:
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: texte.Array.data[1]
-      value: "Comme tu peux le voir je t'ai ajouter de nouvelles parcelles, j'esp\xE8re
+      value: "Comme tu peux le voir je t'ai ajout\xE9 de nouvelles parcelles, j'esp\xE8re
         que ca te fait plaisir ! Tu vas t'amuser comme un petit fou avec tout \xE7a
         !"
       objectReference: {fileID: 0}
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: texte.Array.data[2]
-      value: "Je n'ai pas d'instructions particuli\xE8re \xE0 te donner pour aujourd'hui.
+      value: "Je n'ai pas d'instruction particuli\xE8re \xE0 te donner pour aujourd'hui.
         On va voir si tu sais te d\xE9brouiller comme un grand."
       objectReference: {fileID: 0}
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: texte.Array.data[3]
       value: "J'ai refait le stock de plantes, d'engrais et de produits de traitement
-        pour tes plantes donc n'hesitez pas \xE0 repasser par le stockage."
+        pour tes plantes donc n'h\xE9sites pas \xE0 repasser par le stockage."
       objectReference: {fileID: 0}
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
@@ -6193,7 +6193,7 @@ PrefabInstance:
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: texte.Array.data[6]
-      value: "N'h\xE9sitez pas \xE0 venir <b>me parler</b> si tu veux que je te rappelle
+      value: "N'h\xE9sites pas \xE0 venir <b>me parler</b> si tu veux que je te rappelle
         deux trois trucs ! Bonne chance \xE0 toi mon grand !"
       objectReference: {fileID: 0}
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
@@ -6223,6 +6223,11 @@ PrefabInstance:
       value: "D'ailleurs n'oublies pas que nous sommes actuellement en <b>hiver</b>
         alors ne te trompes pas dans les l\xE9gumes et fruits que tu vas planter
         !"
+      objectReference: {fileID: 0}
+    - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
+      propertyPath: dialogueFini
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 550677923618766195, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
