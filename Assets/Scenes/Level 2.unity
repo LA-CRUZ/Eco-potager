@@ -5973,6 +5973,10 @@ PrefabInstance:
       value: "Au fait, j'ai d\xE9j\xE0 commenc\xE9 \xE0 travailler sur le champs,
         fais attention que le niveau d'<b>eau</b> et d'<b>engrais</b> de ta parcelle
         corresponde \xE0 celle de ta plante !"
+    - target: {fileID: 550677923618766195, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1038722869206062760, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
