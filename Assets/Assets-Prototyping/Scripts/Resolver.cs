@@ -60,6 +60,7 @@ public class Resolver : MonoBehaviour
 
             // initialisation de l'analysePlant
             listComPlants.Add(new AnalysePlante { plant = p });
+            GameObject.Find("SeasonName").GetComponent<Text>().text = saison.ToString();
         }
 
         // init de tous ce qui concerne les plots
