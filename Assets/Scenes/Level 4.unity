@@ -1591,15 +1591,15 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1836551988}
+  - {fileID: 358128110}
   - {fileID: 1509777865}
   - {fileID: 984867789}
-  - {fileID: 14190882}
   - {fileID: 2034130644}
   - {fileID: 1085527054}
   - {fileID: 5686394936814610853}
-  - {fileID: 358128110}
-  - {fileID: 1018850400}
   - {fileID: 1783549470}
+  - {fileID: 1018850400}
+  - {fileID: 14190882}
   m_Father: {fileID: 290371294}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6489,6 +6489,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 290371294}
     m_Modifications:
+    - target: {fileID: 771862228, guid: c2c683c518a6b8d4eacc876fd11bef02, type: 3}
+      propertyPath: tooltip
+      value: 
+      objectReference: {fileID: 361043609}
     - target: {fileID: 7738158306763357169, guid: c2c683c518a6b8d4eacc876fd11bef02,
         type: 3}
       propertyPath: m_Name

@@ -210,7 +210,7 @@ public class Resolver : MonoBehaviour
             nbBonPoints++;
         }
         if (plot.getQEau()  > p.quantiteEau)
-            commentairePlots[indice].setHydratation("Fais attention ! La quantité d'eau de cette parcelle est trop élevé pour les " + nomPlante + ".\n");
+            commentairePlots[indice].setHydratation("Fais attention ! La quantité d'eau de cette parcelle est trop élevée pour les " + nomPlante + ".\n");
 
         // Nutriment
 
@@ -226,7 +226,7 @@ public class Resolver : MonoBehaviour
         //  analyse du NPK
         if( plot.getMineral() == p.mineral)
         {
-            commentairePlots[indice].setEngrais("Cette parcelle est riche en " + p.mineral.ToString().ToLower() + ", c'est idéale pour les " + nomPlante + ".\n");
+            commentairePlots[indice].setEngrais("Cette parcelle est riche en " + p.mineral.ToString().ToLower() + ", c'est idéal pour les " + nomPlante + ".\n");
             ap.maitriseMin++;
             nbBonPoints++;
         } else
@@ -245,7 +245,7 @@ public class Resolver : MonoBehaviour
         }
         else
         {
-            commentairePlots[indice].setPH("Oooh il semblerait que le ph de cette parcelle ne correspond à celui des " + nomPlante + ".\n");
+            commentairePlots[indice].setPH("Oooh il semblerait que le ph de cette parcelle ne correspond pas à celui des " + nomPlante + ".\n");
         }
         //commentairePlots[indice] += "\n\n";
         return nbBonPoints;
