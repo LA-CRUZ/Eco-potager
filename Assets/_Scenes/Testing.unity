@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: {fileID: 361043609}
-  coords: {x: 0, y: -20, z: 0}
+  coords: {x: 0, y: -35, z: 0}
 --- !u!1001 &228793074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: {fileID: 361043609}
-  coords: {x: 0, y: -20, z: 0}
+  coords: {x: 0, y: -35, z: 0}
 --- !u!1001 &284407380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: {fileID: 361043609}
-  coords: {x: 0, y: -20, z: 0}
+  coords: {x: 0, y: -35, z: 0}
 --- !u!1 &481806780
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: {fileID: 361043609}
-  coords: {x: 0, y: -20, z: 0}
+  coords: {x: 0, y: -35, z: 0}
 --- !u!1 &516551258
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: {fileID: 361043609}
-  coords: {x: 0, y: -20, z: 0}
+  coords: {x: 0, y: -35, z: 0}
 --- !u!1001 &873199703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -976,7 +976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: {fileID: 361043609}
-  coords: {x: 0, y: -20, z: 0}
+  coords: {x: 0, y: -35, z: 0}
 --- !u!4 &1149540283 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81,
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: {fileID: 361043609}
-  coords: {x: 0, y: -20, z: 0}
+  coords: {x: 0, y: -35, z: 0}
 --- !u!1001 &1603535175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1390,7 +1390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: {fileID: 361043609}
-  coords: {x: 0, y: -20, z: 0}
+  coords: {x: 0, y: -35, z: 0}
 --- !u!1001 &1875910773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1741,7 +1741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: {fileID: 361043609}
-  coords: {x: 0, y: -20, z: 0}
+  coords: {x: 0, y: -35, z: 0}
 --- !u!1001 &2155822581049321363
 PrefabInstance:
   m_ObjectHideFlags: 0
