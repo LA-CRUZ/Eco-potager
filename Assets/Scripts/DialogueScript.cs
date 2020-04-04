@@ -45,9 +45,9 @@ public class DialogueScript : MonoBehaviour
                 AfficherDialogue();
                 if (dialogueText.text == "New Text")
                     dialogueText.text = texte[0];
-                if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 4)
+                if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 4)
                     nbEtape++;
-                if (Input.GetKeyDown(KeyCode.I) && indexPhrase < 4)
+                if (Input.GetKeyDown(KeyCode.E) && indexPhrase < 4)
                 {
                     dialogueText.text = texte[indexPhrase];
                     indexPhrase++;
@@ -63,9 +63,9 @@ public class DialogueScript : MonoBehaviour
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
                     }
-                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 7)
+                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 7)
                         nbEtape++;
-                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase < 7)
+                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase < 7)
                     {
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
@@ -82,9 +82,9 @@ public class DialogueScript : MonoBehaviour
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
                     }
-                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 13)
+                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 13)
                         nbEtape++;
-                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase < 13)
+                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase < 13)
                     {
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
@@ -101,7 +101,7 @@ public class DialogueScript : MonoBehaviour
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
                     }
-                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 14)
+                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 14)
                         nbEtape++;
                 }
                 break;
@@ -115,7 +115,7 @@ public class DialogueScript : MonoBehaviour
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
                     }
-                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 15)
+                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 15)
                         nbEtape++;
                 }
                 break;
@@ -129,9 +129,9 @@ public class DialogueScript : MonoBehaviour
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
                     }
-                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 17)
+                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 17)
                         nbEtape++;
-                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase < 17)
+                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase < 17)
                     {
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
@@ -148,9 +148,9 @@ public class DialogueScript : MonoBehaviour
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
                     }
-                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 20)
+                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 20)
                         nbEtape++;
-                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase < 20)
+                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase < 20)
                     {
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
@@ -167,9 +167,9 @@ public class DialogueScript : MonoBehaviour
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
                     }
-                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 23)
+                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase == texte.Count)
                         nbEtape++;
-                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase < 23)
+                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase < texte.Count)
                     {
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
@@ -188,19 +188,19 @@ public class DialogueScript : MonoBehaviour
     void lireTexte()
     {
         Text dialogueText = dialoguesGUI.GetComponentInChildren<Text>();
+        AfficherDialogue();
         if (dialogueText.text == "New Text")
         {
-            AfficherDialogue();
+            
             dialogueText.text = texte[0];
         }
-        if (Input.GetKeyDown(KeyCode.I) && indexPhrase == texte.Count)
+        if (Input.GetKeyDown(KeyCode.E) && indexPhrase == texte.Count)
         {
             dialogueFini = true;
             CacherDialogue();
         }
-        if (Input.GetKeyDown(KeyCode.I) && indexPhrase < texte.Count)
+        if (Input.GetKeyDown(KeyCode.E) && indexPhrase < texte.Count)
         {
-            AfficherDialogue();
             dialogueText.text = texte[indexPhrase];
             indexPhrase++;
         }
@@ -208,23 +208,15 @@ public class DialogueScript : MonoBehaviour
 
     public void CacherDialogue()
     {
-        if (dialoguesGUI.GetComponent<Canvas>().enabled == true)
-        {
-            dialoguesGUI.GetComponent<Canvas>().enabled = false;
-            player.GetComponent<Storage>().enabled = true;
-            player.GetComponent<SimpleCharacterControlFree>().enabled = true;
-        }
+        dialoguesGUI.GetComponent<Canvas>().enabled = false;
+        Time.timeScale = 1f;
     }
         
 
     public void AfficherDialogue()
     {
-        if(dialoguesGUI.GetComponent<Canvas>().enabled == false)
-        {
-            dialoguesGUI.GetComponent<Canvas>().enabled = true;
-            player.GetComponent<Storage>().enabled = false;
-            player.GetComponent<SimpleCharacterControlFree>().enabled = false;
-        }
+        dialoguesGUI.GetComponent<Canvas>().enabled = true;
+        Time.timeScale = 0f;
     }
 
 }

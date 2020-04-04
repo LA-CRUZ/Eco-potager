@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject menuOptions;
     public GameObject aideWindow;
+    public GameObject volumeSlider;
 
     // Update is called once per frame
     void Update()
@@ -51,6 +53,7 @@ public class PauseMenu : MonoBehaviour
     {
         menuOptions.SetActive(true);
         pauseMenu.SetActive(false);
+        volumeSlider.GetComponent<Slider>().value = PlayerPrefs.GetFloat("volume") * 5;
     }
 
     public void HideOptions()

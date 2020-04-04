@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private GameObject menuLevelSelection;
     [SerializeField] private GameObject menuOptions;
     [SerializeField] private GameObject aideWindow;
+    public GameObject volumeSlider;
 
     public void SwitchSceneBtn(string nameScene)
     {
@@ -37,6 +39,7 @@ public class ButtonManager : MonoBehaviour
     {
         menuOptions.SetActive(true);
         menuStart.SetActive(false);
+        volumeSlider.GetComponent<Slider>().value = PlayerPrefs.GetFloat("volume") * 5;
     }
 
     public void HideOptions()

@@ -137,7 +137,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &75099880
 MonoBehaviour:
@@ -193,6 +193,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 814853664}
   menuOptions: {fileID: 310393244121874068}
   aideWindow: {fileID: 1931599913705049807}
+  volumeSlider: {fileID: 5585654221077802718}
 --- !u!1 &267793343
 GameObject:
   m_ObjectHideFlags: 0
@@ -9778,6 +9779,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3593011973437941253, guid: a996233c7f60d664b93cdb954db5b20c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -43.89984
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593011973437941253, guid: a996233c7f60d664b93cdb954db5b20c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -350.1001
+      objectReference: {fileID: 0}
     - target: {fileID: 7145877640548898429, guid: a996233c7f60d664b93cdb954db5b20c,
         type: 3}
       propertyPath: m_Text
@@ -9978,6 +9989,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Papa
+      objectReference: {fileID: 0}
+    - target: {fileID: 1895843440360564864, guid: eb71d99032af46c4eb9270797a38da75,
+        type: 3}
+      propertyPath: m_Text
+      value: (E) pour continuer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb71d99032af46c4eb9270797a38da75, type: 3}

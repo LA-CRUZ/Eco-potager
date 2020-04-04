@@ -6073,7 +6073,7 @@ PrefabInstance:
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: texte.Array.size
-      value: 25
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
@@ -6083,18 +6083,47 @@ PrefabInstance:
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: texte.Array.data[23]
-      value: "Et voil\xE0, tu as r\xE9ussi \xE0 cultiver ta premi\xE8re plante, f\xE9licitations
-        ! \xC0 pr\xE9sent tu vas pouvoir continuer \xE0 jardiner dans ton \xE9co-potager
-        et faire pousser des tonnes de plantes diff\xE9rentes, bonne chance ! Et
-        attention bien les traiter !"
+      value: "Une fois que tu pense avoir termin\xE9 tu peux appuyer sur <b>Espace</b>
+        pour voir le bilan de tes r\xE9ussites !"
       objectReference: {fileID: 0}
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: texte.Array.data[24]
+      value: "Enfin, si tu as besoin d'acc\xE9der aux options en cours de partie,
+        ou que tu souhaite retourner au menu principal, appuie sur <b>Echap</b>."
+      objectReference: {fileID: 0}
+    - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
+      propertyPath: texte.Array.data[22]
+      value: "Si jamais tu as besoin d'<b>aide</b> au cours de tes travaux, n'h\xE9site
+        pas \xE0 appuyer sur <b>A</b> pour que je te conseille !"
+      objectReference: {fileID: 0}
+    - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
+      propertyPath: texte.Array.data[25]
       value: "Et voil\xE0, tu as r\xE9ussi \xE0 cultiver ta premi\xE8re plante, f\xE9licitations
         ! \xC0 pr\xE9sent tu vas pouvoir continuer \xE0 jardiner dans ton \xE9co-potager
         et faire pousser des tonnes de plantes diff\xE9rentes, bonne chance ! Et
-        attention bien les traiter !"
+        attention \xE0 bien les traiter !"
+      objectReference: {fileID: 0}
+    - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
+      propertyPath: texte.Array.data[6]
+      value: "Ici tu as acc\xE8s \xE0 toutes les graines de plantes disponibles dans
+        le niveau, tu peux consulter les informations relatives \xE0 chacune d\u2019entre
+        elles et savoir comment les cultiver. Jetons un oeil \xE0 nos <b>graines
+        de tomates</b> (Rubrique \"Plus d'infos\")."
+      objectReference: {fileID: 0}
+    - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
+      propertyPath: tuto
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
+      propertyPath: texte.Array.data[26]
+      value: "(Rapelles-toi d'appuyer sur <b>Espace</b> pour mettre fin au niveau
+        et acc\xE9der \xE0 ton score !)"
       objectReference: {fileID: 0}
     - target: {fileID: 2155822580411981872, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
