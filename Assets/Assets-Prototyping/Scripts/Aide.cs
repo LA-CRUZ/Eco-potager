@@ -37,7 +37,7 @@ public class Aide : MonoBehaviour
     public void genHelp()
     {
         Item tmp = GameObject.FindGameObjectWithTag("Player").GetComponent<SimpleCharacterControlFree>().getObjetInHand();
-        messageAide = "<b>Aide</b> : ";
+        messageAide = "";
         if (tmp != null)
         {
             string type = tmp.GetType().ToString();
