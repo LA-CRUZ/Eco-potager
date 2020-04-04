@@ -8,6 +8,7 @@ public class ButtonManager : MonoBehaviour
 
     [SerializeField] private GameObject menuStart;
     [SerializeField] private GameObject menuLevelSelection;
+    [SerializeField] private GameObject menuOptions;
     public void SwitchSceneBtn(string nameScene)
     {
         SceneManager.LoadScene(nameScene);
@@ -28,5 +29,22 @@ public class ButtonManager : MonoBehaviour
     {
         menuLevelSelection.SetActive(false);
         menuStart.SetActive(true);
+    }
+
+    public void ShowOptions()
+    {
+        menuOptions.SetActive(true);
+        menuStart.SetActive(false);
+    }
+
+    public void HideOptions()
+    {
+        menuOptions.SetActive(false);
+        menuStart.SetActive(true);
+    }
+
+    public void changeDifficulty(int difficulty)
+    {
+        PlayerPrefs.SetInt("difficulty", difficulty);
     }
 }
