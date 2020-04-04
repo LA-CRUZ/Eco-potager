@@ -28,7 +28,6 @@ public class InfoEngrais : MonoBehaviour
     {
         prendre.onClick.AddListener(delegate () { prendreObjet(); });
         moreInfo.onClick.AddListener(delegate () { expandInfos(); });
-        Debug.Log("setup");
         this.panel.transform.localScale = new Vector3(1, 1, 1);
         storageScrollList = currentScrollList;
         item = currentItem;
