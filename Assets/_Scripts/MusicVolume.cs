@@ -17,14 +17,14 @@ public class MusicVolume : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        audioSrc.volume = PlayerPrefs.GetFloat("volume", 1f);
+        audioSrc.volume = PlayerPrefs.GetFloat("volume", 0.1f);
         audioSrc.mute = PlayerPrefs.GetInt("mute", 0) == 0 ? true : false;
 
     }
 
     public void SetVolume(float vol)
     {
-        PlayerPrefs.SetFloat("volume", vol);
+        PlayerPrefs.SetFloat("volume", vol/5);
     }
 
     public void ToggleMusic(bool mute)
