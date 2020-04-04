@@ -683,6 +683,7 @@ MonoBehaviour:
   menuLevelSelection: {fileID: 1521565561}
   menuOptions: {fileID: 905631400}
   aideWindow: {fileID: 596472061}
+  volumeSlider: {fileID: 296813071}
 --- !u!4 &274074176
 Transform:
   m_ObjectHideFlags: 0
