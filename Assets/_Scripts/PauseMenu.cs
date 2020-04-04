@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool gamePaused = false;
     public GameObject pauseMenu;
+    public GameObject menuOptions;
+    public GameObject aideWindow;
 
     // Update is called once per frame
     void Update()
@@ -43,5 +45,28 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+    }
+
+    public void ShowOptions()
+    {
+        menuOptions.SetActive(true);
+        pauseMenu.SetActive(false);
+    }
+
+    public void HideOptions()
+    {
+        menuOptions.SetActive(false);
+        aideWindow.SetActive(false);
+        pauseMenu.SetActive(true);
+    }
+
+    public void ToggleHelp()
+    {
+        aideWindow.SetActive(!aideWindow.activeSelf);
+    }
+
+    public void changeDifficulty(int difficulty)
+    {
+        PlayerPrefs.SetInt("difficulty", difficulty);
     }
 }

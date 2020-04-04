@@ -46,12 +46,11 @@ public class Resolver : MonoBehaviour
     public Canvas resolverGUI;
     //-1 si non, 0-9 si oui (0 parcelle de test)
     private int plotSelected;
-    public int nbCriteres;
+    private int nbCriteres = 3;
     public int nbPlotRequis = 1;
 
     void Start()
     {
-        nbCriteres = PlayerPrefs.GetInt("difficulty", 3);
         // initialisation de tous ce qui concerne les plantes
         foreach (Plant p in listPlantes)
         {
@@ -109,6 +108,8 @@ public class Resolver : MonoBehaviour
             affichage();
             AfficherResolverWindow();
         }
+        Debug.Log(nbCriteres);
+        nbCriteres = PlayerPrefs.GetInt("difficulty", 3);
     }
 
 
