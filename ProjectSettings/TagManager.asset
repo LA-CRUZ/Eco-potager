@@ -21,6 +21,7 @@ TagManager:
   - Poireau
   - Melon
   - Concombre
+  - NPC
   layers:
   - Default
   - TransparentFX

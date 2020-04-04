@@ -34,6 +34,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
     [SerializeField] private bool doMovements = true;
     private Item item_to_pick_up;
     public Plot plot_to_interact;
+    private bool isNPCHere = false;
 
     private float m_currentV = 0;
     private float m_currentH = 0;
@@ -70,11 +71,16 @@ public class SimpleCharacterControlFree : MonoBehaviour
                 SetObjetInHand(item_to_pick_up);
                 InteractAnimation();
             }
-            // Intéraction avec un plot
+            // Interaction avec un plot
             else if (plot_to_interact != null && object_in_hand != null)
             {
                 InteractWith(plot_to_interact);
                 InteractAnimation();
+            }
+            // Interaction avec Oncle Robert
+            else if (isNPCHere)
+            {
+                GameObject.Find("DialoguesManager").GetComponent<DialogueScript>().resetDialogue();
             }
         }
     }
@@ -229,14 +235,15 @@ public class SimpleCharacterControlFree : MonoBehaviour
         switch (other.tag)
         {
             case "Watering can":
-                //TODO: Show tooltip
                 item_to_pick_up = Resources.Load<Item>("Arrosoir");
                 GameObject.Find("Recuperer").SetActive(true);
                 break;
             case "Plot":
-                //TODO Show tooltip
                 plot_to_interact = other.GetComponent<Plot>();
                 plot_to_interact.GetComponent<Tooltip>().ShowTooltip();
+                break;
+            case "NPC":
+                isNPCHere = true;
                 break;
             default:
                 Debug.Log("tag not handled : " + other.tag);

@@ -77,7 +77,21 @@ public class InfoPlante : MonoBehaviour
 
         // Besoins minéraux : désactiver par défaut
         this.mineraux.enabled = false;
-        this.mineraux.text += item.mineral == Minerals.None ? "Pas de préférence" : item.mineral.ToString();
+        switch (item.mineral)
+        {
+            case Minerals.Azote:
+                this.mineraux.text += "<b><color=green>" + item.mineral + "</color></b>";
+                break;
+            case Minerals.Phosphore:
+                this.mineraux.text += "<b><color=blue>" + item.mineral + "</color></b>";
+                break;
+            case Minerals.Potassium:
+                this.mineraux.text += "<b><color=purple>" + item.mineral + "</color></b>";
+                break;
+            default:
+                this.mineraux.text += "Pas de préférence";
+                break;
+        }
 
         // pH : désactiver par défaut
         this.ph.enabled = false;

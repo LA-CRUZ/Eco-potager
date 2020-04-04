@@ -33,6 +33,12 @@ public class DialogueScript : MonoBehaviour
             else lireTexte();
     }
 
+    public void resetDialogue()
+    {
+        dialogueFini = false;
+        indexPhrase = 1;
+        dialoguesGUI.GetComponentInChildren<Text>().text = "New Text";
+    }
     void tutoriel()
     {
         Text dialogueText = dialoguesGUI.GetComponentInChildren<Text>();

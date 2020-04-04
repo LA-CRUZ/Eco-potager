@@ -14,16 +14,22 @@ public class TooltipInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Vector3 pos = Camera.main.WorldToScreenPoint(this.transform.position);
-        tooltip.transform.SetParent(canvas.transform);
-        tooltip.transform.position = pos + coords;
-        tooltip.transform.localScale = new Vector3(1, 1, 1);
+        if(other.tag == "Player")
+        {
+            Vector3 pos = Camera.main.WorldToScreenPoint(this.transform.position);
+            tooltip.transform.SetParent(canvas.transform);
+            tooltip.transform.position = pos + coords;
+            tooltip.transform.localScale = new Vector3(1, 1, 1);
+            tooltip.SetActive(true);
+        }
 
-        tooltip.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        tooltip.SetActive(false);
+        if(other.tag == "Player")
+        {
+            tooltip.SetActive(false);
+        }
     }
 }
