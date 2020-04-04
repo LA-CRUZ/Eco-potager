@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum Plants
@@ -194,35 +193,35 @@ public class Resolver : MonoBehaviour
         {
             if (plotTraitement == t.nom)
             {
-                commentairePlots[indice].setTraitement("bien joué tu as appliqué le bon traitement sur cette plante.\n");
+                commentairePlots[indice].setTraitement("Bien joué tu as appliqué le bon traitement sur cette plante.\n");
                 nbBonPoints++;
                 traitementOk = true;
             }
         }
         if(!traitementOk)
-            commentairePlots[indice].setTraitement("attention tu n'as pas apppliqué le bon traitement!\n");
+            commentairePlots[indice].setTraitement("Attention tu n'as pas apppliqué le bon traitement!\n");
 
         //  Humidité
         if (plot.getQEau() < p.quantiteEau)
         {
-            commentairePlots[indice].setHydratation("dommage, la quantité d'eau de cette parcelle est trop faible pour cette plante.\n");
+            commentairePlots[indice].setHydratation("Dommage, la quantité d'eau de cette parcelle est trop faible pour cette plante.\n");
         }
         if (plot.getQEau() == p.quantiteEau)
         {
-            commentairePlots[indice].setHydratation("super, la quantité d'eau est idéale pour cette plante.\n");
+            commentairePlots[indice].setHydratation("Super, la quantité d'eau est idéale pour cette plante.\n");
             ap.maitriseQEau++;
             nbBonPoints++;
         }
         if (plot.getQEau()  > p.quantiteEau)
-            commentairePlots[indice].setHydratation("fait attention! la quantité d'eau de cette parcelle est trop élevé pour les " + nomPlante + "\n");
+            commentairePlots[indice].setHydratation("Fait attention! la quantité d'eau de cette parcelle est trop élevé pour les " + nomPlante + ".\n");
 
         // Nutriment
 
         if (plot.getQNutrition() < p.quantiteNutrition)
-            commentairePlots[indice].setEngrais("dommage, la quantité de nutriments de cette parcelle est trop faible pour cette plante.\n");
+            commentairePlots[indice].setEngrais("Dommage, la quantité de nutriments de cette parcelle est trop faible pour cette plante.\n");
         if (plot.getQNutrition() >= p.quantiteNutrition)
         {
-            commentairePlots[indice].setEngrais("super, la quantité de nutriments dans cette parcelle convient bien à cette plante.\n");
+            commentairePlots[indice].setEngrais("Super, la quantité de nutriments dans cette parcelle convient bien à cette plante.\n");
             ap.maitriseQNut++;
             nbBonPoints++;
         }
@@ -230,12 +229,12 @@ public class Resolver : MonoBehaviour
         //  analyse du NPK
         if( plot.getMineral() == p.mineral)
         {
-            commentairePlots[indice].setEngrais("cette parcelle est riche en " + p.mineral.ToString().ToLower() + ", c'est idéale pour les " + nomPlante + ".\n");
+            commentairePlots[indice].setEngrais("Cette parcelle est riche en " + p.mineral.ToString().ToLower() + ", c'est idéale pour les " + nomPlante + ".\n");
             ap.maitriseMin++;
             nbBonPoints++;
         } else
         {
-            commentairePlots[indice].setEngrais("dommage, cette plante aime les parcelles richent en " + p.mineral.ToString().ToLower() + " et ce n'est pas le cas de cette parcelle.\n");
+            commentairePlots[indice].setEngrais("Dommage, cette plante aime les parcelles richent en " + p.mineral.ToString().ToLower() + " et ce n'est pas le cas de cette parcelle.\n");
         }
         //  analyse du ph
         float phPlot = plot.getPh();
@@ -243,13 +242,13 @@ public class Resolver : MonoBehaviour
         float phMax = p.phMax;
         if (phPlot >= phMin && phPlot <= phMax)
         {
-            commentairePlots[indice].setPH("incroyable! Le ph de cette parcelle est parfaite pour cette plante.\n");
+            commentairePlots[indice].setPH("Incroyable! Le ph de cette parcelle est parfaite pour cette plante.\n");
             ap.maitrisePh++;
             nbBonPoints++;
         }
         else
         {
-            commentairePlots[indice].setPH("oooh il semblerait que le ph de cette parcelle ne correspond à celui des " + nomPlante + ".\n");
+            commentairePlots[indice].setPH("Oooh il semblerait que le ph de cette parcelle ne correspond à celui des " + nomPlante + ".\n");
         }
         //commentairePlots[indice] += "\n\n";
         return nbBonPoints;
@@ -346,11 +345,6 @@ public class Resolver : MonoBehaviour
             GameObject.Find("Player").GetComponent<SimpleCharacterControlFree>().enabled = true;
         }
         plotSelected = -1;
-    }
-
-    public void GoToLevelSelection()
-    {
-        SceneManager.LoadScene("Menu");
     }
 
 

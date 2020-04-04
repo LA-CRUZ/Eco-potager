@@ -43,24 +43,25 @@ public class Aide : MonoBehaviour
             
             if (type == "Plant")
             {
-                messageAide += "tu peux planter les <b>" + tmp.nom + "</b> dans une des parcelles ou bien choisir un autre item.";
+                string leNom = translate((Plant)tmp);
+                messageAide += "Tu peux planter les <b>" + leNom + "</b> dans une des parcelles ou bien choisir un autre élément.";
             }
             else if (type == "Engrais")
             {
-                messageAide += "tu peux appliquer cet engrais en t'approchant suffisement près d'une parcelle.";
+                messageAide += "Tu peux appliquer cet engrais en t'approchant suffisement près d'une parcelle.";
             }
             else if(type == "Traitement")
             {
-                messageAide += "si tu souhaites appliquer ce traitement sur une parcelle rapproche toi de celle-ci.";
+                messageAide += "Si tu souhaites appliquer ce traitement sur une parcelle rapproche toi de celle-ci.";
             }
             else if (type == "Item")
             {
-                messageAide += "tu peux arroser une plante maintenant en t'approchant d'une parcelle.";
+                messageAide += "Tu peux arroser une plante maintenant en t'approchant d'une parcelle.";
             }
             
         }else
         {
-            messageAide += "pour commencer tu peux choisir un élément dans le stock (touche <b>TAB</b>) ou bien voir les caractéristiques d'une parcelle.";
+            messageAide += "Pour commencer tu peux choisir un élément dans le <b>stock</b> ou bien voir les caractéristiques d'une parcelle.";
         }
         Debug.Log(messageAide);
         genUi();
@@ -75,5 +76,21 @@ public class Aide : MonoBehaviour
         t.text = messageAide;
         isShowing = !isShowing;
         helperUi.SetActive(isShowing);
+    }
+    public string translate(Plant plante)
+    {
+        string nomAuPluriel = "";
+
+        if (plante.nom == "Poireau")
+            nomAuPluriel = "poireaux";
+        else if (plante.nom == "Pomme de terre")
+            nomAuPluriel = "pommes de terre";
+        else if (plante.nom == "Chou-fleur")
+            nomAuPluriel = "choux-fleurs";
+        else if (plante.nom == "Radis")
+            nomAuPluriel = "radis";
+        else nomAuPluriel = plante.nom.ToLower() + "s";
+
+        return nomAuPluriel;
     }
 }
