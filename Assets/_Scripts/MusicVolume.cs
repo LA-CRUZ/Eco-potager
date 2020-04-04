@@ -12,7 +12,6 @@ public class MusicVolume : MonoBehaviour
     void Start()
     {
         audioSrc = GetComponent<AudioSource>();
-        GameObject.Find("Slider").GetComponent<Slider>().interactable = true;
     }
 
     // Update is called once per frame
