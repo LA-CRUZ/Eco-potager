@@ -186,7 +186,20 @@ public class Resolver : MonoBehaviour
         }
         else commentairePlots[indice].setSaison("Attention, les " + p.nom + " poussent en " + s + " et non en " + saison + ".\n");
 
-        //  analyse des taux
+        //  traitement
+        string plotTraitement = plot.GetTraitementName();
+        bool traitementOk = false;
+        foreach(Traitement t in p.listPes)
+        {
+            if (plotTraitement == t.nom)
+            {
+                commentairePlots[indice].setTraitement("bien joué tu as appliqué le bon traitement sur cette plante.\n");
+                nbBonPoints++;
+                traitementOk = true;
+            }
+        }
+        if(!traitementOk)
+            commentairePlots[indice].setTraitement("attention tu n'as pas apppliqué le bon traitement!\n");
 
         //  Humidité
         if (plot.getQEau() < p.quantiteEau)
