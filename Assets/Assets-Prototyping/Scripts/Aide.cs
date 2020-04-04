@@ -51,11 +51,11 @@ public class Aide : MonoBehaviour
             }
             else if(type == "Traitement")
             {
-                messageAide += "si tu souhaites appliquer ce traitement sur une parcelle demande-toi avant si c'est vraiment indispensable.";
+                messageAide += "si tu souhaites appliquer ce traitement sur une parcelle rapproche toi de celle-ci.";
             }
             else if (type == "Item")
             {
-                messageAide += "tu peux arroser une plante maintenant.";
+                messageAide += "tu peux arroser une plante maintenant en t'approchant d'une parcelle.";
             }
             
         }else
