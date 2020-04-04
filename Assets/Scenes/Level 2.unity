@@ -1413,15 +1413,15 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1836551988}
+  - {fileID: 846673821}
   - {fileID: 1509777865}
   - {fileID: 984867789}
-  - {fileID: 2034130644}
-  - {fileID: 5686394936814610853}
-  - {fileID: 846673821}
-  - {fileID: 471085458}
-  - {fileID: 1677012333}
   - {fileID: 1455643280}
+  - {fileID: 2034130644}
+  - {fileID: 1677012333}
+  - {fileID: 5686394936814610853}
   - {fileID: 2020173106}
+  - {fileID: 471085458}
   m_Father: {fileID: 290371294}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5966,6 +5966,11 @@ PrefabInstance:
       value: "Dans notre potager les <b>3 rang\xE9es</b> ont chacune un <b>ph diff\xE9rent</b>.
         Nous sommes d'ailleurs en <b>Automne</b> pense donc \xE0 bien planter des
         <b>l\xE9gumes de saison</b> et dans une parcelle avec un <b>ph adapt\xE9</b>."
+      objectReference: {fileID: 0}
+    - target: {fileID: 550677923618766195, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1038722869206062760, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
