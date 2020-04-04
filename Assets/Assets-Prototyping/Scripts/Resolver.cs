@@ -26,7 +26,7 @@ public class Resolver : MonoBehaviour
     private Saison saison;
 
     [SerializeField]
-    private Plants[] plantes;
+    //private Plants[] plantes;
     public List<Plant> listPlantes = new List<Plant>(); 
     private List<string> commentairePlantes = new List<string>();
     private List<AnalysePlante> listComPlants = new List<AnalysePlante>();
@@ -35,6 +35,7 @@ public class Resolver : MonoBehaviour
     private List<commentairePlot> commentairePlots = new List<commentairePlot>();
 
     public int objectifScore; // de 0 à nb parcelles
+    string nomPlante;
     private int score = 0;
     private string conseil;
     private List<int> plotScores = new List<int>();
@@ -51,17 +52,15 @@ public class Resolver : MonoBehaviour
     void Start()
     {   
         // initialisation de tous ce qui concerne les plantes
-        if(listPlantes.Capacity == 0)
+        foreach (Plant p in listPlantes)
         {
-            foreach (Plants p in plantes)
-            {
-                // recuperation des objets Plant stocké dans _Data/...
-                listPlantes.Add((Plant)AssetDatabase.LoadAssetAtPath("Assets/_Data/Plantes/" + p + ".asset", typeof(Plant)));
-                commentairePlantes.Add("Pour les " + p + " : ");
+            // recuperation des objets Plant stocké dans _Data/...
+            //listPlantes.Add((Plant)AssetDatabase.LoadAssetAtPath("Assets/_Data/Plantes/" + p + ".asset", typeof(Plant)));
+            nomPlante = translate(p);
+            commentairePlantes.Add("Pour les " + nomPlante + " : ");
 
-                // initialisation de l'analysePlant
-                listComPlants.Add(new AnalysePlante { plant = p });
-            }
+            // initialisation de l'analysePlant
+            listComPlants.Add(new AnalysePlante { plant = p });
         }
 
         // init de tous ce qui concerne les plots
@@ -155,21 +154,21 @@ public class Resolver : MonoBehaviour
             if(tmp.nbPlanter > 0)
             {
                 tmp.genCommentaire();
-                Debug.Log("pour les " + tmp.plant + " il y a " + tmp.scoreTot);
-                Debug.Log("pour les " + planteNonMaitrise.plant + " il y a " + planteNonMaitrise.scoreTot);
                 if (planteNonMaitrise.scoreTot <= tmp.scoreTot)
                     planteNonMaitrise = tmp;    // on récupère la plante la moins bien maitrisé sur la partie
             }
         }
         if (planteNonMaitrise.scoreTot != 0)
             conseil = planteNonMaitrise.conseil;
-        else conseil = "";  // pas de conseil si le joueur n'a pas commis d'erreur
+        else conseil = "les différents traitements contre les parasites ou les maladies même s'ils sont bio, restent dangereux et sont à utiliser avec beaucoup de précaution";  // pas de conseil si le joueur n'a pas commis d'erreur
     }
 
     int process (Plot plot, Plant p, int indice, AnalysePlante ap)   // créer les commentaires pour 1 plot et son fils
     {
         int nbBonPoints = 0;
         commentairePlots[indice].setLegume(p.nom);
+        // récupération du nom sans faute d'orthographe
+        nomPlante = translate(p);
         // analyse de la saison
         bool estDeSaison = false;
         Saison s = Saison.None;
@@ -184,31 +183,44 @@ public class Resolver : MonoBehaviour
             commentairePlots[indice].setSaison("Il s'agit bien d'un légume de saison, c'est super!\n");
             nbBonPoints++;
         }
-        else commentairePlots[indice].setSaison("Attention, les " + p.nom + " poussent en " + s + " et non en " + saison + ".\n");
+        else commentairePlots[indice].setSaison("Attention, les " + nomPlante + " poussent en " + s + " et non en " + saison.ToString().ToLower() + ".\n");
 
-        //  analyse des taux
+        //  traitement
+        string plotTraitement = plot.GetTraitementName();
+        bool traitementOk = false;
+        foreach(Traitement t in p.listPes)
+        {
+            if (plotTraitement == t.nom)
+            {
+                commentairePlots[indice].setTraitement("bien joué tu as appliqué le bon traitement sur cette plante.\n");
+                nbBonPoints++;
+                traitementOk = true;
+            }
+        }
+        if(!traitementOk)
+            commentairePlots[indice].setTraitement("attention tu n'as pas apppliqué le bon traitement!\n");
 
         //  Humidité
         if (plot.getQEau() < p.quantiteEau)
         {
-            commentairePlots[indice].setHydratation("Dommage, la quantité d'eau de cette parcelle est trop faible pour cette plante.\n");
+            commentairePlots[indice].setHydratation("dommage, la quantité d'eau de cette parcelle est trop faible pour cette plante.\n");
         }
         if (plot.getQEau() == p.quantiteEau)
         {
-            commentairePlots[indice].setHydratation("Super, la quantité d'eau est idéale pour cette plante.\n");
+            commentairePlots[indice].setHydratation("super, la quantité d'eau est idéale pour cette plante.\n");
             ap.maitriseQEau++;
             nbBonPoints++;
         }
         if (plot.getQEau()  > p.quantiteEau)
-            commentairePlots[indice].setHydratation("Fait attention! la quantité d'eau de cette parcelle est trop élevé pour les " + p.nom + "\n");
+            commentairePlots[indice].setHydratation("fait attention! la quantité d'eau de cette parcelle est trop élevé pour les " + nomPlante + "\n");
 
         // Nutriment
 
         if (plot.getQNutrition() < p.quantiteNutrition)
-            commentairePlots[indice].setEngrais("Dommage, la quantité de nutriments de cette parcelle est trop faible pour cette plante.\n");
+            commentairePlots[indice].setEngrais("dommage, la quantité de nutriments de cette parcelle est trop faible pour cette plante.\n");
         if (plot.getQNutrition() >= p.quantiteNutrition)
         {
-            commentairePlots[indice].setEngrais("Super, la quantité de nutriments dans cette parcelle convient bien à cette plante.\n");
+            commentairePlots[indice].setEngrais("super, la quantité de nutriments dans cette parcelle convient bien à cette plante.\n");
             ap.maitriseQNut++;
             nbBonPoints++;
         }
@@ -216,12 +228,12 @@ public class Resolver : MonoBehaviour
         //  analyse du NPK
         if( plot.getMineral() == p.mineral)
         {
-            commentairePlots[indice].setEngrais("Cette parcelle est riche en " + p.mineral.ToString() + ", c'est idéale pour les " + p.nom + ".\n");
+            commentairePlots[indice].setEngrais("cette parcelle est riche en " + p.mineral.ToString().ToLower() + ", c'est idéale pour les " + nomPlante + ".\n");
             ap.maitriseMin++;
             nbBonPoints++;
         } else
         {
-            commentairePlots[indice].setEngrais("Dommage. Cette plante aime les parcelles richent en " + p.mineral.ToString() + " et ce n'est pas le cas de cette parcelle.\n");
+            commentairePlots[indice].setEngrais("dommage, cette plante aime les parcelles richent en " + p.mineral.ToString().ToLower() + " et ce n'est pas le cas de cette parcelle.\n");
         }
         //  analyse du ph
         float phPlot = plot.getPh();
@@ -229,13 +241,13 @@ public class Resolver : MonoBehaviour
         float phMax = p.phMax;
         if (phPlot >= phMin && phPlot <= phMax)
         {
-            commentairePlots[indice].setPH("Incroyable! Le ph de cette parcelle est parfaite pour cette plante.\n");
+            commentairePlots[indice].setPH("incroyable! Le ph de cette parcelle est parfaite pour cette plante.\n");
             ap.maitrisePh++;
             nbBonPoints++;
         }
         else
         {
-            commentairePlots[indice].setPH("Ooooh il semblerait que le ph de cette parcelle ne correspond à celui des " + p.nom + ".\n");
+            commentairePlots[indice].setPH("oooh il semblerait que le ph de cette parcelle ne correspond à celui des " + nomPlante + ".\n");
         }
         //commentairePlots[indice] += "\n\n";
         return nbBonPoints;
@@ -343,6 +355,23 @@ public class Resolver : MonoBehaviour
             GameObject.Find("Player").GetComponent<Storage>().enabled = false;
             GameObject.Find("Player").GetComponent<SimpleCharacterControlFree>().enabled = false;
         }
+    }
+
+    public string translate(Plant plante)
+    {
+        string nomAuPluriel = "";
+
+        if (plante.nom == "Poireau")
+            nomAuPluriel = "poireaux";
+        else if (plante.nom == "Pomme de terre")
+            nomAuPluriel = "pommes de terre";
+        else if (plante.nom == "Chou-fleur")
+            nomAuPluriel = "choux-fleurs";
+        else if (plante.nom == "Radis")
+            nomAuPluriel = "radis";
+        else nomAuPluriel = plante.nom.ToLower() + "s";
+
+        return nomAuPluriel;
     }
 }
 
