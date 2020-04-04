@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class AnalysePlante : MonoBehaviour
 {
-    public Plants plant;
-
+    public Plant plant;
+    public string departConseil;
+    public string finConseil;
     public string conseil;
 
     public int maitrisePh;
@@ -20,21 +21,31 @@ public class AnalysePlante : MonoBehaviour
 
     public void genCommentaire()   // génération des commentaires
     {
-        conseil = "Conseils sur les " + plant + ":\n";
-        Plant p = (Plant)AssetDatabase.LoadAssetAtPath("Assets/_Data/Plantes/" + plant + ".asset", typeof(Plant));
+        departConseil = "concernant les <b>" + translate(plant) + "</b> ";
+        finConseil = "";
+        //Plant p = (Plant)AssetDatabase.LoadAssetAtPath("Assets/_Data/Plantes/" + plant + ".asset", typeof(Plant));
         if (maitrisePh / nbPlanter < 0.5f)
-            genComPh(p);
-        if (maitriseQEau / nbPlanter < 0.5f)
-            genComQEau(p);
-        if (maitriseQNut / nbPlanter < 0.5f)
-            genComQNut(p);
-        if (maitriseMin / nbPlanter < 0.5f)
-            genComMin(p);
+        {
+            genComPh(plant);
+        }
+        if (maitriseQEau / nbPlanter < 0.5f) { 
+            genComQEau(plant);
+        }if (maitriseQNut / nbPlanter< 0.5f) { 
+                genComQNut(plant);
+        }if (maitriseMin / nbPlanter < 0.5f){
+            genComMin(plant);
+        }
+        conseil = departConseil + finConseil;
     }
 
     private void genComMin(Plant p)
     {
-        conseil += "celle-ci préfère les parcelles richent en " + p.mineral + ".\n";
+        if (finConseil == "")
+        {
+            finConseil += "il vaut mieux les planter sur un sol riche en " + p.mineral.ToString().ToLower() + ".\n";
+        }
+        else finConseil += "Il vaut mieux les planter sur un sol riche en " + p.mineral.ToString().ToLower() + ".\n";
+
         scoreTot++;
     }
 
@@ -43,16 +54,29 @@ public class AnalysePlante : MonoBehaviour
         switch(p.quantiteNutrition)
         {
             case 1:
-                conseil += "cette plante peut très bien être cultivé sur un sol pauvre en nutriment.\n";
+                if (finConseil == "")
+                {
+                    finConseil += "une parcelle pauvre en nutriment lui suffit.\n";
+                }else finConseil += "Une parcelle pauvre en nutriment lui suffit.\n";
+
                 break;
             case 2:
-                conseil += "cette plante a besoin d'être cultivé sur un sol avec un apport en nutriment dans la moyenne.\n";
+                if (finConseil == "")
+                {
+                    finConseil += "une parcelle avec un apport de nutriment moyen lui suffit.\n";
+                } else finConseil += "Une parcelle avec un apport de nutriment moyen lui suffit.\n";
                 break;
             case 3:
-                conseil += "cette plante a besoin d'être cultivé sur un sol riche en nutriment.\n";
+                if (finConseil == "")
+                {
+                    finConseil += "une parcelle riche en nutriment pour pousser.\n";
+                } else finConseil += "Une parcelle riche en nutriment pour pousser.\n";
                 break;
             default:
-                conseil += "une parcelle même très pauvre en nutrient lui suffit pour pousser.\n";
+                if (finConseil == "")
+                {
+                    finConseil += "une parcelle même pauvre en nutriment lui suffit pour grandir.\n";
+                } else finConseil += "Une parcelle même pauvre en nutriment lui suffit pour grandir.\n";
                 break;
         }
         scoreTot++;
@@ -63,16 +87,30 @@ public class AnalysePlante : MonoBehaviour
         switch (p.quantiteEau)
         {
             case 1:
-                conseil += "cette plante peut très bien être cultivé sur un sol très sec.\n";
+                if (finConseil == "")
+                {
+                    finConseil += "une parcelle assez sec suffirait pour son apport en eau.\n";
+                } else finConseil += "Une parcelle assez sec suffirait pour son apport en eau.\n";
                 break;
             case 2:
-                conseil += "cette plante a besoin d'être cultivé sur un sol un minimum hydraté.\n";
+                if (finConseil == "")
+                {
+                    finConseil += "une parcelle assez humide est nécessaire pour son apport en eau.\n";
+                }
+                else finConseil += "Une parcelle assez humide est nécessaire pour son apport en eau.\n";
+
                 break;
             case 3:
-                conseil += "les " + p.nom + " ont besoin de beaucoup d'eau pour pousser.\n";
+                if (finConseil == "")
+                {
+                    finConseil += "une parcelle très humide est indispensable pour sa croissance.\n";
+                }else finConseil += "Une parcelle très humide est indispensable pour sa croissance.\n";
                 break;
             default:
-                conseil += "une parcelle aride lui conviendrait, cette plante est parfaite en temps de secheresse.\n";
+                if (finConseil == "")
+                {
+                    finConseil += "un sol très sec lui suffirait pour pousser.\n";
+                } else finConseil += "Un sol très sec lui suffirait pour pousser.\n";
                 break;
         }
         scoreTot++;
@@ -81,8 +119,35 @@ public class AnalysePlante : MonoBehaviour
     private void genComPh(Plant p)
     {
         if (p.phMax >= 7)
-            conseil += "une parcelle classique avec un ph neutre lui conviendrait.\n";
-        else conseil += "une terre avec un ph acide est ce qui convient le mieux aux" + p.nom + ".\n";
+        {
+            if(finConseil == "")
+                finConseil += "une terre avec un ph neutre (c'est-à-dire proche de 7) est nécessaire.\n";
+            else finConseil += "Une terre avec un ph neutre (c'est-à-dire proche de 7) est nécessaire.\n";
+
+        }
+        else
+        {
+            if(finConseil == "")
+                finConseil += "une terre avec un ph acide (vers 6) est idéale pour cette plante.\n";
+            else finConseil += "Une terre avec un ph acide (vers 6) est idéale pour cette plante.\n";
+        }
         scoreTot++;
+    }
+
+    public string translate(Plant plante)
+    {
+        string nomAuPluriel = "";
+
+        if (plante.nom == "Poireau")
+            nomAuPluriel = "poireaux";
+        else if (plante.nom == "Pomme de terre")
+            nomAuPluriel = "pommes de terre";
+        else if (plante.nom == "Chou-fleur")
+            nomAuPluriel = "choux-fleurs";
+        else if (plante.nom == "Radis")
+            nomAuPluriel = "radis";
+        else nomAuPluriel = plante.nom.ToLower() + "s";
+
+        return nomAuPluriel;
     }
 }
