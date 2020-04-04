@@ -11,9 +11,9 @@ public class DialogueScript : MonoBehaviour
     public List<String> texte;
     public GameObject plantPanel;
     public bool tuto = false;
+    public bool dialogueFini;
 
     private int nbEtape;
-    private bool dialogueFini;
     private int indexPhrase;
 
     // Start is called before the first frame update
