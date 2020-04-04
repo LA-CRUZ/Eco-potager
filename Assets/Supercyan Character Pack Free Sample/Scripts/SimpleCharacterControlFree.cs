@@ -246,7 +246,6 @@ public class SimpleCharacterControlFree : MonoBehaviour
                 isNPCHere = true;
                 break;
             default:
-                Debug.Log("tag not handled : " + other.tag);
                 break;
         }
     }
