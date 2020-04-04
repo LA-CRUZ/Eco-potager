@@ -31,6 +31,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
     [SerializeField] private ControlMode m_controlMode = ControlMode.Direct;
 
     [SerializeField] private Item object_in_hand;
+    [SerializeField] private bool doMovements = true;
     private Item item_to_pick_up;
     public Plot plot_to_interact;
 
@@ -158,14 +159,8 @@ public class SimpleCharacterControlFree : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         float h = Input.GetAxis("Horizontal");
 
-        bool walk = Input.GetKey(KeyCode.LeftShift);
-
         if (v < 0) {
-            if (walk) { v *= m_backwardsWalkScale; }
-            else { v *= m_backwardRunScale; }
-        } else if(walk)
-        {
-            v *= m_walkScale;
+            v *= m_backwardRunScale;
         }
 
         m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
@@ -179,16 +174,12 @@ public class SimpleCharacterControlFree : MonoBehaviour
 
     private void DirectUpdate()
     {
+        if (!doMovements) { return;  }
+
         float v = Input.GetAxis("Vertical");
         float h = Input.GetAxis("Horizontal");
 
         Transform camera = Camera.main.transform;
-
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            v *= m_walkScale;
-            h *= m_walkScale;
-        }
 
         m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
         m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
