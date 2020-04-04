@@ -29,6 +29,51 @@ public class ButtonManager : MonoBehaviour
         menuLevelSelection.SetActive(true);
         menuStart.SetActive(false);
         menuCredits.SetActive(false);
+        //Level 1
+        if (PlayerPrefs.GetInt("Tutoriel", 0) == 0)
+        {
+            GameObject.Find("Level 1").GetComponent<Button>().interactable = false;
+            GameObject.Find("Level 1").transform.GetChild(1).GetComponent<Text>().enabled = true;
+        }
+        else
+        {
+            GameObject.Find("Level 1").GetComponent<Button>().interactable = true;
+            GameObject.Find("Level 1").transform.GetChild(1).GetComponent<Text>().enabled = false;
+        }
+        
+        //Level 2
+        if (PlayerPrefs.GetInt("Level 1", 0) == 0)
+        {
+            GameObject.Find("Level 2").GetComponent<Button>().interactable = false;
+            GameObject.Find("Level 2").transform.GetChild(1).GetComponent<Text>().enabled = true;
+        }
+        else
+        {
+            GameObject.Find("Level 2").GetComponent<Button>().interactable = true;
+            GameObject.Find("Level 2").transform.GetChild(1).GetComponent<Text>().enabled = false;
+        }
+        //Level 3
+        if (PlayerPrefs.GetInt("Level 2", 0) == 0)
+        {
+            GameObject.Find("Level 3").GetComponent<Button>().interactable = false;
+            GameObject.Find("Level 3").transform.GetChild(1).GetComponent<Text>().enabled = true;
+        }
+        else
+        {
+            GameObject.Find("Level 3").GetComponent<Button>().interactable = true;
+            GameObject.Find("Level 3").transform.GetChild(1).GetComponent<Text>().enabled = false;
+        }
+        //Level 4
+        if (PlayerPrefs.GetInt("Level 3", 0) == 0)
+        {
+            GameObject.Find("Level 4").GetComponent<Button>().interactable = false;
+            GameObject.Find("Level 4").transform.GetChild(1).GetComponent<Text>().enabled = true;
+        }
+        else
+        {
+            GameObject.Find("Level 4").GetComponent<Button>().interactable = true;
+            GameObject.Find("Level 4").transform.GetChild(1).GetComponent<Text>().enabled = false;
+        }
     }
 
     public void HideLevelSelection()

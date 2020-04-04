@@ -6964,6 +6964,11 @@ PrefabInstance:
       propertyPath: saison
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1038722869206062760, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
+      propertyPath: numNiveau
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2155822580411981872, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: m_Name
@@ -7113,7 +7118,7 @@ PrefabInstance:
     - target: {fileID: 3186284012279439550, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -43.900146
+      value: -43.900208
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ab3adaed68ff8643b99a60ca5575bc3, type: 3}
