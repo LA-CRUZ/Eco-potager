@@ -62,7 +62,7 @@ public class SimpleCharacterControlFree : MonoBehaviour
     
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             // Nouveau item à mettre en main
             if (item_to_pick_up != null)

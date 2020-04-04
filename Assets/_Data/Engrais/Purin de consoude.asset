@@ -16,8 +16,8 @@ MonoBehaviour:
   description: "C'est la m\xEAme recette que pour faire un purin d'ortie mais cette
     fois avec des feuilles de consoude.\n\nIl s'agit d'un engrais riche en <b><color=purple>potassium</color></b>
     !\n\nLe  <b><color=purple>potassium</color></b> sert \xE0 <b>transmettre</b>
-    l'eau, les sucres et les autres mineraux dans toute la plante! Sans lui la plante
-    ne pourra pas utiliser tous ce qu'elle a absorb\xE9 pour sa croissance! \nUtiliser
-    en grande quantit\xE9, celui-ci peut m\xEAme servir de <b>traitement</b>."
+    l'eau, les sucres et les autres min\xE9raux dans toute la plante ! Sans lui,
+    la plante ne pourra pas utiliser tout ce qu'elle a absorb\xE9 pour sa croissance
+    !"
   icon: {fileID: 21300000, guid: 319d3b5d28f6684489204f7f91ad260b, type: 3}
   mineral: 2

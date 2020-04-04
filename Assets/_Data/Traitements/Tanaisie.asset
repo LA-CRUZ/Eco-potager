@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tanaisie
   m_EditorClassIdentifier: 
   nom: "D\xE9coction de Tanaisie"
-  description: "La tanaisie est une belle plante jaune. Pour faire la d\xE9coction 
-    il suffit de faire tremper dans le l'eau les p\xE9tales de cette fleur pendant
-    24 heures. \n\nCette solution est parfaite pour faire fuir les limaces, les fourmis
+  description: "La tanaisie est une belle plante jaune. Pour faire la d\xE9coction
+    il suffit de faire tremper les p\xE9tales de cette fleur dans l'eau pendant 24
+    heures. \n\nCette solution est parfaite pour faire fuir les limaces, les fourmis
     ou encore les tiques et les mites !"
   icon: {fileID: 21300000, guid: 9ef15185e49969946a05eb6a554ece57, type: 3}

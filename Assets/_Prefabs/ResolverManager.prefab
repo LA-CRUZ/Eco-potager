@@ -137,7 +137,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e5d8eced5453332498d020ca76229ba7, type: 2}
   objectifScore: 1
   resolverGUI: {fileID: 1405490068194464124}
-  nbCriteres: 3
   nbPlotRequis: 1
 --- !u!1 &1405490067421688942
 GameObject:
@@ -1027,7 +1026,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1405490067367206729}
-        m_MethodName: CacherResolverWindow
+        m_MethodName: GoToLevelSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1476,8 +1475,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 239.19, y: 0.4355}
-  m_SizeDelta: {x: 930.5, y: 67.111}
+  m_AnchoredPosition: {x: 242.25, y: 0.000014156}
+  m_SizeDelta: {x: 918.84, y: 67.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1405490068517236398
 CanvasRenderer:
@@ -2171,7 +2170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 239.73, y: -1.69}
+  m_AnchoredPosition: {x: 243.4, y: 0.0000023842}
   m_SizeDelta: {x: 914.05, y: 76.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1405490069130399594

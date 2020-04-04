@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: 1.5}
-  m_SizeDelta: {x: -155.5, y: -127.8}
+  m_AnchoredPosition: {x: 1, y: 6.75}
+  m_SizeDelta: {x: -155.5, y: -138.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1895843438571639854
 CanvasRenderer:
@@ -203,12 +203,12 @@ MonoBehaviour:
   - "Commence donc par acc\xE9der au <b>stock</b>. Il te permettra de r\xE9cup\xE9rer
     tous les <b>engrais</b>, <b>traitements</b> et <b>graines</b> n\xE9cessaires
     pour faire pousser tes l\xE9gumes."
-  - "Pour acc\xE9der au <b>stock</b>, appuies sur <b>TAB</b> !"
-  - "Bien ! A pr\xE9sent il faut d\xE9cider par quel l\xE9gume commencer, pourquoi
+  - "Pour acc\xE9der au <b>stock</b>, appuies sur <b>S</b> !"
+  - "Bien ! \xC0 pr\xE9sent il faut d\xE9cider par quel l\xE9gume commencer, pourquoi
     pas des <b>tomates</b> tiens !"
   - "Pour planter un l\xE9gume, il faut d\u2019abord choisir un <b>engrais</b> ad\xE9quat,
-    pour se faire, tu peux te r\xE9f\xE9rer aux informations de la plante concern\xE9e,
-    disponibles dans l\u2019onglet <b>\u201CPlantes\u201D</b>."
+    pour ce faire, tu peux te r\xE9f\xE9rer aux informations de la plante concern\xE9e,
+    disponibles dans l\u2019onglet <b>Plantes</b>."
   - "Ici tu as acc\xE8s \xE0 toutes les graines de plantes disponibles, tu peux consulter
     les informations relatives \xE0 chacune d\u2019entre elles et savoir comment
     les cultiver. Jetons un oeil \xE0 nos <b>graines de tomates</b>."
@@ -216,50 +216,49 @@ MonoBehaviour:
     l\u2019engrais le plus adapt\xE9 sera donc le <b><color=green>purin d\u2019orties</color></b>
     (tu peux \xE9galement te r\xE9f\xE9rer \xE0 la couleur associ\xE9e si tu as un
     doute)"
-  - "Chaque plante a une pr\xE9f\xE9rence sur le sol ou elle pousse, il est donc
+  - "Chaque plante a une pr\xE9f\xE9rence sur le sol o\xF9 elle pousse, il est donc
     important de choisir un engrais adapt\xE9 pour favoriser sa croissance."
   - "Ces pr\xE9f\xE9rences vont g\xE9n\xE9ralement vers l\u2019<b><color=green>azote</color></b>,
     le <b><color=blue>phosphore</color></b> ou le <b><color=purple>potassium</color></b>,
     \xE0 toi de choisir le meilleur engrais pour avoir des plantes de qualit\xE9
     !"
-  - "A noter : Chacun des engrais utilis\xE9s dans ton \xE9co-potager sont des engrais
-    dits <b>\u201Corganiques\u201D</b>. "
-  - "C\u2019est \xE0 dire qu\u2019ils sont r\xE9alis\xE9s en r\xE9cup\xE9rant et
+  - "\xC0 noter : Chaque engrais utilis\xE9 dans ton \xE9co-potager est un engrais
+    dit <b>organique</b>. "
+  - "C\u2019est-\xE0-dire qu\u2019ils sont r\xE9alis\xE9s en r\xE9cup\xE9rant et
     en transformant des d\xE9chets organiques. Cette m\xE9thode de <b>recyclage</b>
     est appel\xE9e le <b>compost</b> et permet de cultiver beaucoup de plantes en
     consommant tr\xE8s peu de mati\xE8res premi\xE8res !"
   - "Bien maintenant qu\u2019on a le bon engrais, <b>prends</b> le et allons l\u2019appliquer
-    \xE0 notre parcelle ! (Appuie sur <b>TAB</b> pour fermer le stock)"
+    \xE0 notre parcelle ! (Appuie sur <b>S</b> pour fermer le stock)"
   - "Super ! Rappelles toi cependant, selon les informations des <b>graines de tomates</b>,
-    celles ci requi\xE8rent 3 doses d\u2019engrais !"
-  - "Parfait ! A pr\xE9sent notre parcelle est pr\xEAte \xE0 recevoir nos <b>graines
-    de tomates</b>, va donc les chercher dans le stock !"
+    celles-ci requi\xE8rent 3 doses d\u2019engrais !"
+  - "Parfait ! \xC0 pr\xE9sent notre parcelle est pr\xEAte \xE0 recevoir nos b>graines
+    de tomates/b>, va donc les chercher dans le stock !"
   - "Bien, plus qu\u2019\xE0 les <b>arroser</b> suffisamment (mais pas trop) et \xE0
-    leur appliquer un <b>pesticide</b> adapt\xE9 si n\xE9cessaire "
+    leur appliquer un <b>traitement</b> adapt\xE9 si n\xE9cessaire."
   - "Va donc chercher l\u2019<b>arrosoir</b>. Si tu as un doute sur la <b>quantit\xE9
     d\u2019eau</b> ad\xE9quate, n\u2019h\xE9site pas \xE0 consulter les informations
-    des <b>graines de tomates</b> dans l\u2019onglet <b>\u201CPlantes\u201D</b> du
-    <b>stock</b>."
+    des <b>graines de tomates</b> dans l\u2019onglet <b>Plantes</b> du <b>stock</b>."
   - "Parfait ! Il faut bien penser \xE0 arroser <b>r\xE9guli\xE8rement</b> tes plantes
     si tu veux qu\u2019elles poussent correctement ! Mais attention \xE0 ne pas trop
-    le faire sinon tu risque de les <b>noyer</b> et elles finiront par pourrir."
+    le faire sinon tu risques de les <b>noyer</b> et elles finiront par pourrir."
   - "Ne pas consommer trop d\u2019eau est \xE9galement une fa\xE7on d\u2019\xEAtre
-    <b>responsable</b> vis \xE0 vis de la nature, et de ne pas g\xE2cher ses ressources
+    <b>responsable</b> vis-\xE0-vis de la nature, et de ne pas g\xE2cher ses ressources
     !"
-  - "Il me semble que les tomates ont besoin d\u2019un <b>pesticide</b> particulier
+  - "Il me semble que les tomates ont besoin d\u2019un <b>traitement</b> particulier
     pour les prot\xE9ger d\u2019une maladie r\xE9pandue chez quelques plantes : le
-    mildiou, va donc r\xE9cup\xE9rer ce produit dans le <b>stock</b> !"
+    mildiou. Va donc r\xE9cup\xE9rer ce produit dans le <b>stock</b> !"
   - "Voil\xE0, une application suffira, pense bien \xE0 <b>traiter</b> tes plantes
     si tu veux les prot\xE9ger des maladies et des parasites. Mais fais bien attention
     \xE0 \xEAtre <b>accompagn\xE9</b> d\u2019un adulte, et \xE0 respecter la <b>notice
     d\u2019utilisation</b> avant de te servir de ce genre de produits."
   - "Comme pour les engrais, les produits pr\xE9sent\xE9s ici sont pr\xE9par\xE9s
-    de mani\xE8re <b>responsable</b> et <b>\xE9cologique</b>, c\u2019est important
+    de mani\xE8re <b>responsable</b> et <b>\xE9cologique</b> : c\u2019est important
     de bien choisir les produits qu\u2019on utilise pour \xEAtre conscient de notre
     impact sur la nature !"
   - "Et voil\xE0, tu as r\xE9ussi \xE0 cultiver ta premi\xE8re plante, f\xE9licitations
-    ! A pr\xE9sent tu vas pouvoir continuer \xE0 jardiner dans ton \xE9co-potager
-    et faire pousser des tonnes de l\xE9gumes diff\xE9rents, bonne chance ! Et attention
+    ! \xC0 pr\xE9sent tu vas pouvoir continuer \xE0 jardiner dans ton \xE9co-potager
+    et faire pousser des tonnes de plantes diff\xE9rentes, bonne chance ! Et attention
     bien les traiter !"
   plantPanel: {fileID: 0}
 --- !u!1 &1895843439607579356
@@ -623,8 +622,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 222, y: -284}
-  m_SizeDelta: {x: 35.2, y: 30}
+  m_AnchoredPosition: {x: 165.1, y: -277.8}
+  m_SizeDelta: {x: 218.38, y: 39.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1895843440360564865
 CanvasRenderer:
@@ -655,7 +654,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 24
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
@@ -665,4 +664,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: (E)
+  m_Text: (I) pour continuer

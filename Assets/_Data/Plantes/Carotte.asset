@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Carotte
   m_EditorClassIdentifier: 
   nom: Carotte
-  description: "La carotte est consid\xE9r\xE9e comme un fruit car au Portugal elle
-    est pr\xE9par\xE9e en confiture, or la confiture est cens\xE9e \xEAtre \xE0 base
-    de fruit !"
+  description: "La carotte est consid\xE9r\xE9e comme un fruit au Portugal car il
+    la pr\xE9pare en confiture !"
   icon: {fileID: 21300000, guid: cb01a0e86bc1bf94e9ee0498ef1acd40, type: 3}
   saison: 0000000003000000
   listPes:

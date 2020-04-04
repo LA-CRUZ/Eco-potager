@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tomate
   m_EditorClassIdentifier: 
   nom: Tomate
-  description: "On se demande souvent si la tomate est un fruit OU un l\xE9gume,
-    mais officiellement la tomate est le fruit qui vient d\u2019un l\xE9gume."
+  description: "On se demande souvent si la tomate est un fruit ou un l\xE9gume mais
+    officiellement la tomate est le fruit qui vient d\u2019un l\xE9gume."
   icon: {fileID: 21300000, guid: b85df735c74fe2a4d9ab9fcedc022d39, type: 3}
   saison: 0000000003000000
   listPes:

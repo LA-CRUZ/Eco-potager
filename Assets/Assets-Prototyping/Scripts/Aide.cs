@@ -18,18 +18,20 @@ public class Aide : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( Input.GetKeyDown(touche))
+        if (Input.GetKeyDown(touche))
         {
-            if (isShowing == false)
+            if (isShowing)
+            {
+                helperUi.SetActive(false);
+                isShowing = false;
+            }
+            else
+            {
                 genHelp();
-            else genHelp();
-        } 
-
-        if(Input.anyKey && !Input.GetKey(touche))
-        {
-            helperUi.SetActive(false);
+                isShowing = true;
+            }
         }
-        
+
     }
 
     public void genHelp()
@@ -39,7 +41,6 @@ public class Aide : MonoBehaviour
         if (tmp != null)
         {
             string type = tmp.GetType().ToString();
-            Debug.Log(type);
             
             if (type == "Plant")
             {
@@ -58,12 +59,11 @@ public class Aide : MonoBehaviour
             {
                 messageAide += "Tu peux arroser une plante maintenant en t'approchant d'une parcelle.";
             }
-            
-        }else
-        {
-            messageAide += "Pour commencer tu peux choisir un élément dans le <b>stock</b> ou bien voir les caractéristiques d'une parcelle.";
         }
-        Debug.Log(messageAide);
+        else
+        {
+            messageAide += "Pour commencer tu peux choisir un élément dans le <b>stock</b> ou bien voir les caractéristiques d'une parcelle en t'approchant de celle-ci.";
+        }
         genUi();
 
     }

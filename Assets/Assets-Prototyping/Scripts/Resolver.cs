@@ -9,7 +9,6 @@ public enum Plants
 {
     Carotte,
     ChouFleur,
-    Celerie,
     Cocombre,
     Laitue,
     Melon,
@@ -26,7 +25,6 @@ public class Resolver : MonoBehaviour
     private Saison saison;
 
     [SerializeField]
-    //private Plants[] plantes;
     public List<Plant> listPlantes = new List<Plant>(); 
     private List<string> commentairePlantes = new List<string>();
     private List<AnalysePlante> listComPlants = new List<AnalysePlante>();
@@ -114,7 +112,6 @@ public class Resolver : MonoBehaviour
 
     void calculScore()
     {
-        Debug.Log("Calcul en cours...");
         int i = 0;
         foreach(GameObject plot in listPlots)
         {
@@ -136,8 +133,6 @@ public class Resolver : MonoBehaviour
                     AnalysePlante ap = listComPlants[j];
                     if (p.nom == tagChild)
                     {
-                        Debug.Log("avant lancement du process pour le legume " + listComPlants[j].plant + " dont le score est actuellement de " + listComPlants[j].scoreTot);
-                        Debug.Log("avant lancement du process pour le legume " + ap.plant + " dont le score est actuellement de " + ap.scoreTot);
                         ap.nbPlanter++;
                         plotScores[i] = process(plot.GetComponent<Plot>(), p, i, ap);
                         if (plotScores[i] > 2)
@@ -161,7 +156,7 @@ public class Resolver : MonoBehaviour
         }
         if (planteNonMaitrise.scoreTot != 0)
             conseil = planteNonMaitrise.conseil;
-        else conseil = "les différents traitements contre les parasites ou les maladies même s'ils sont bio, restent dangereux et sont à utiliser avec beaucoup de précaution";  // pas de conseil si le joueur n'a pas commis d'erreur
+        else conseil = "Les différents traitements contre les parasites ou les maladies, même s'ils sont bio, restent dangereux et sont à utiliser avec beaucoup de précaution.";  // pas de conseil si le joueur n'a pas commis d'erreur
     }
 
     int process (Plot plot, Plant p, int indice, AnalysePlante ap)   // créer les commentaires pour 1 plot et son fils
@@ -181,7 +176,7 @@ public class Resolver : MonoBehaviour
         }
         if (estDeSaison)
         {
-            commentairePlots[indice].setSaison("Il s'agit bien d'un légume de saison, c'est super!\n");
+            commentairePlots[indice].setSaison("Il s'agit bien d'un légume de saison, c'est super !\n");
             nbBonPoints++;
         }
         else commentairePlots[indice].setSaison("Attention, les " + nomPlante + " poussent en " + s + " et non en " + saison.ToString().ToLower() + ".\n");
@@ -199,7 +194,7 @@ public class Resolver : MonoBehaviour
             }
         }
         if(!traitementOk)
-            commentairePlots[indice].setTraitement("Attention tu n'as pas apppliqué le bon traitement!\n");
+            commentairePlots[indice].setTraitement("Attention tu n'as pas apppliqué le bon traitement !\n");
 
         //  Humidité
         if (plot.getQEau() < p.quantiteEau)
@@ -213,7 +208,7 @@ public class Resolver : MonoBehaviour
             nbBonPoints++;
         }
         if (plot.getQEau()  > p.quantiteEau)
-            commentairePlots[indice].setHydratation("Fait attention! la quantité d'eau de cette parcelle est trop élevé pour les " + nomPlante + ".\n");
+            commentairePlots[indice].setHydratation("Fais attention ! La quantité d'eau de cette parcelle est trop élevé pour les " + nomPlante + ".\n");
 
         // Nutriment
 
@@ -242,7 +237,7 @@ public class Resolver : MonoBehaviour
         float phMax = p.phMax;
         if (phPlot >= phMin && phPlot <= phMax)
         {
-            commentairePlots[indice].setPH("Incroyable! Le ph de cette parcelle est parfaite pour cette plante.\n");
+            commentairePlots[indice].setPH("Incroyable ! Le ph de cette parcelle est parfait pour cette plante.\n");
             ap.maitrisePh++;
             nbBonPoints++;
         }

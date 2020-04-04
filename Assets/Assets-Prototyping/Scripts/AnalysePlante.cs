@@ -21,7 +21,7 @@ public class AnalysePlante : MonoBehaviour
 
     public void genCommentaire()   // génération des commentaires
     {
-        departConseil = "concernant les <b>" + translate(plant) + "</b> ";
+        departConseil = "Concernant les <b>" + translate(plant) + "</b>, ";
         finConseil = "";
         //Plant p = (Plant)AssetDatabase.LoadAssetAtPath("Assets/_Data/Plantes/" + plant + ".asset", typeof(Plant));
         if (maitrisePh / nbPlanter < 0.5f)
@@ -56,27 +56,27 @@ public class AnalysePlante : MonoBehaviour
             case 1:
                 if (finConseil == "")
                 {
-                    finConseil += "une parcelle pauvre en nutriment lui suffit.\n";
-                }else finConseil += "Une parcelle pauvre en nutriment lui suffit.\n";
+                    finConseil += "une parcelle pauvre en nutriments lui suffit.\n";
+                }else finConseil += "Une parcelle pauvre en nutriments lui suffit.\n";
 
                 break;
             case 2:
                 if (finConseil == "")
                 {
-                    finConseil += "une parcelle avec un apport de nutriment moyen lui suffit.\n";
-                } else finConseil += "Une parcelle avec un apport de nutriment moyen lui suffit.\n";
+                    finConseil += "une parcelle avec un apport de nutriments moyen lui suffit.\n";
+                } else finConseil += "Une parcelle avec un apport de nutriments moyen lui suffit.\n";
                 break;
             case 3:
                 if (finConseil == "")
                 {
-                    finConseil += "une parcelle riche en nutriment pour pousser.\n";
-                } else finConseil += "Une parcelle riche en nutriment pour pousser.\n";
+                    finConseil += "une parcelle riche en nutriments lui suffit pour grandir.\n";
+                } else finConseil += "Une parcelle riche en nutriments lui suffit pour grandir.\n";
                 break;
             default:
                 if (finConseil == "")
                 {
-                    finConseil += "une parcelle même pauvre en nutriment lui suffit pour grandir.\n";
-                } else finConseil += "Une parcelle même pauvre en nutriment lui suffit pour grandir.\n";
+                    finConseil += "une parcelle même pauvre en nutriments lui suffit pour grandir.\n";
+                } else finConseil += "Une parcelle même pauvre en nutriments lui suffit pour grandir.\n";
                 break;
         }
         scoreTot++;

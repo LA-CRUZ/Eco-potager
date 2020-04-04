@@ -42,9 +42,9 @@ public class DialogueScript : MonoBehaviour
                 AfficherDialogue();
                 if (dialogueText.text == "New Text")
                     dialogueText.text = texte[0];
-                if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 4)
+                if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 4)
                     nbEtape++;
-                if (Input.GetKeyDown(KeyCode.E) && indexPhrase < 4)
+                if (Input.GetKeyDown(KeyCode.I) && indexPhrase < 4)
                 {
                     dialogueText.text = texte[indexPhrase];
                     indexPhrase++;
@@ -60,9 +60,9 @@ public class DialogueScript : MonoBehaviour
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
                     }
-                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 7)
+                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 7)
                         nbEtape++;
-                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase < 7)
+                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase < 7)
                     {
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
@@ -79,9 +79,9 @@ public class DialogueScript : MonoBehaviour
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
                     }
-                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 13)
+                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 13)
                         nbEtape++;
-                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase < 13)
+                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase < 13)
                     {
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
@@ -98,7 +98,7 @@ public class DialogueScript : MonoBehaviour
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
                     }
-                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 14)
+                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 14)
                         nbEtape++;
                 }
                 break;
@@ -112,7 +112,7 @@ public class DialogueScript : MonoBehaviour
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
                     }
-                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 15)
+                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 15)
                         nbEtape++;
                 }
                 break;
@@ -126,9 +126,9 @@ public class DialogueScript : MonoBehaviour
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
                     }
-                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 17)
+                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 17)
                         nbEtape++;
-                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase < 17)
+                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase < 17)
                     {
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
@@ -145,9 +145,9 @@ public class DialogueScript : MonoBehaviour
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
                     }
-                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 20)
+                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 20)
                         nbEtape++;
-                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase < 20)
+                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase < 20)
                     {
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
@@ -164,9 +164,9 @@ public class DialogueScript : MonoBehaviour
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
                     }
-                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase == 23)
+                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase == 23)
                         nbEtape++;
-                    if (Input.GetKeyDown(KeyCode.E) && indexPhrase < 23)
+                    if (Input.GetKeyDown(KeyCode.I) && indexPhrase < 23)
                     {
                         dialogueText.text = texte[indexPhrase];
                         indexPhrase++;
