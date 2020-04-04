@@ -6072,9 +6072,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
+      propertyPath: texte.Array.size
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1407041065}
+    - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
+      propertyPath: texte.Array.data[23]
+      value: "Et voil\xE0, tu as r\xE9ussi \xE0 cultiver ta premi\xE8re plante, f\xE9licitations
+        ! \xC0 pr\xE9sent tu vas pouvoir continuer \xE0 jardiner dans ton \xE9co-potager
+        et faire pousser des tonnes de plantes diff\xE9rentes, bonne chance ! Et
+        attention bien les traiter !"
+      objectReference: {fileID: 0}
+    - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
+      propertyPath: texte.Array.data[24]
+      value: "Et voil\xE0, tu as r\xE9ussi \xE0 cultiver ta premi\xE8re plante, f\xE9licitations
+        ! \xC0 pr\xE9sent tu vas pouvoir continuer \xE0 jardiner dans ton \xE9co-potager
+        et faire pousser des tonnes de plantes diff\xE9rentes, bonne chance ! Et
+        attention bien les traiter !"
+      objectReference: {fileID: 0}
     - target: {fileID: 2155822580411981872, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: m_Name
@@ -6139,6 +6160,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186284012279439550, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -43.89984
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186284012279439550, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -350.09998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ab3adaed68ff8643b99a60ca5575bc3, type: 3}
