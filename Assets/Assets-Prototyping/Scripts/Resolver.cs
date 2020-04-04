@@ -108,7 +108,6 @@ public class Resolver : MonoBehaviour
             affichage();
             AfficherResolverWindow();
         }
-        Debug.Log(nbCriteres);
         nbCriteres = PlayerPrefs.GetInt("difficulty", 3);
     }
 
