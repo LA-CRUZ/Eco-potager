@@ -6536,7 +6536,7 @@ PrefabInstance:
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: texte.Array.data[0]
-      value: "Salut ! J'esp\xE8re que tu es en forme pour ce premier jour de <b>Printemps</b>
+      value: "Salut ! J'esp\xE8re que tu es en forme pour ce premier jour de <b>printemps</b>
         ! Aujourd'hui, l'objectif est de commencer \xE0 planter diff\xE9rents l\xE9gumes
         de <b>saison</b>."
       objectReference: {fileID: 0}
@@ -6544,14 +6544,14 @@ PrefabInstance:
         type: 3}
       propertyPath: texte.Array.data[1]
       value: "Je te laisse regarder dans le <b>stock</b> les l\xE9gumes qui poussent
-        au <b>Printemps</b>. Fais bien attention \xE0 planter les bons l\xE9gumes
+        au <b>printemps</b>. Fais bien attention \xE0 planter les bons l\xE9gumes
         de saison dans la bonne <b>parcelle</b>, n'h\xE9site pas \xE0 <b>arroser</b>
         ou mettre de l'<b>engrais</b> si n\xE9cessaire."
       objectReference: {fileID: 0}
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: texte.Array.data[2]
-      value: Quand tu penses avoir fini tu peux quitter le potager (rappelles-toi
+      value: Quand tu penses avoir fini tu peux quitter le potager (rappelle-toi
         d'appuyer sur <b>Espace</b> pour cela).
       objectReference: {fileID: 0}
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,

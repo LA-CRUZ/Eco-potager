@@ -5928,7 +5928,7 @@ PrefabInstance:
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: texte.Array.data[0]
-      value: "Aujourd'hui on va s'int\xE9resser aux <b>ph</b>, il s'agit d'un <b>indice</b>,
+      value: "Aujourd'hui on va s'int\xE9resser au <b>ph</b>, il s'agit d'un <b>indice</b>,
         compris entre <b>0 et 14</b>, permettant de mesurer l'<b>acidit\xE9</b> d'un
         milieu, comme la terre.  "
       objectReference: {fileID: 0}
@@ -5964,15 +5964,16 @@ PrefabInstance:
         type: 3}
       propertyPath: texte.Array.data[5]
       value: "Dans notre potager les <b>3 rang\xE9es</b> ont chacune un <b>ph diff\xE9rent</b>.
-        Nous sommes d'ailleurs en <b>Automne</b> pense donc \xE0 bien planter des
+        Nous sommes d'ailleurs en <b>automne</b>, pense donc \xE0 bien planter des
         <b>l\xE9gumes de saison</b> et dans une parcelle avec un <b>ph adapt\xE9</b>."
       objectReference: {fileID: 0}
     - target: {fileID: 550677923109771603, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: texte.Array.data[6]
-      value: "Au fait, j'ai d\xE9j\xE0 commenc\xE9 \xE0 travailler sur le champs,
-        fais attention que le niveau d'<b>eau</b> et d'<b>engrais</b> de ta parcelle
-        corresponde \xE0 celle de ta plante !"
+      value: "Au fait, j'ai d\xE9j\xE0 commenc\xE9 \xE0 travailler sur les parcelles.
+        Fais attention au niveau d'<b>eau</b> et d'<b>engrais</b> de ta parcelle
+        pour qu'ils correspondent \xE0 ceux de ta plante !"
+      objectReference: {fileID: 0}
     - target: {fileID: 550677923618766195, guid: 4ab3adaed68ff8643b99a60ca5575bc3,
         type: 3}
       propertyPath: m_FontData.m_Alignment
