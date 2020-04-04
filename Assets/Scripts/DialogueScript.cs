@@ -10,24 +10,27 @@ public class DialogueScript : MonoBehaviour
     public GameObject player;
     public List<String> texte;
     public GameObject plantPanel;
+    public bool tuto = false;
 
     private int nbEtape;
-    private bool tutorielFini;
+    private bool dialogueFini;
     private int indexPhrase;
 
     // Start is called before the first frame update
     void Start()
     {
         nbEtape = 0;
-        tutorielFini = false;
+        dialogueFini = false;
         indexPhrase = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!tutorielFini)
-            tutoriel();
+        if (!dialogueFini)
+            if (tuto)
+                tutoriel();
+            else lireTexte();
     }
 
     void tutoriel()
@@ -156,7 +159,7 @@ public class DialogueScript : MonoBehaviour
                 break;
             case 7: //le joueur a appliqué le traitement
                 CacherDialogue();
-                if (true) //TODO
+                if (plot.GetTraitementName() != " ") //TODO
                 {
                     AfficherDialogue();
                     if (indexPhrase == 20)
@@ -175,11 +178,32 @@ public class DialogueScript : MonoBehaviour
                 break;
             default:
                 CacherDialogue();
-                tutorielFini = true;
+                dialogueFini = true;
                 break;
         }
 
         
+    }
+
+    void lireTexte()
+    {
+        Text dialogueText = dialoguesGUI.GetComponentInChildren<Text>();
+        if (dialogueText.text == "New Text")
+        {
+            AfficherDialogue();
+            dialogueText.text = texte[0];
+        }
+        if (Input.GetKeyDown(KeyCode.I) && indexPhrase == texte.Count)
+        {
+            dialogueFini = true;
+            CacherDialogue();
+        }
+        if (Input.GetKeyDown(KeyCode.I) && indexPhrase < texte.Count)
+        {
+            AfficherDialogue();
+            dialogueText.text = texte[indexPhrase];
+            indexPhrase++;
+        }
     }
 
     public void CacherDialogue()
