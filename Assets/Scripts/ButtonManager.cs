@@ -10,6 +10,7 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private GameObject menuStart;
     [SerializeField] private GameObject menuLevelSelection;
     [SerializeField] private GameObject menuOptions;
+    [SerializeField] private GameObject menuCredits;
     [SerializeField] private GameObject aideWindow;
     public GameObject volumeSlider;
 
@@ -27,11 +28,25 @@ public class ButtonManager : MonoBehaviour
     {
         menuLevelSelection.SetActive(true);
         menuStart.SetActive(false);
+        menuCredits.SetActive(false);
     }
 
     public void HideLevelSelection()
     {
         menuLevelSelection.SetActive(false);
+        menuStart.SetActive(true);
+        menuCredits.SetActive(false);
+    }
+
+    public void ShowCredit()
+    {
+        menuCredits.SetActive(true);
+        menuStart.SetActive(false);
+    }
+
+    public void HideCredit()
+    {
+        menuCredits.SetActive(false);
         menuStart.SetActive(true);
     }
 
