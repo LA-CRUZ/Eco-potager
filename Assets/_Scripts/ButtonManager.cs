@@ -9,6 +9,8 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private GameObject menuStart;
     [SerializeField] private GameObject menuLevelSelection;
     [SerializeField] private GameObject menuOptions;
+    [SerializeField] private GameObject aideWindow;
+
     public void SwitchSceneBtn(string nameScene)
     {
         SceneManager.LoadScene(nameScene);
@@ -40,11 +42,17 @@ public class ButtonManager : MonoBehaviour
     public void HideOptions()
     {
         menuOptions.SetActive(false);
+        aideWindow.SetActive(false);
         menuStart.SetActive(true);
     }
 
     public void changeDifficulty(int difficulty)
     {
         PlayerPrefs.SetInt("difficulty", difficulty);
+    }
+
+    public void ToggleHelp()
+    {
+        aideWindow.SetActive(!aideWindow.activeSelf);
     }
 }
