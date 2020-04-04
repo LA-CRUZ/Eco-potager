@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum Plants
@@ -351,6 +352,11 @@ public class Resolver : MonoBehaviour
             GameObject.Find("Player").GetComponent<Storage>().enabled = false;
             GameObject.Find("Player").GetComponent<SimpleCharacterControlFree>().enabled = false;
         }
+    }
+
+    public void GoToLevelSelection()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
     public string translate(Plant plante)
