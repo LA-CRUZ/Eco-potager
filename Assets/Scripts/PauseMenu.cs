@@ -53,7 +53,7 @@ public class PauseMenu : MonoBehaviour
     {
         menuOptions.SetActive(true);
         pauseMenu.SetActive(false);
-        volumeSlider.GetComponent<Slider>().value = PlayerPrefs.GetFloat("volume") * 5;
+        volumeSlider.GetComponent<Slider>().value = PlayerPrefs.GetFloat("volume", 0.1f) * 5;
     }
 
     public void HideOptions()

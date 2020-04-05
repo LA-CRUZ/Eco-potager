@@ -99,7 +99,7 @@ public class ButtonManager : MonoBehaviour
     {
         menuOptions.SetActive(true);
         menuStart.SetActive(false);
-        volumeSlider.GetComponent<Slider>().value = PlayerPrefs.GetFloat("volume") * 5;
+        volumeSlider.GetComponent<Slider>().value = PlayerPrefs.GetFloat("volume", 0.1f) * 5;
     }
 
     public void HideOptions()
