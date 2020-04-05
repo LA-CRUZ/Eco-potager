@@ -12,13 +12,15 @@ public class MusicVolume : MonoBehaviour
     void Start()
     {
         audioSrc = GetComponent<AudioSource>();
+        audioSrc.volume = 0.1f;
+        audioSrc.mute = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         audioSrc.volume = PlayerPrefs.GetFloat("volume", 0.1f);
-        audioSrc.mute = PlayerPrefs.GetInt("mute", 0) == 0 ? true : false;
+        audioSrc.mute = PlayerPrefs.GetInt("mute", 1) == 0 ? true : false;
 
     }
 
