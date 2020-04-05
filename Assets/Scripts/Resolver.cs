@@ -47,6 +47,7 @@ public class Resolver : MonoBehaviour
     private int plotSelected;
     private int nbCriteres = 3;
     public int nbPlotRequis = 1;
+    public int numNiveau = 0;
 
     void Start()
     {
@@ -253,8 +254,8 @@ public class Resolver : MonoBehaviour
 
     void affichage()
     {
-        Transform starsGroup = GameObject.Find("starsGroup").transform;
         int nbReussite = 0;
+        Transform starsGroup = GameObject.Find("starsGroup").transform;
         string appreciation = "";
         foreach (Transform child in starsGroup)
             GameObject.Destroy(child.gameObject);
@@ -358,6 +359,17 @@ public class Resolver : MonoBehaviour
     public void GoToLevelSelection()
     {
         SceneManager.LoadScene("Menu");
+        Debug.Log(GameObject.Find("Appreciation").GetComponent<Text>().text);
+        if (GameObject.Find("Appreciation").GetComponent<Text>().text == "Parfait !" || GameObject.Find("Appreciation").GetComponent<Text>().text == "Super !")
+            setLevelActive();
+    }
+
+    void setLevelActive()
+    {
+        string varLabel = "Tutoriel";
+        if (numNiveau > 0)
+            varLabel = "Level " + numNiveau.ToString();
+        PlayerPrefs.SetInt(varLabel, 1);
     }
 
     public string translate(Plant plante)
