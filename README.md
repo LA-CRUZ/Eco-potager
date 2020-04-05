@@ -8,9 +8,9 @@ Réalisé sous **Unity 2019.3.0f6**.
 
 ## Exécutable
 
-Afin de pouvoir lancer l'application il est nécessaire de cloner se projet et de lancer l'exécutable ``build_1.0/Eco-potager.exe ``
+Afin de pouvoir lancer l'application il est nécessaire de cloner se projet et de lancer l'exécutable ``_BUILD/Eco-potager.exe ``
 
-Sinon, vu la taille du répertoire, il est possible de télécharger l'exécutable à ce lien.
+Sinon, vu la taille du répertoire, il est possible de télécharger l'exécutable à [ce lien](https://filesender.renater.fr/?s=download&token=38effd0e-de71-4a84-a983-d75d0f27dde1) (disponible jusqu'au 05/05/2020).
 
 
 
